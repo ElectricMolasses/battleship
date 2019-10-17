@@ -35,7 +35,17 @@ it('placeShip should return false for out of bounds index, if the coordinates ar
   assert.isFalse(placeShip(1, 22, 'destroyer', 'horizontal', board));
 });
 
-it('placeShip should return false if part of the ship would be off the grid');
+it('placeShip should return false if part of the ship would be off the grid horizontally', function() {
+  const board = createBoard();
+
+  assert.isFalse(placeShip(6, 6, 'carrier', 'horizontal', board));
+});
+
+it('placeShip should return false if part of the ship would be off the grid vertically', function() {
+  const board = createBoard();
+
+  assert.isFalse(placeShip(8, 7, 'carrier', 'vertical', board));
+});
 
 it('placeShip should return false if any part of the ship overlaps with another ship');
 
