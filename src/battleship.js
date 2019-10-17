@@ -57,7 +57,7 @@ const placeShip = function(x, y, ship, orientation, board, player) {
   if (!isPointValid(x, y, board)) return false;
 
   // Check if tail of ship is out of bounds
-  isShipTailValid(x, y, ship, board);
+  if (!isShipTailValid(x, y, ship, orientation, board)) return false;
   
   
   // Check if the ship overlaps with another ship.
@@ -110,14 +110,15 @@ const isShipPlaced = function(ship, player) {
 
 const isShipTailValid = function(x, y, ship, orientation, board) {
   if (orientation === 'horizontal') {
-    if (x + SHIPS[ship].length > board.length) {
+    if (x + SHIPS[ship].length > board.length - 1) {
       return false;
     }
   } else if (orientation === 'vertical') {
-    if (y + SHIPS[ship].length > board[x].length) {
+    if (y + SHIPS[ship].length > board[x].length - 1) {
       return false;
     }
   }
+  return true;
 };
 
 const isPointValid = function(x, y, board) {
