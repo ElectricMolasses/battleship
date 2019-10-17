@@ -18,6 +18,13 @@ const placeShip = function(x, y, ship) {
 
 };
 
+// Start game will handle the game loop, created boards for both players, and
+// allow interactions to begin.  It will ONLY handle the game logic, actual
+// user input will be processed from the main function.
+const startGame = function() {
+
+};
+
 module.exports = {
   createBoard
 };
