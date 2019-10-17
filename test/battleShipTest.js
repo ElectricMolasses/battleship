@@ -3,7 +3,8 @@ const assert = chai.assert;
 const expect = chai.expect;
 
 const main = require('../src/battleship');
-const {SHIPS,
+const {
+  SHIPS,
   createBoard,
   placeShip,
   removeShip,
