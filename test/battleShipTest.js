@@ -6,6 +6,7 @@ const main = require('../src/battleship');
 const SHIPS = main.SHIPS;
 const createBoard = main.createBoard;
 const placeShip = main.placeShip;
+const removeShip = main.removeShip;
 
 it('SHIPS should contain playerX/Y and computerX/Y as null from launch', function() {
   assert.isNull(SHIPS.cruiser.player.X);
@@ -70,7 +71,11 @@ it('placeShip should throw an error if the player argument is not "player" or "c
 
 it('removeShip should return true if the ship was on the board, and successfully removed');
 
-it('removeShip should return false if the ship was not already placed');
+it('removeShip should return false if the ship was not already placed', () => {
+  const board = createBoard();
+
+  assert.isFalse(removeShip('destroyer', board, 'player'));
+});
 
 it('doesHit should return true when firing on a cell occupied by a ship.');
 
