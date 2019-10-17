@@ -11,6 +11,7 @@ const {SHIPS,
   isShipPlaced,
   isPointValid,
   isShipTailValid,
+  isOrientationValid,
   doesShipOverlap,
   fire,
 } = main;

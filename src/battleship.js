@@ -70,7 +70,6 @@ const placeShip = function(x, y, ship, orientation, board, player) {
     }
   }
   return true;
-  
 };
 
 const removeShip = function(ship, board, player) {
@@ -161,6 +160,7 @@ module.exports = {
   isShipPlaced,
   isPointValid,
   isShipTailValid,
+  isOrientationValid,
   doesShipOverlap,
   fire,
 };
