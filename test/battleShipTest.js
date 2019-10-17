@@ -2,6 +2,7 @@ const chai = require('chai');
 const assert = chai.assert;
 
 const main = require('../src/battleship');
+const SHIPS = main.SHIPS;
 const createBoard = main.createBoard;
 const placeShip = main.placeShip;
 
@@ -28,8 +29,10 @@ it('placeShip should return true if the ship placement is valid and ship is not 
 
 it('placeShip should return false if the ship has already been places');
 
-it('placeShip should throw an error for out of bounds index, if the coordinates are not within board restrictions', function() {
+it('placeShip should return false for out of bounds index, if the coordinates are not within board restrictions', function() {
   const board = createBoard();
+
+  assert.isFalse(placeShip(1, 22, 'destroyer', 'horizontal', board));
 });
 
 it('placeShip should return false if part of the ship would be off the grid');
