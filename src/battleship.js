@@ -25,7 +25,7 @@ const createBoard = function() {
 // Returns boolean as to whether or not ship was actually
 // placed.
 // Orientation will only accept 'vertical' or 'horizontal'
-const placeShip = function(x, y, orientation, ship, board) {
+const placeShip = function(x, y, ship, orientation, board) {
   // Check if index out of bounds.
   if (x < 0 || x > board.length ||
       y < 0 || y > board[x].length) {
