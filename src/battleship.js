@@ -154,7 +154,10 @@ module.exports = {
   createBoard,
   placeShip,
   removeShip,
+  isPlayerValid,
   isShipPlaced,
+  isPointValid,
   isShipTailValid,
+  doesShipOverlap,
   fire,
 };
