@@ -54,10 +54,7 @@ const placeShip = function(x, y, ship, orientation, board, player) {
   }
   
   // Check if index out of bounds.
-  if (x < 0 || x > board.length ||
-      y < 0 || y > board[x].length) {
-    return false;
-  }
+  if (!isIndexValid(x, y, board)) return false;
 
   // Check if tail of ship is out of bounds
   if (orientation === 'horizontal') {
@@ -118,6 +115,10 @@ const isShipPlaced = function(ship, player) {
   return SHIPS[ship][player].X !== null;
 };
 
+const isIndexValid = function(x, y, board) {
+  return x < board.length && y < board[0].length;
+};
+
 const fire = function(x, y, board, targetPlayer) {
 
 };
@@ -148,5 +149,5 @@ module.exports = {
   placeShip,
   removeShip,
   isShipPlaced,
-  fire
+  fire,
 };
