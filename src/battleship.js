@@ -29,7 +29,14 @@ const placeShip = function(x, y, orientation, ship, board) {
       y < 0 || y > board[x].length) {
     return false;
   }
-  
+  // Check if tail of ship is out of bounds
+  /*
+  if (orientation === 'horizontal') {
+    
+  } else if (orientation === 'vertical') {
+    
+  }
+  */
 };
 
 // This function here is probably just bad practice.
