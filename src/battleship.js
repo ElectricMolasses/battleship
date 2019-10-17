@@ -1,4 +1,4 @@
-const ships = {
+const SHIPS = {
   carrier: 5,
   battleship: 4,
   cruiser: 3,
@@ -32,13 +32,17 @@ const placeShip = function(x, y, orientation, ship, board) {
     return false;
   }
   // Check if tail of ship is out of bounds
-  /*
+  
   if (orientation === 'horizontal') {
-    
+    if (x + SHIPS[ship] > board.length) {
+      return false;
+    }
   } else if (orientation === 'vertical') {
-    
+    if (y + SHIPS[ship] > board[x].length) {
+      return false;
+    }
   }
-  */
+  
 };
 
 // This function here is probably just bad practice.
