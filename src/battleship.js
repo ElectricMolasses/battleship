@@ -54,18 +54,11 @@ const placeShip = function(x, y, ship, orientation, board, player) {
   }
   
   // Check if index out of bounds.
-  if (!isIndexValid(x, y, board)) return false;
+  if (!isPointValid(x, y, board)) return false;
 
   // Check if tail of ship is out of bounds
-  if (orientation === 'horizontal') {
-    if (x + SHIPS[ship].length > board.length) {
-      return false;
-    }
-  } else if (orientation === 'vertical') {
-    if (y + SHIPS[ship].length > board[x].length) {
-      return false;
-    }
-  }
+  isShipTailValid(x, y, ship, board);
+  
   
   // Check if the ship overlaps with another ship.
   for (let i = 0; i < SHIPS[ship].length; i++) {
@@ -115,7 +108,19 @@ const isShipPlaced = function(ship, player) {
   return SHIPS[ship][player].X !== null;
 };
 
-const isIndexValid = function(x, y, board) {
+const isShipTailValid = function(x, y, ship, orientation, board) {
+  if (orientation === 'horizontal') {
+    if (x + SHIPS[ship].length > board.length) {
+      return false;
+    }
+  } else if (orientation === 'vertical') {
+    if (y + SHIPS[ship].length > board[x].length) {
+      return false;
+    }
+  }
+};
+
+const isPointValid = function(x, y, board) {
   return x < board.length && y < board[0].length;
 };
 
@@ -149,5 +154,6 @@ module.exports = {
   placeShip,
   removeShip,
   isShipPlaced,
+  isShipTailValid,
   fire,
 };
