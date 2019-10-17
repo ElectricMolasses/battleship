@@ -88,10 +88,16 @@ it('doesHit should return true when firing on a cell occupied by a ship.', () =>
   assert.isTrue(fire(1, 1, board, 'player'));
 });
 
-it('doesHit should change the property of that cell to hit.', () => {
+it('doesHit should change the wasShot property of that cell on a hit.', () => {
   const board = createBoard();
   placeShip(2, 3, 'carrier', 'horizontal', board, 'player');
-  fire(4, 3, 'carrier', 'horizontal', board, 'player');
+  fire(4, 3, board, 'player');
+  assert(board[4][3].wasShot === true);
+});
+
+it('doesHit should change the wasShot property of that cell on a miss.', () => {
+  const board = createBoard();
+  fire(4, 3, board, 'player');
   assert(board[4][3].wasShot === true);
 });
 
