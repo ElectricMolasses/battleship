@@ -7,6 +7,7 @@ const SHIPS = main.SHIPS;
 const createBoard = main.createBoard;
 const placeShip = main.placeShip;
 const removeShip = main.removeShip;
+const fire = main.fire;
 
 it('SHIPS should contain playerX/Y and computerX/Y as null from launch', () => {
   assert.isNull(SHIPS.cruiser.player.X);

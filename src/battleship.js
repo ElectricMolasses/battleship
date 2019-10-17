@@ -147,5 +147,6 @@ module.exports = {
   createBoard,
   placeShip,
   removeShip,
-  isShipPlaced
+  isShipPlaced,
+  fire
 };
