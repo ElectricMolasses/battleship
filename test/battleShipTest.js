@@ -77,37 +77,35 @@ describe('removeShip', () => {
   });
 });
 
-it('doesHit should return true when firing on a cell occupied by a ship.', () => {
-  
-  placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
-  assert.isTrue(fire(1, 1, board, 'player'));
-});
+describe('doesHit', () => {
+  before(() => board = createBoard());
 
-it('doesHit should change the wasShot property of that cell on a hit.', () => {
-  
-  placeShip(2, 3, 'carrier', 'horizontal', board, 'player');
-  fire(4, 3, board, 'player');
-  assert(board[4][3].wasShot === true);
-});
+  it('should return true when firing on a cell occupied by a ship.', () => {
+    placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
+    assert.isTrue(fire(1, 1, board, 'player'));
+  });
 
-it('doesHit should change the wasShot property of that cell on a miss.', () => {
-  
-  fire(4, 3, board, 'player');
-  assert(board[4][3].wasShot === true);
-});
+  it('should change the wasShot property of that cell on a hit.', () => {
+    placeShip(2, 3, 'carrier', 'horizontal', board, 'player');
+    fire(4, 3, board, 'player');
+    assert(board[4][3].wasShot === true);
+  });
 
-it('doesHit should return false when firing on a cell that is not occupied by a ship.', () => {
-  
-  assert.isFalse(fire(4, 3, board, 'player'));
-});
+  it('should change the wasShot property of that cell on a miss.', () => {
+    fire(4, 3, board, 'player');
+    assert(board[4][3].wasShot === true);
+  });
 
-it('doesHit should throw an Error when targeting an out of bounds cell', () => {
-  
-  expect(fire(20, 20, board, 'player')).to.throw(Error);
-});
+  it('should return false when firing on a cell that is not occupied by a ship.', () => {
+    assert.isFalse(fire(4, 3, board, 'player'));
+  });
 
-it('doesHit should throw an Error when attempting to fire on a cell already fired on', () => {
-  
-  fire(3, 3, board, 'player');
-  expect(fire(3, 3, board, 'player')).to.throw(Error);
+  it('should throw an Error when targeting an out of bounds cell', () => {
+    expect(fire(20, 20, board, 'player')).to.throw(Error);
+  });
+
+  it('should throw an Error when attempting to fire on a cell already fired on', () => {
+    fire(3, 3, board, 'player');
+    expect(fire(3, 3, board, 'player')).to.throw(Error);
+  });
 });
