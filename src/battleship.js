@@ -49,7 +49,7 @@ const createBoard = function() {
 // Player will only accept 'player' or 'computer'
 const placeShip = function(x, y, ship, orientation, board, player) {
   // Check if the ship has already been placed.
-  if (isShipPlaced) {
+  if (isShipPlaced(ship, player)) {
     return false;
   }
   
@@ -97,7 +97,7 @@ const placeShip = function(x, y, ship, orientation, board, player) {
 };
 
 const removeShip = function(ship, board, player) {
-
+  
 };
 
 const isShipPlaced = function(ship, player) {
