@@ -23,7 +23,8 @@ for (let ship in SHIPS) {
   SHIPS[ship].player.Y = null;
   SHIPS[ship].computer.X = null;
   SHIPS[ship].computer.Y = null;
-  SHIPS[ship].orientation = null;
+  SHIPS[ship].player.orientation = null;
+  SHIPS[ship].computer.orientation = null;
 }
 
 const createBoard = function() {
@@ -67,10 +68,17 @@ const placeShip = function(x, y, ship, orientation, board, player) {
   // Check if the ship overlaps with another ship.
   
   // Place the ship
-  if (player === 'player') {
-    // Nothing yet.
-  } else if (player === 'computer') {
-    // Nothing yet.
+  if (player === 'player' || player === 'computer') {
+    SHIPS[ship][player].X = x;
+    SHIPS[ship][player].Y = y;
+    SHIPS[ship][player].orientation = orientation;
+    for (let i = 0; i < SHIPS[ship].length; i++) {
+      if (orientation === 'horizontal') {
+        board[x + i][y].shipType = ship;
+      } else {
+        board[x][y + i].shipType = ship;
+      }
+    }
   } else {
     throw Error("Invalid player argument.");
   }
