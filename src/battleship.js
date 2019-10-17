@@ -21,7 +21,7 @@ const createBoard = function() {
 };
 
 const placeShip = function(x, y, orientation, ship) {
-
+  
 };
 
 const validateShipPlacement = function(x, y, orientation, ship) {
@@ -32,7 +32,20 @@ const validateShipPlacement = function(x, y, orientation, ship) {
 // allow interactions to begin.  It will ONLY handle the game logic, actual
 // user input will be processed from the main function.
 const startGame = function() {
+  const playerBoard = createBoard();
+  const computerBoard = createBoard();
 
+  let playing = true;
+
+  // Determine who goes first.
+
+  let turn = 'player';
+
+  while (playing) {
+    // Accept user input.
+
+    // Accept computer input.
+  }
 };
 
 module.exports = {
