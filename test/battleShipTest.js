@@ -33,7 +33,7 @@ describe('createBoard', () => {
     assert.isFalse(board[1][6].wasShot);
   });
 });
-// =================================================================
+
 describe('placeShip', () => {
   beforeEach(() => board = createBoard());
 
@@ -67,17 +67,17 @@ describe('placeShip', () => {
     expect(placeShip.bind(1, 1, 'carrier', 'vertical', board, 'bob')).to.throw(Error);
   });
 });
-// =================================================================
-it('removeShip should return true if the ship was on the board, and successfully removed', () => {
-  
-  placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
-  assert.isTrue(removeShip('carrier', board, 'player'));
-});
 
-it('removeShip should return false if the ship was not already placed', () => {
-  
+describe('removeShip', () => {
+  before(() => board = createBoard());
+  it('removeShip should return true if the ship was on the board, and successfully removed', () => {
+    placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
+    assert.isTrue(removeShip('carrier', board, 'player'));
+  });
 
-  assert.isFalse(removeShip('destroyer', board, 'player'));
+  it('removeShip should return false if the ship was not already placed', () => {
+    assert.isFalse(removeShip('destroyer', board, 'player'));
+  });
 });
 
 it('doesHit should return true when firing on a cell occupied by a ship.', () => {
