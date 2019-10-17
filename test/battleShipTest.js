@@ -3,11 +3,7 @@ const assert = chai.assert;
 const expect = chai.expect;
 
 const main = require('../src/battleship');
-const SHIPS = main.SHIPS;
-const createBoard = main.createBoard;
-const placeShip = main.placeShip;
-const removeShip = main.removeShip;
-const fire = main.fire;
+const {SHIPS, createBoard, placeShip, removeShip, fire} = main;
 
 it('SHIPS should contain playerX/Y and computerX/Y as null from launch', () => {
   assert.isNull(SHIPS.cruiser.player.X);
