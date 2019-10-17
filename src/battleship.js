@@ -100,6 +100,18 @@ const removeShip = function(ship, board, player) {
   if (!isShipPlaced(ship, player)) {
     return false;
   }
+  let orientation = SHIPS[ship][player].orientation;
+  let x = SHIPS[ship][player].X;
+  let y = SHIPS[ship][player].Y;
+
+  for (let i = 0; i < SHIPS[ship].length; i++) {
+    if (orientation === 'horizontal') {
+      board[x + i][y].shipType = null;
+    } else {
+      board[x][y + i].shipType = null;
+    }
+  }
+  return true;
 };
 
 const isShipPlaced = function(ship, player) {
