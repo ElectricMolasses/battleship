@@ -51,10 +51,10 @@ const createBoard = function() {
 // Player will only accept 'player' or 'computer'
 const placeShip = function(x, y, ship, orientation, board, player) {
 
-  if (isShipPlaced(ship, player)) return false;
-  if (!isPointValid(x, y, board)) return false;
-  if (!isShipTailValid(x, y, ship, orientation, board)) return false;
-  if (!doesShipOverlap(x, y, ship, orientation, board)) return false;
+  if (isShipPlaced(ship, player) ||
+      !isPointValid(x, y, board) ||
+      !isShipTailValid(x, y, ship, orientation, board) ||
+      !doesShipOverlap(x, y, ship, orientation, board)) return false;
   
   if (isPlayerValid(player)) {
     SHIPS[ship][player].X = x;
@@ -67,7 +67,6 @@ const placeShip = function(x, y, ship, orientation, board, player) {
         board[x][y + i].shipType = ship;
       }
     }
-
     return true;
   } else {
     throw Error("Invalid player argument.");
