@@ -1,9 +1,19 @@
 const SHIPS = {
-  carrier: 5,
-  battleship: 4,
-  cruiser: 3,
-  submarine: 3,
-  destroyer: 2
+  carrier: {
+    length: 5,
+  },
+  battleship: {
+    length: 4,
+  },
+  cruiser: {
+    length: 3,
+  },
+  submarine: {
+    length: 3,
+  },
+  destroyer: {
+    length: 2,
+  }
 };
 
 const createBoard = function() {
@@ -34,11 +44,11 @@ const placeShip = function(x, y, ship, orientation, board) {
   // Check if tail of ship is out of bounds
   
   if (orientation === 'horizontal') {
-    if (x + SHIPS[ship] > board.length) {
+    if (x + SHIPS[ship].length > board.length) {
       return false;
     }
   } else if (orientation === 'vertical') {
-    if (y + SHIPS[ship] > board[x].length) {
+    if (y + SHIPS[ship].length > board[x].length) {
       return false;
     }
   }
