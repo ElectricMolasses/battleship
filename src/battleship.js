@@ -17,10 +17,12 @@ const SHIPS = {
 };
 
 for (let ship in SHIPS) {
-  SHIPS[ship].playerX = null;
-  SHIPS[ship].playerY = null;
-  SHIPS[ship].computerX = null;
-  SHIPS[ship].computerY = null;
+  SHIPS[ship].player = {};
+  SHIPS[ship].computer = {};
+  SHIPS[ship].player.X = null;
+  SHIPS[ship].player.Y = null;
+  SHIPS[ship].computer.X = null;
+  SHIPS[ship].computer.Y = null;
   SHIPS[ship].orientation = null;
 }
 
