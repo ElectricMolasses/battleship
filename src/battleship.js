@@ -20,10 +20,21 @@ const createBoard = function() {
   return board;
 };
 
-const placeShip = function(x, y, orientation, ship) {
+// Returns boolean as to whether or not ship was actually
+// placed.
+// Orientation will only accept 'vertical' or 'horizontal'
+const placeShip = function(x, y, orientation, ship, board) {
+  // Check if index out of bounds.
+  if (x < 0 || x > board.length ||
+      y < 0 || y > board[x].length) {
+    return false;
+  }
   
 };
 
+// This function here is probably just bad practice.
+// If the code is never going to be used outside of
+// placeShip, just drop it.
 const validateShipPlacement = function(x, y, orientation, ship) {
 
 };
