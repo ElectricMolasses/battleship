@@ -74,9 +74,8 @@ const placeShip = function(x, y, ship, orientation, board, player) {
 };
 
 const removeShip = function(ship, board, player) {
-  if (!isShipPlaced(ship, player)) {
-    return false;
-  }
+  if (!isShipPlaced(ship, player)) return false;
+  
   let orientation = SHIPS[ship][player].orientation;
   let x = SHIPS[ship][player].X;
   let y = SHIPS[ship][player].Y;
