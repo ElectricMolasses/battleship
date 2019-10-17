@@ -66,6 +66,11 @@ const placeShip = function(x, y, ship, orientation, board, player) {
   }
   
   // Check if the ship overlaps with another ship.
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board.length; j++) {
+      if (board[x + i][j + i].shipType !== null) return false;
+    }
+  }
   
   // Place the ship
   if (player === 'player' || player === 'computer') {
