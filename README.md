@@ -6,7 +6,7 @@ Web application that let's you play battleship.
 
 Mocha and chai is used for testing, everything else is pure javasript.  No additional libraries needed to run.
 
-For quick reference, you can instll these modules using the following command.
+For quick reference, you can install these modules using the following command.
 
 ```
 npm install mocha chai --save-dev
