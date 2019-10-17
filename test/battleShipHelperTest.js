@@ -14,8 +14,10 @@ const {
   clearShipCoords,
 } = main;
 
-describe('isPlayerValid', () => {
-  it('should return true if the player is "player"', () =>{
-    assert.isTrue(isPlayerValid("player"));
+describe('Helper Functions', () => {
+  describe('isPlayerValid', () => {
+    it('should return true if the player is "player"', () =>{
+      assert.isTrue(isPlayerValid("player"));
+    });
   });
 });
