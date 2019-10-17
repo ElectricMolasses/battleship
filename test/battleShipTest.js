@@ -86,6 +86,6 @@ it('doesHit should return true when firing on a cell occupied by a ship.');
 
 it('doesHit should return false when firing on a cell that is not occupied by a ship.');
 
-it('doesHit should throw false when targeting an out of bounds cell');
+it('doesHit should return false when targeting an out of bounds cell');
 
-it('doesHit should throw false when attempting to fire on a cell already fired on');
+it('doesHit should return false when attempting to fire on a cell already fired on');
