@@ -42,3 +42,7 @@ Will have to take input (most likely a click on a cell), and pass that to the ga
 #### updateCell()
 
 Updates a cell on either board to display a hit or a miss.  This function will be called by the game logic after `fire()` evaluation, or on the computers turn.
+
+#### drawShip(x, y, ship)
+
+Updates display to show a ship the player has placed.
