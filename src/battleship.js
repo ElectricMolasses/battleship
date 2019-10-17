@@ -14,6 +14,10 @@ const createBoard = function() {
   return board;
 };
 
+const placeShip = function(x, y, ship) {
+
+};
+
 module.exports = {
   createBoard
 };
