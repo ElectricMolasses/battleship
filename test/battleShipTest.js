@@ -18,4 +18,8 @@ it('placeShip should return false if part of the ship would be off the grid');
 
 it('placeShip should return false if any part of the ship overlaps with another ship');
 
+it('removeShip should return true if the ship was on the board, and successfully removed');
+
+it('removeShip should return false if the ship was not already placed');
+
 it('doesHit should return true when firing on a cell occupied by a ship.');
