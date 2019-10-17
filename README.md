@@ -32,3 +32,9 @@ Takes a ship to remove, find the cells containing that ship in the board objects
 #### doesHit(x, y)
 
 Takes a coordinate to confirm whether or not a shot hits.  Will apply the hit property to the cell and call any functions required to show a hit/miss.
+
+### The Browser
+
+#### fire()
+
+Will have to take input (most likely a click on a cell), and pass that to the game logic to run the players turn.
