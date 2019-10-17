@@ -25,6 +25,8 @@ for (let ship in SHIPS) {
   SHIPS[ship].computer.Y = null;
   SHIPS[ship].player.orientation = null;
   SHIPS[ship].computer.orientation = null;
+  SHIPS[ship].player.hp = SHIPS[ship].length;
+  SHIPS[ship].computer.hp = SHIPS[ship].length;
 }
 
 const createBoard = function() {
