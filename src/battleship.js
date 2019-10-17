@@ -52,12 +52,9 @@ const placeShip = function(x, y, ship, orientation, board, player) {
   if (isShipPlaced(ship, player)) return false;
   if (!isPointValid(x, y, board)) return false;
   if (!isShipTailValid(x, y, ship, orientation, board)) return false;
-  
   if (!doesShipOverlap(x, y, ship, orientation, board)) return false;
   
-  
-  // Place the ship
-  if (player === 'player' || player === 'computer') {
+  if (isPlayerValid(player)) {
     SHIPS[ship][player].X = x;
     SHIPS[ship][player].Y = y;
     SHIPS[ship][player].orientation = orientation;
@@ -121,6 +118,10 @@ const doesShipOverlap = function(x, y, ship, orientation, board) {
 
 const isPointValid = function(x, y, board) {
   return x < board.length && y < board[x].length;
+};
+
+const isPlayerValid = function(player) {
+  return (player === "player" || player === "computer");
 };
 
 const fire = function(x, y, board, targetPlayer) {
