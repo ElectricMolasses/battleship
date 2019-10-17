@@ -21,7 +21,10 @@ it('createBoard cells should contain the property shipType', function() {
   assert(board[4][8].shipType !== undefined);
 });
 
-it('createBoard cells should contain the property wasShot');
+it('createBoard cells should instantiate with wasShot = false', function() {
+  const board = createBoard();
+  assert.isFalse(board[1][6].wasShot);
+});
 
 it('placeShip should return true if the ship placement is valid and ship is not already placed', function() {
   const board = createBoard();
