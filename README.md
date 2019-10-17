@@ -33,6 +33,17 @@ Takes a ship to remove, find the cells containing that ship in the board objects
 
 Takes a coordinate to confirm whether or not a shot hits.  Will apply the hit property to the cell and call any functions required to show a hit/miss.
 
+#### logShotResult(x, y, hits)
+
+Takes the information for the last shot, formats it as such:
+```
+Player 1 shoots at A1: HIT
+Player 2 shoots at B5: MISS
+Player 1 shoots at A3: HIT
+Player 1 has sunk a submarine!
+```
+And logs it to console.
+
 ### The Browser
 
 #### fire()
