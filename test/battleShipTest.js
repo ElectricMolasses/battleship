@@ -101,8 +101,18 @@ it('doesHit should change the wasShot property of that cell on a miss.', () => {
   assert(board[4][3].wasShot === true);
 });
 
-it('doesHit should return false when firing on a cell that is not occupied by a ship.');
+it('doesHit should return false when firing on a cell that is not occupied by a ship.', () => {
+  const board = createBoard();
+  assert.isFalse(fire(4, 3, board, 'player'));
+});
 
-it('doesHit should throw an Error when targeting an out of bounds cell');
+it('doesHit should throw an Error when targeting an out of bounds cell', () => {
+  const board = createBoard();
+  expect(fire(20, 20, board, 'player')).to.throw(Error);
+});
 
-it('doesHit should throw an Error when attempting to fire on a cell already fired on');
+it('doesHit should throw an Error when attempting to fire on a cell already fired on', () => {
+  const board = createBoard();
+  fire(3, 3, board, 'player');
+  expect(fire(3, 3, board, 'player')).to.throw(Error);
+});
