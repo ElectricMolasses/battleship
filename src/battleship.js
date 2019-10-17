@@ -66,5 +66,7 @@ const startGame = function() {
 };
 
 module.exports = {
-  createBoard
+  SHIPS,
+  createBoard,
+  placeShip
 };
