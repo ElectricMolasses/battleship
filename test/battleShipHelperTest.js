@@ -14,6 +14,8 @@ const {
   clearShipCoords,
 } = main;
 
-it('isPlayerValid should return true if the player is "player"', () =>{
-  assert.isTrue(isPlayerValid("player"));
+describe('isPlayerValid', () => {
+  it('should return true if the player is "player"', () =>{
+    assert.isTrue(isPlayerValid("player"));
+  });
 });
