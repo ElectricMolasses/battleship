@@ -5,6 +5,7 @@ const expect = chai.expect;
 const main = require('../src/battleship');
 const {
   SHIPS,
+  resetSHIPS,
   createBoard,
   placeShip,
   removeShip,

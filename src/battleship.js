@@ -16,18 +16,22 @@ const SHIPS = {
   }
 };
 
-for (let ship in SHIPS) {
-  SHIPS[ship].player = {};
-  SHIPS[ship].computer = {};
-  SHIPS[ship].player.X = null;
-  SHIPS[ship].player.Y = null;
-  SHIPS[ship].computer.X = null;
-  SHIPS[ship].computer.Y = null;
-  SHIPS[ship].player.orientation = null;
-  SHIPS[ship].computer.orientation = null;
-  SHIPS[ship].player.hp = SHIPS[ship].length;
-  SHIPS[ship].computer.hp = SHIPS[ship].length;
-}
+
+const resetSHIPS = function() {
+  for (let ship in SHIPS) {
+    SHIPS[ship].player = {};
+    SHIPS[ship].computer = {};
+    SHIPS[ship].player.X = null;
+    SHIPS[ship].player.Y = null;
+    SHIPS[ship].computer.X = null;
+    SHIPS[ship].computer.Y = null;
+    SHIPS[ship].player.orientation = null;
+    SHIPS[ship].computer.orientation = null;
+    SHIPS[ship].player.hp = SHIPS[ship].length;
+    SHIPS[ship].computer.hp = SHIPS[ship].length;
+  }
+};
+resetSHIPS();
 
 const createBoard = function() {
   let board = [];
@@ -167,6 +171,7 @@ const startGame = function() {
 
 module.exports = {
   SHIPS,
+  resetSHIPS,
   createBoard,
   placeShip,
   removeShip,
