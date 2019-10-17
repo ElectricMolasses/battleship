@@ -97,7 +97,9 @@ const placeShip = function(x, y, ship, orientation, board, player) {
 };
 
 const removeShip = function(ship, board, player) {
-  
+  if (!isShipPlaced(ship, player)) {
+    return false;
+  }
 };
 
 const isShipPlaced = function(ship, player) {
@@ -127,5 +129,7 @@ const startGame = function() {
 module.exports = {
   SHIPS,
   createBoard,
-  placeShip
+  placeShip,
+  removeShip,
+  isShipPlaced
 };
