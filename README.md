@@ -46,3 +46,7 @@ Updates a cell on either board to display a hit or a miss.  This function will b
 #### drawShip(x, y, ship)
 
 Updates display to show a ship the player has placed.
+
+#### eraseShip(ship)
+
+Removes a ship the player has picked back up from the display.
