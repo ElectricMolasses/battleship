@@ -121,7 +121,7 @@ const isShipTailValid = function(x, y, ship, orientation, board) {
 };
 
 const isPointValid = function(x, y, board) {
-  return x < board.length && y < board[0].length;
+  return x < board.length && y < board[x].length;
 };
 
 const fire = function(x, y, board, targetPlayer) {
