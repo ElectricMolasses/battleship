@@ -57,21 +57,20 @@ const placeShip = function(x, y, ship, orientation, board, player) {
       !doesShipOverlap(x, y, ship, orientation, board) ||
       !isOrientationValid(orientation)) return false;
   
-  if (isPlayerValid(player)) {
-    SHIPS[ship][player].X = x;
-    SHIPS[ship][player].Y = y;
-    SHIPS[ship][player].orientation = orientation;
-    for (let i = 0; i < SHIPS[ship].length; i++) {
-      if (orientation === 'horizontal') {
-        board[x + i][y].shipType = ship;
-      } else {
-        board[x][y + i].shipType = ship;
-      }
+  if (!isPlayerValid(player)) throw Error("Invalid player argument");
+  
+  SHIPS[ship][player].X = x;
+  SHIPS[ship][player].Y = y;
+  SHIPS[ship][player].orientation = orientation;
+  for (let i = 0; i < SHIPS[ship].length; i++) {
+    if (orientation === 'horizontal') {
+      board[x + i][y].shipType = ship;
+    } else {
+      board[x][y + i].shipType = ship;
     }
-    return true;
-  } else {
-    throw Error("Invalid player argument.");
   }
+  return true;
+  
 };
 
 const removeShip = function(ship, board, player) {
