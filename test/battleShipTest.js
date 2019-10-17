@@ -10,7 +10,7 @@ it('createBoard should have an array of length 10, containing 10 objects', funct
 
 it('createBoard cells should contain the property shipType', function() {
   const board = main.createBoard();
-
+  assert(board[4][8].shipType !== undefined);
 });
 
 it('createBoard cells should contain the property shipOrientation if shipType is not null');
