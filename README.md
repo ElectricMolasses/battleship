@@ -44,6 +44,10 @@ Player 1 has sunk a submarine!
 ```
 And logs it to console.
 
+### The Computer
+
+List of functions regarding AI gameplay.
+
 ### The Browser
 
 #### fire(x, y)
