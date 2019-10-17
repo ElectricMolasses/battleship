@@ -34,33 +34,33 @@ describe('createBoard', () => {
 describe('placeShip', () => {
   beforeEach(() => board = createBoard());
 
-  it('placeShip should return true if the ship placement is valid and ship is not already placed', () => {
+  it('should return true if the ship placement is valid and ship is not already placed', () => {
     assert.isTrue(placeShip(2, 4, 'cruiser', 'horizontal', board, 'player'));
   });
 
-  it('placeShip should return false if the ship has already been placed', () => {
+  it('should return false if the ship has already been placed', () => {
     placeShip(2, 4, 'cruiser', 'horizontal', board, 'player');
     assert.isFalse(placeShip(1, 4, 'cruiser', 'horizontal', board, 'player'));
   });
 
-  it('placeShip should return false for out of bounds index, if the coordinates are not within board restrictions', () => {
+  it('should return false for out of bounds index, if the coordinates are not within board restrictions', () => {
     assert.isFalse(placeShip(1, 22, 'destroyer', 'horizontal', board, 'player'));
   });
 
-  it('placeShip should return false if part of the ship would be off the grid horizontally', () => {
+  it('should return false if part of the ship would be off the grid horizontally', () => {
     assert.isFalse(placeShip(6, 6, 'carrier', 'horizontal', board, 'player'));
   });
 
-  it('placeShip should return false if part of the ship would be off the grid vertically', () => {
+  it('should return false if part of the ship would be off the grid vertically', () => {
     assert.isFalse(placeShip(8, 7, 'carrier', 'vertical', board, 'player'));
   });
 
-  it('placeShip should return false if any part of the ship overlaps with another ship', () => {
+  it('should return false if any part of the ship overlaps with another ship', () => {
     placeShip(3, 3, 'carrier', 'vertical', board, 'player');
     assert.isFalse(placeShip(3, 3, 'destroyer', 'horizontal', board, 'player'));
   });
 
-  it('placeShip should throw an error if the player argument is not "player" or "computer"', () => {
+  it('should throw an error if the player argument is not "player" or "computer"', () => {
     expect(placeShip.bind(1, 1, 'carrier', 'vertical', board, 'bob')).to.throw(Error);
   });
 });
