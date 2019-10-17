@@ -31,7 +31,7 @@ it('placeShip should return true if the ship placement is valid and ship is not 
   assert.isTrue(placeShip(2, 4, 'cruiser', 'horizontal', board, 'player'));
 });
 
-it('placeShip should return false if the ship has already been places');
+it('placeShip should return false if the ship has already been placed');
 
 it('placeShip should return false for out of bounds index, if the coordinates are not within board restrictions', function() {
   const board = createBoard();
@@ -51,7 +51,12 @@ it('placeShip should return false if part of the ship would be off the grid vert
   assert.isFalse(placeShip(8, 7, 'carrier', 'vertical', board, 'player'));
 });
 
-it('placeShip should return false if any part of the ship overlaps with another ship');
+it('placeShip should return false if any part of the ship overlaps with another ship', function() {
+  const board = createBoard();
+
+  placeShip(3, 3, 'carrier', 'vertical', board, 'player');
+  assert.isFalse(placeShip(2, 3, 'destroyer', 'horizontal', board, 'player'));
+});
 
 it('placeShip should throw an error if the player argument is not "player" or "computer"', function() {
   const board = createBoard();
