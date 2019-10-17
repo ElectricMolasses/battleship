@@ -14,7 +14,11 @@ const createBoard = function() {
   return board;
 };
 
-const placeShip = function(x, y, ship) {
+const placeShip = function(x, y, orientation, ship) {
+
+};
+
+const validateShipPlacement = function(x, y, orientation, ship) {
 
 };
 
