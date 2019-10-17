@@ -21,7 +21,7 @@ describe('Helper Functions', () => {
     });
   });
 
-  describe('isShipPlaces', () => {
+  describe('isShipPlaced', () => {
     
   });
 
