@@ -4,15 +4,14 @@ const expect = chai.expect;
 
 const main = require('../src/battleship');
 const {
-  SHIPS,
-  createBoard,
-  placeShip,
-  removeShip,
   isPlayerValid,
   isShipPlaced,
   isPointValid,
   isShipTailValid,
   isOrientationValid,
   doesShipOverlap,
-  fire,
 } = main;
+
+it('isPlayerValid should return true if the player is "player"', () =>{
+  assert.isTrue(isPlayerValid("player"));
+});
