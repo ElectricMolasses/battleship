@@ -39,6 +39,6 @@ Takes a coordinate to confirm whether or not a shot hits.  Will apply the hit pr
 
 Will have to take input (most likely a click on a cell), and pass that to the game logic to run the players turn.
 
-#### updateCellComputer()
+#### updateCell()
 
-Updates a cell on the computers board to display a hit or a miss.  This function will be called by the game logic after `fire()` evaluation.
+Updates a cell on either board to display a hit or a miss.  This function will be called by the game logic after `fire()` evaluation, or on the computers turn.
