@@ -1,5 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
+const expect = chai.expect;
 
 const main = require('../src/battleship');
 const SHIPS = main.SHIPS;
@@ -36,22 +37,28 @@ it('placeShip should return false if the ship has already been places');
 it('placeShip should return false for out of bounds index, if the coordinates are not within board restrictions', function() {
   const board = createBoard();
 
-  assert.isFalse(placeShip(1, 22, 'destroyer', 'horizontal', board));
+  assert.isFalse(placeShip(1, 22, 'destroyer', 'horizontal', board, 'player'));
 });
 
 it('placeShip should return false if part of the ship would be off the grid horizontally', function() {
   const board = createBoard();
 
-  assert.isFalse(placeShip(6, 6, 'carrier', 'horizontal', board));
+  assert.isFalse(placeShip(6, 6, 'carrier', 'horizontal', board, 'player'));
 });
 
 it('placeShip should return false if part of the ship would be off the grid vertically', function() {
   const board = createBoard();
 
-  assert.isFalse(placeShip(8, 7, 'carrier', 'vertical', board));
+  assert.isFalse(placeShip(8, 7, 'carrier', 'vertical', board, 'player'));
 });
 
 it('placeShip should return false if any part of the ship overlaps with another ship');
+
+it('placeShip should throw an error if the player argument is not "player" or "computer"', function() {
+  const board = createBoard();
+
+  expect(placeShip.bind(1, 1, 'carrier', 'vertical', board, 'bob')).to.throw(Error);
+});
 
 it('removeShip should return true if the ship was on the board, and successfully removed');
 
