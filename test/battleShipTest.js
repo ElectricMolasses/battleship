@@ -82,10 +82,21 @@ it('removeShip should return false if the ship was not already placed', () => {
   assert.isFalse(removeShip('destroyer', board, 'player'));
 });
 
-it('doesHit should return true when firing on a cell occupied by a ship.');
+it('doesHit should return true when firing on a cell occupied by a ship.', () => {
+  const board = createBoard();
+  placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
+  assert.isTrue(fire(1, 1, board, 'player'));
+});
+
+it('doesHit should change the property of that cell to hit.', () => {
+  const board = createBoard();
+  placeShip(2, 3, 'carrier', 'horizontal', board, 'player');
+  fire(4, 3, 'carrier', 'horizontal', board, 'player');
+  assert(board[4][3].wasShot === true);
+});
 
 it('doesHit should return false when firing on a cell that is not occupied by a ship.');
 
-it('doesHit should return false when targeting an out of bounds cell');
+it('doesHit should throw an Error when targeting an out of bounds cell');
 
-it('doesHit should return false when attempting to fire on a cell already fired on');
+it('doesHit should throw an Error when attempting to fire on a cell already fired on');
