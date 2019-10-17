@@ -16,6 +16,13 @@ const SHIPS = {
   }
 };
 
+for (let ship in SHIPS) {
+  SHIPS[ship].playerX = null;
+  SHIPS[ship].playerY = null;
+  SHIPS[ship].computerX = null;
+  SHIPS[ship].computerY = null;
+}
+
 const createBoard = function() {
   let board = [];
 
