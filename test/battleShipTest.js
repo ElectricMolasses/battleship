@@ -17,19 +17,16 @@ it('SHIPS should contain playerX/Y and computerX/Y as null from launch', () => {
 });
 
 describe('createBoard', () => {
+  before(() => board = createBoard());
   it('should have an array of length 10, containing 10 objects', () => {
-    
     assert(board.length === 10 && board[9].length === 10);
   });
 
-
   it('cells should contain the property shipType', () => {
-    
     assert(board[4][8].shipType !== undefined);
   });
 
   it('cells should instantiate with wasShot = false', () => {
-    
     assert.isFalse(board[1][6].wasShot);
   });
 });
