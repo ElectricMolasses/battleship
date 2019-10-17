@@ -67,12 +67,12 @@ describe('placeShip', () => {
 
 describe('removeShip', () => {
   before(() => board = createBoard());
-  it('removeShip should return true if the ship was on the board, and successfully removed', () => {
+  it('should return true if the ship was on the board, and successfully removed', () => {
     placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
     assert.isTrue(removeShip('carrier', board, 'player'));
   });
 
-  it('removeShip should return false if the ship was not already placed', () => {
+  it('should return false if the ship was not already placed', () => {
     assert.isFalse(removeShip('destroyer', board, 'player'));
   });
 });
