@@ -54,12 +54,12 @@ const placeShip = function(x, y, ship, orientation, board, player) {
   if (isShipPlaced(ship, player) ||
       !isPointValid(x, y, board) ||
       !isShipTailValid(x, y, ship, orientation, board) ||
-      !doesShipOverlap(x, y, ship, orientation, board) ||
+      doesShipOverlap(x, y, ship, orientation, board) ||
       !isOrientationValid(orientation)) return false;
   
   if (!isPlayerValid(player)) throw Error("Invalid player argument");
   
-  setShipCoords(ship, player, orientation);
+  setShipCoords(x, y, ship, player, orientation);
   for (let i = 0; i < SHIPS[ship].length; i++) {
     if (orientation === 'horizontal') {
       board[x + i][y].shipType = ship;
@@ -89,7 +89,7 @@ const removeShip = function(ship, board, player) {
   return true;
 };
 
-const setShipCoords = function(ship, player, orientation) {
+const setShipCoords = function(x, y, ship, player, orientation) {
   SHIPS[ship][player].X = x;
   SHIPS[ship][player].Y = y;
   SHIPS[ship][player].orientation = orientation;
@@ -120,11 +120,13 @@ const isShipTailValid = function(x, y, ship, orientation, board) {
 
 const doesShipOverlap = function(x, y, ship, orientation, board) {
   for (let i = 0; i < SHIPS[ship].length; i++) {
-    for (let j = 0; j < SHIPS[ship].length; j++) {
-      if (board[x + i][y + j].shipType !== null) return false;
+    if (orientation === 'horizontal') {
+      if (board[x + i][y].shipType !== null) return true;
+    } else {
+      if (board[x][y + i].shipType !== null) return true;
     }
   }
-  return true;
+  return false;
 };
 
 const isPointValid = function(x, y, board) {
