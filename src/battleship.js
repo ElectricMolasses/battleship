@@ -1,3 +1,9 @@
+const CARRIER_LENGTH = 5;
+const BATTLESHIP_LENGTH = 4;
+const CRUISER_LENGTH = 3;
+const SUBMARINE_LENGTH = 3;
+const DESTOYER_LENGTH = 2;
+
 const createBoard = function() {
   let board = [];
 
