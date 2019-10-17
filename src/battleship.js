@@ -86,7 +86,14 @@ const removeShip = function(ship, board, player) {
       board[x][y + i].shipType = null;
     }
   }
+  clearShipCoords(ship, player);
+
   return true;
+};
+
+const clearShipCoords = function(ship, player) {
+  SHIPS[ship][player].X = null;
+  SHIPS[ship][player].Y = null;
 };
 
 const isShipPlaced = function(ship, player) {
