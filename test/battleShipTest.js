@@ -21,9 +21,6 @@ it('createBoard cells should contain the property shipType', function() {
   assert(board[4][8].shipType !== undefined);
 });
 
-it('createBoard cells should contain the property shipOrientation if shipType is not null');
-// ^^^ Might not need this, using pointers to other cells to more easily navigate cells containing the ship.
-
 it('createBoard cells should contain the property wasShot');
 
 it('placeShip should return true if the ship placement is valid and ship is not already placed', function() {
