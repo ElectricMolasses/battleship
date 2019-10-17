@@ -20,4 +20,32 @@ describe('Helper Functions', () => {
       assert.isTrue(isPlayerValid("player"));
     });
   });
+
+  describe('isShipPlaces', () => {
+    
+  });
+
+  describe('isPointValid', () => {
+
+  });
+
+  describe('isShipTailValid', () => {
+
+  });
+
+  describe('isOrientationValid', () => {
+
+  });
+
+  describe('doesShipOverlap', () => {
+
+  });
+
+  describe('setShipCoords', () => {
+
+  });
+
+  describe('clearShipCoords', () => {
+
+  });
 });
