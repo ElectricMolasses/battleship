@@ -2,6 +2,15 @@
 
 Web application that let's you play battleship.
 
+## Values
+
+### Entity Objects
+
+#### playerShips{}
+
+An object containing ship objects, to track whether or not they've been placed yet, and their start coordinate/alignment for the purpose of removal.
+This **could** be used to track hits/misses as well, rather than tracking it directly inside the board.
+
 ## Functions
 
 ### The Board
@@ -15,7 +24,6 @@ Generates an empty, 10 x 10 array of objects.  Will initialize the default prope
 #### placeShip()
 
 Allows the user to place a ship onto their board.  Internally will take the upper left coordinate of placement and orientation, will return true or false as to whether or not placement is possible (Part of the ship out of bounds.)  Will likely flag a global value to let the game know that ship has been placed.
-
 
 #### removeShip()
 
