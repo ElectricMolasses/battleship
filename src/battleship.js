@@ -49,7 +49,7 @@ const createBoard = function() {
 // Player will only accept 'player' or 'computer'
 const placeShip = function(x, y, ship, orientation, board, player) {
   // Check if the ship has already been placed.
-  if (SHIPS[ship][player].X !== null) {
+  if (isShipPlaced) {
     return false;
   }
   
@@ -98,6 +98,10 @@ const placeShip = function(x, y, ship, orientation, board, player) {
 
 const removeShip = function(ship, board, player) {
 
+};
+
+const isShipPlaced = function(ship, player) {
+  return SHIPS[ship][player].X !== null;
 };
 
 // Start game will handle the game loop, created boards for both players, and
