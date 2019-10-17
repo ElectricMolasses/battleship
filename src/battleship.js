@@ -174,5 +174,7 @@ module.exports = {
   isShipTailValid,
   isOrientationValid,
   doesShipOverlap,
+  setShipCoords,
+  clearShipCoords,
   fire,
 };

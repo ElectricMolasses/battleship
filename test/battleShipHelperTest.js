@@ -10,6 +10,8 @@ const {
   isShipTailValid,
   isOrientationValid,
   doesShipOverlap,
+  setShipCoords,
+  clearShipCoords,
 } = main;
 
 it('isPlayerValid should return true if the player is "player"', () =>{
