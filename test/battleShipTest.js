@@ -23,3 +23,9 @@ it('removeShip should return true if the ship was on the board, and successfully
 it('removeShip should return false if the ship was not already placed');
 
 it('doesHit should return true when firing on a cell occupied by a ship.');
+
+it('doesHit should return false when firing on a cell that is not occupied by a ship.');
+
+it('doesHit should throw an Error when targeting an out of bounds cell');
+
+it('doesHit should throw an error when attempting to fire on a cell already fired on');
