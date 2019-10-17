@@ -21,6 +21,7 @@ for (let ship in SHIPS) {
   SHIPS[ship].playerY = null;
   SHIPS[ship].computerX = null;
   SHIPS[ship].computerY = null;
+  SHIPS[ship].orientation = null;
 }
 
 const createBoard = function() {
@@ -42,14 +43,15 @@ const createBoard = function() {
 // Returns boolean as to whether or not ship was actually
 // placed.
 // Orientation will only accept 'vertical' or 'horizontal'
-const placeShip = function(x, y, ship, orientation, board) {
+// Player will only accept 'player' or 'computer'
+const placeShip = function(x, y, ship, orientation, board, player) {
   // Check if index out of bounds.
   if (x < 0 || x > board.length ||
       y < 0 || y > board[x].length) {
     return false;
   }
+
   // Check if tail of ship is out of bounds
-  
   if (orientation === 'horizontal') {
     if (x + SHIPS[ship].length > board.length) {
       return false;
@@ -60,6 +62,16 @@ const placeShip = function(x, y, ship, orientation, board) {
     }
   }
   
+  // Check if the ship overlaps with another ship.
+  
+  // Place the ship
+  if (player === 'player') {
+    // Nothing yet.
+  } else if (player === 'computer') {
+    // Nothing yet.
+  } else {
+    throw Error("Invalid player argument.");
+  }
 };
 
 // Start game will handle the game loop, created boards for both players, and
