@@ -79,6 +79,8 @@ const placeShip = function(x, y, ship, orientation, board, player) {
         board[x][y + i].shipType = ship;
       }
     }
+
+    return true;
   } else {
     throw Error("Invalid player argument.");
   }
