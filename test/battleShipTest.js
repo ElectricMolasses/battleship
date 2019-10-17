@@ -6,6 +6,10 @@ const SHIPS = main.SHIPS;
 const createBoard = main.createBoard;
 const placeShip = main.placeShip;
 
+it('SHIPS should contain playerX/Y and computerX/Y as null from launch', function() {
+  assert.isNull(SHIPS.cruiser.playerX);
+});
+
 it('createBoard should have an array of length 10, containing 10 objects', function() {
   const board = createBoard();
   assert(board.length === 10 && board[9].length === 10);
