@@ -48,6 +48,11 @@ const createBoard = function() {
 // Orientation will only accept 'vertical' or 'horizontal'
 // Player will only accept 'player' or 'computer'
 const placeShip = function(x, y, ship, orientation, board, player) {
+  // Check if the ship has already been placed.
+  if (SHIPS[ship][player].X !== null) {
+    return false;
+  }
+  
   // Check if index out of bounds.
   if (x < 0 || x > board.length ||
       y < 0 || y > board[x].length) {
