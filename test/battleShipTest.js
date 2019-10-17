@@ -13,8 +13,10 @@ const {
 } = main;
 let board;
 
-it('SHIPS should contain playerX/Y and computerX/Y as null from launch', () => {
-  assert.isNull(SHIPS.cruiser.player.X);
+describe('SHIPS', () => {
+  it('SHIPS should contain playerX/Y and computerX/Y as null from launch', () => {
+    assert.isNull(SHIPS.cruiser.player.X);
+  });
 });
 
 describe('createBoard', () => {
