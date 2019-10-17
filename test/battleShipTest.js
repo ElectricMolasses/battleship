@@ -14,6 +14,7 @@ it('createBoard cells should contain the property shipType', function() {
 });
 
 it('createBoard cells should contain the property shipOrientation if shipType is not null');
+// ^^^ Might not need this, using pointers to other cells to more easily navigate cells containing the ship.
 
 it('createBoard cells should contain the property shipConnections, and it should be an array of no greater than 2, if shipType does not equal null');
 
