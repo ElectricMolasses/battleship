@@ -69,7 +69,11 @@ it('placeShip should throw an error if the player argument is not "player" or "c
   expect(placeShip.bind(1, 1, 'carrier', 'vertical', board, 'bob')).to.throw(Error);
 });
 
-it('removeShip should return true if the ship was on the board, and successfully removed');
+it('removeShip should return true if the ship was on the board, and successfully removed', () => {
+  const board = createBoard();
+  placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
+  assert.isTrue(removeShip('carrier', board, 'player'));
+});
 
 it('removeShip should return false if the ship was not already placed', () => {
   const board = createBoard();
