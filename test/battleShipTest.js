@@ -26,7 +26,10 @@ it('createBoard cells should contain the property shipOrientation if shipType is
 
 it('createBoard cells should contain the property wasShot');
 
-it('placeShip should return true if the ship placement is valid and ship is not already placed');
+it('placeShip should return true if the ship placement is valid and ship is not already placed', function() {
+  const board = createBoard();
+  assert.isTrue(placeShip(2, 4, 'cruiser', 'horizontal', board, 'player'));
+});
 
 it('placeShip should return false if the ship has already been places');
 
