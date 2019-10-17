@@ -8,16 +8,18 @@ it('createBoard should have an array of length 10, containing 10 objects', funct
   assert(board.length === 10 && board[9].length === 10);
 });
 
-it('createBoard cells should contain the parameter shipType', function() {
+it('createBoard cells should contain the property shipType', function() {
   const board = main.createBoard();
 
 });
 
-it('createBoard cells should contain the parameter shipOrientation');
+it('createBoard cells should contain the property shipOrientation if shipType is not null');
 
-it('createBoard cells should contain the parameter wasShot');
+it('createBoard cells should contain the property shipConnections, and it should be an array of no greater than 2, if shipType does not equal null');
 
-it('createBoard cells should contain the parameter shipConnections, and it should be an array of no greater than 2');
+it('createBoard cells shipConnections property should not have a length greater than 0 if shipType is null');
+
+it('createBoard cells should contain the property wasShot');
 
 it('placeShip should return true if the ship placement is valid and ship is not already placed');
 
