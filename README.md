@@ -6,7 +6,7 @@ Web application that let's you play battleship.
 
 ### Entity Objects
 
-#### playerShips{}
+#### playerShips/computerShips{}
 
 An object containing ship objects, to track whether or not they've been placed yet, and their start coordinate/alignment for the purpose of removal.
 This **could** be used to track hits/misses as well, rather than tracking it directly inside the board.
@@ -28,3 +28,7 @@ Allows the user to place a ship onto their board.  Internally will take the uppe
 #### removeShip()
 
 Takes a ship to remove, find the cells containing that ship in the board objects, and then sets them to no longer contain that ship.  Will likely have to flag a global value to let the game know that ship is now free for placement again.
+
+#### doesHit(x, y)
+
+Takes a coordinate to confirm whether or not a shot hits.  Will apply the hit property to the cell and call any functions required to show a hit/miss.
