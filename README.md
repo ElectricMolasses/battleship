@@ -21,11 +21,11 @@ The board is designed as an array of objects, where the objects track state.  Yo
 
 Generates an empty, 10 x 10 array of objects.  Will initialize the default properties for each of them to avoid undefined returns when making calls.
 
-#### placeShip()
+#### placeShip(x, y, ship)
 
 Allows the user to place a ship onto their board.  Internally will take the upper left coordinate of placement and orientation, will return true or false as to whether or not placement is possible (Part of the ship out of bounds.)  Will likely flag a global value to let the game know that ship has been placed.
 
-#### removeShip()
+#### removeShip(ship)
 
 Takes a ship to remove, find the cells containing that ship in the board objects, and then sets them to no longer contain that ship.  Will likely have to flag a global value to let the game know that ship is now free for placement again.
 
@@ -46,7 +46,7 @@ And logs it to console.
 
 ### The Browser
 
-#### fire()
+#### fire(x, y)
 
 Will have to take input (most likely a click on a cell), and pass that to the game logic to run the players turn.
 
