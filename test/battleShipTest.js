@@ -8,12 +8,6 @@ const {
   createBoard,
   placeShip,
   removeShip,
-  isPlayerValid,
-  isShipPlaced,
-  isPointValid,
-  isShipTailValid,
-  isOrientationValid,
-  doesShipOverlap,
   fire,
 } = main;
 
