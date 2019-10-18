@@ -43,6 +43,15 @@ describe('Main Functions', () => {
       assert.isTrue(placeShip(2, 4, 'cruiser', 'horizontal', board, 'player'));
     });
 
+    it('should change the board state to reflect the cells the ship occupies', () => {
+      placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
+      assert.isTrue(board[1][1].shipType === 'carrier' &&
+                    board[2][1].shipType === 'carrier' &&
+                    board[3][1].shipType === 'carrier' &&
+                    board[4][1].shipType === 'carrier' &&
+                    board[4][1].shipType === 'carrier');
+    });
+
     it('should return false if the ship has already been placed', () => {
       placeShip(2, 4, 'cruiser', 'horizontal', board, 'player');
       assert.isFalse(placeShip(1, 4, 'cruiser', 'horizontal', board, 'player'));
