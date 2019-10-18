@@ -152,7 +152,7 @@ const fire = function(x, y, board, targetPlayer) {
 
   if (ship !== null) {
     reduceHP(ship, targetPlayer);
-
+    hitCell(x, y, board);
     return true;
   }
 };
@@ -164,7 +164,7 @@ const reduceHP = function(ship, player) {
 };
 
 const hitCell = function(x, y, board) {
-
+  board[x][y].wasShot = true;
 };
 
 // Start game will handle the game loop, created boards for both players, and
