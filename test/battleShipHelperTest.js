@@ -109,14 +109,20 @@ describe('Helper Functions', () => {
   });
 
   describe('clearShipCoords', () => {
+    beforeEach(() => {
+      SHIPS.destroyer.player.X = 3;
+      SHIPS.destroyer.player.Y = 0;
+    });
     afterEach(() => resetSHIPS());
 
     it('should clear the X coordinate in the global SHIPS object.', () => {
-
+      clearShipCoords('destroyer', 'player');
+      assert.equal(SHIPS.destroyer.player.X = null);
     });
 
     it('should clear the Y coordinate in the global SHIPS object', () => {
-
+      clearShipCoords('destroyer', 'player');
+      assert.equal(SHIPS.destroyer.player.Y, null);
     });
   });
 });
