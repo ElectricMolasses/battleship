@@ -42,6 +42,14 @@ const fireOnCell = function(cell) {
 
 };
 
+const drawHit = function(cell) {
+
+};
+
+const drawMiss = function(cell) {
+
+};
+
 $(function() {
   const gridContainer = $('#grid');
   drawGrid(gridContainer);
