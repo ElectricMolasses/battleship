@@ -79,13 +79,31 @@ body {
   flex-direction: column;
 }
 
-#gameView .left #shipStatus #playerShips {
+#gameView .left div div {
   display: flex;
   flex-direction: column;
 }
 
-#gameView .left #shipStatus #playerShips img {
+#gameView .left #shipStatus #playerShips {
+  /* */
+}
+
+#gameView .left #shipStatus div img {
   margin-right: auto;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#gameView .left #shipStatus #playerShips img {
+  /* Just leaving this here for now.*/
+}
+
+#gameView .left #shipStatus #aiShips{
+  /* */
+}
+
+#gameView .left #shipStatus #aiShips img {
+  /* Just leaving this here for now.*/
 }
 
 #gameView .right {
