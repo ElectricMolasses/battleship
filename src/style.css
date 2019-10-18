@@ -59,28 +59,24 @@ body {
   width: 1200px;
   height: 900px;
   display: flex;
-}
-
-#gameView .top {
-  background: red;
-  border-style: solid;
-  border-color: blue;
+  justify-content: center;
+  align-items: center;  
 }
 
 #gameView .left {
   background: red;
   border-style: solid;
   border-color: blue;
-}
-
-#gameView .center {
-  background: red;
-  border-style: solid;
-  border-color: blue;
+  border-width: 1px;
+  width: 300px;
+  height: 875px;
 }
 
 #gameView .right {
   background: red;
   border-style: solid;
   border-color: blue;
+  border-width: 1px;
+  width: 875px;
+  height: 875px;
 }
