@@ -173,6 +173,22 @@ const isOccupied = function(x, y, board) {
   return board[x][y].shipType !== null;
 };
 
+const listShips = function(player) {
+
+};
+
+const logShots = function(x, y, hitStatus, player) {
+  if (hitStatus) {
+    console.log(`${player} shoots at ${GENERATE_CELL_HERE}: HIT`);
+  } else {
+    console.log(`${player} shoots at ${GENERATE_CELL_HERE}: MISS`);
+  }
+};
+
+const convertCellName = function(x, y) {
+
+};
+
 // Start game will handle the game loop, created boards for both players, and
 // allow interactions to begin.  It will ONLY handle the game logic, actual
 // user input will be processed from the main function.
