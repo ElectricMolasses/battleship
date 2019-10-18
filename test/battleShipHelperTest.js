@@ -42,7 +42,15 @@ describe('Helper Functions', () => {
   });
 
   describe('isPointValid', () => {
+    beforeEach(() => board = createBoard());
 
+    it('should return true if the point is within bounds of board', () => {
+      assert.isTrue(isPointValid(4, 9, board));
+    });
+
+    it('should return false if the point is not within bounds of board', () => {
+      assert.isFalse(isPointValid(0, 10, board));
+    });
   });
 
   describe('isShipTailValid', () => {
