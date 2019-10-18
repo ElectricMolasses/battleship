@@ -1,6 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 const expect = chai.expect;
+require('mocha-sinon'); // For console.log verification.
 
 const main = require('../src/battleship');
 const {
@@ -134,13 +135,28 @@ describe('Main Functions', () => {
   });
 
   describe('logShot', () => {
-
-    it('should dispay a message with the players name, where they fired, an whether or not the shot landed.', () => {
-      assert.equal(logShot(2, 7, true, 'player'), `player shoots at C8: HIT`);
+    // AHHHHHHHHHH
+    beforeEach(function() {
+      let log = console.log;
+      this.sinon.stub(console, 'log').callsFake(() => {
+        return log.apply(log, arguments);
+      });
     });
 
+    it('should dispay a message with the players name, where they fired, and that the shot landed.', () => {
+      logShot(2, 7, true, 'player');
+      expect(console.log.calledOnce).to.be.true;
+      expect(console.log.calledWith(`player shoots at C8: HIT`)).to.be.true;
+    });
+
+    it('should display a message with the computers name, where they fired, and that the shot missed.', () => {
+      logShot(3, 2, false, 'computer');
+      expect(console.log.calledOnce).to.be.true;
+      expect(console.log.calledWith(`computer shoots at D3: MISS`)).to.be.true;
+    });
+    /*
     it('should dispay a message with the computers name, where they fired, an whether or not the shot landed.', () => {
       assert.equal(logShot(3, 2, false, 'computer'), `computer shoots at D3: MISS`);
-    });
+    });*/
   });
 });

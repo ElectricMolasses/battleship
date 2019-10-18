@@ -178,11 +178,9 @@ const listShips = function(player) {
 };
 
 const logShot = function(x, y, hitStatus, player) {
-  if (hitStatus) {
-    console.log(`${player} shoots at ${convertCellName(x,y)}: HIT`);
-  } else {
-    console.log(`${player} shoots at ${convertCellName(x, y)}: MISS`);
-  }
+  console.log(`${player} shoots at ${convertCellName(x,y)}: ${
+    hitStatus ? 'HIT' : 'MISS'
+  }`);
 };
 
 const convertCellName = function(x, y) {
