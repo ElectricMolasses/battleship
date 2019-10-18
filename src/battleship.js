@@ -174,7 +174,13 @@ const isOccupied = function(x, y, board) {
 };
 
 const shipsList = function(player) {
+  const shipsList = {};
 
+  for (const ship in SHIPS) {
+    shipsList[ship] = SHIPS[ship][player].hp;
+  }
+
+  return shipsList;
 };
 
 const logShot = function(x, y, hitStatus, player) {
