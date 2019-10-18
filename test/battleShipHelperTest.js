@@ -161,4 +161,20 @@ describe('Helper Functions', () => {
       assert.isFalse(isOccupied(4, 3, board));
     });
   });
+
+  describe('convertCellName', () => {
+
+    it('should convert 0,0 to A1', () => {
+      assert.equal(convertCellName(0, 0), 'A1');
+    });
+
+    it(`it should convert various index's from 0-9 to A-J for x, and 1-10 for y`, () => {
+      assert.equal(convertCellName(6, 5), 'G6');
+      assert.equal(convertCellName(4, 7), 'E8');
+      assert.equal(convertCellName(7, 2), 'H3');
+      assert.equal(convertCellName(8, 7), 'I8');
+      assert.equal(convertCellName(1, 3), 'B4');
+      assert.equal(convertCellName(9, 9), 'J10');
+    });
+  });
 });
