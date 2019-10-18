@@ -143,7 +143,7 @@ describe('Main Functions', () => {
 
       // I created a "fake" function that still runs the console.log
       // command via console.log.apply, but lets sinon spy on it for
-      // testing.  We then confirm in the tests that the arguement passed
+      // testing.  We then confirm in the tests that the argument passed
       // to it was the correct string, and that the call actually
       // completed with calledOnce.
       this.sinon.stub(console, 'log').callsFake(() => {
