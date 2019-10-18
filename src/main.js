@@ -25,10 +25,6 @@ const drawGrid = function(element) {
   }
 };
 
-const drawCell = function() {
-
-};
-
 $(function() {
   const gridContainer = $('#grid');
   drawGrid(gridContainer);
