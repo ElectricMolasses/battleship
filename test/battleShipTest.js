@@ -132,5 +132,3 @@ describe('Main Functions', () => {
     });
   });
 });
-
-//expect(placeShip.bind(1, 1, 'carrier', 'vertical', board, 'bob')).to.throw(Error);
