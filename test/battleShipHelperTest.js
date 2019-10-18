@@ -28,6 +28,14 @@ describe('Helper Functions', () => {
     it('should return true if the player is "player"', () =>{
       assert.isTrue(isPlayerValid("player"));
     });
+
+    it('should return trueif the player is "computer"', () => {
+      assert.isTrue(isPlayerValid("computer"));
+    });
+
+    it('should return false if the player is not player or computer.', () => {
+      assert.isFalse(isPlayerValid('bob'));
+    });
   });
 
   describe('isShipPlaced', () => {
