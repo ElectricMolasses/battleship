@@ -167,6 +167,10 @@ const hitCell = function(x, y, board) {
   board[x][y].wasShot = true;
 };
 
+const isOccupied = function(x, y, board) {
+  
+};
+
 // Start game will handle the game loop, created boards for both players, and
 // allow interactions to begin.  It will ONLY handle the game logic, actual
 // user input will be processed from the main function.
