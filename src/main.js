@@ -19,7 +19,11 @@ const drawGrid = function(element) {
       cells[i].push($('<div></div>').width(gridWidth / 10)
         .height(gridHeight / 10)
         .addClass('cell')
-        .attr('id', `cell${j}-${i}`));
+        .attr('id', `cell${j}-${i}`)
+        .click(() => {
+          //Test method, will have to sent shot requests to game engine.
+          $(`#cell${j}-${i}`).css('background-color', 'red');
+        }));
       cellRows[i].append(cells[i][j]);
     }
   }
