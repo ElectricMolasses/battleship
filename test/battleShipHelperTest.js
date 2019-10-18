@@ -109,6 +109,14 @@ describe('Helper Functions', () => {
   });
 
   describe('clearShipCoords', () => {
+    afterEach(() => resetSHIPS());
 
+    it('should clear the X coordinate in the global SHIPS object.', () => {
+
+    });
+
+    it('should clear the Y coordinate in the global SHIPS object', () => {
+
+    });
   });
 });
