@@ -235,4 +235,6 @@ module.exports = {
   reduceHP,
   hitCell,
   isOccupied,
+  logShots,
+  convertCellName,
 };
