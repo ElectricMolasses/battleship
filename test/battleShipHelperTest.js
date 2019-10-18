@@ -85,11 +85,11 @@ describe('Helper Functions', () => {
       placeShip(1, 1, 'carrier', 'vertical', board, 'player');
     });
 
-    it('should return true if the ships do not overlap', () => {
+    it('should return false if the ships do not overlap', () => {
       assert.isTrue(doesShipOverlap(0, 0, 'destroyer', 'horizontal', board));
     });
 
-    it('should return false if the ships do overlap', () => {
+    it('should return true if the ships do overlap', () => {
 
     });
   });
