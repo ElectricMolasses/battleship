@@ -70,6 +70,22 @@ body {
   border-width: 1px;
   width: 300px;
   height: 875px;
+  display: flex;
+  flex-direction: column;
+}
+
+#gameView .left #shipStatus {
+  display: flex;
+  flex-direction: column;
+}
+
+#gameView .left #shipStatus #playerShips {
+  display: flex;
+  flex-direction: column;
+}
+
+#gameView .left #shipStatus #playerShips img {
+  margin-right: auto;
 }
 
 #gameView .right {
