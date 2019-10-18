@@ -150,9 +150,10 @@ const fire = function(x, y, board, targetPlayer) {
 
   const ship = board[x][y].shipType;
 
+  hitCell(x, y, board);
+
   if (ship !== null) {
     reduceHP(ship, targetPlayer);
-    hitCell(x, y, board);
     return true;
   }
 };
