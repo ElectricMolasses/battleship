@@ -54,19 +54,29 @@ describe('Helper Functions', () => {
   });
 
   describe('isShipTailValid', () => {
+    before(() => board = createBoard());
 
+    it('should return true if the ships tail is within bounds', () => {
+      assert.isTrue(isShipTailValid(7, 0, 'submarine', 'horizontal', board));
+    });
+
+    it('should return false if the ships tail is out of bounds', () => {
+      assert.isFalse(isShipTailValid(8, 0, 'submarine', 'horizontal', board));
+    });
   });
 
   describe('isOrientationValid', () => {
     it('should return true if the orientation is horizontal', () => {
       assert.isTrue(isOrientationValid('horizontal'));
     });
+
     it('should return true if the orientation is vertical', () => {
       assert.isTrue(isOrientationValid('vertical'));
     });
+
     it('should return false if the orientation is not horizontal or vertical', () => {
       assert.isFalse(isOrientationValid('Horizontal'));
-    })
+    });
   });
 
   describe('doesShipOverlap', () => {
