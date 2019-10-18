@@ -110,12 +110,12 @@ describe('Main Functions', () => {
     it('should change the wasShot property of that cell on a hit.', () => {
       placeShip(2, 3, 'carrier', 'horizontal', board, 'player');
       fire(4, 3, board, 'player');
-      assert(board[4][3].wasShot === true);
+      assert.equal(board[4][3].wasShot, true);
     });
 
     it('should change the wasShot property of that cell on a miss.', () => {
       fire(4, 3, board, 'player');
-      assert(board[4][3].wasShot === true);
+      assert.equal(board[4][3].wasShot, true);
     });
 
     it('should return false when firing on a cell that is not occupied by a ship.', () => {
