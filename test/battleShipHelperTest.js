@@ -97,7 +97,8 @@ describe('Helper Functions', () => {
 
   describe('setShipCoords', () => {
     beforeEach(() => setShipCoords(2, 5, 'destroyer', 'horizontal', 'player'));
-    afterEach(() => resetSHIPS);
+    afterEach(() => resetSHIPS());
+
     it('should store the coordinates in the global SHIP object.', () => {
       
     });
