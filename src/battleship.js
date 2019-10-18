@@ -147,10 +147,17 @@ const isOrientationValid = function(orientation) {
 };
 
 const fire = function(x, y, board, targetPlayer) {
-  
-  if (board[x][x].shipType !== null) {
+
+  if (board[x][y].shipType !== null) {
     return true;
   }
+};
+
+const reduceHP = function(ship, player) {
+  if (SHIPS[ship][player].hp !== null) return false;
+  if (SHIPS[ship][player].hp > 0) return false;
+
+  SHIPS[ship][player].hp--;
 };
 
 // Start game will handle the game loop, created boards for both players, and
@@ -188,4 +195,5 @@ module.exports = {
   setShipCoords,
   clearShipCoords,
   fire,
+  reduceHP,
 };
