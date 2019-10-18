@@ -137,3 +137,23 @@ body {
   width: 80px;
   height: 80px;
 }
+
+#carrierImage {
+  width: 400px;
+}
+
+#battleshipImage {
+  width: 320px;
+}
+
+#cruiserImage {
+  width: 240px;
+}
+
+#submarineImage {
+  width: 240px;
+}
+
+#destroyerImage {
+  width: 160px;
+}
