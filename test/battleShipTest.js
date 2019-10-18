@@ -13,6 +13,7 @@ const {
   shipsList,
   fire,
   logShot,
+  reduceHP,
 } = main;
 let board;
 
@@ -96,13 +97,15 @@ describe('Main Functions', () => {
   });
 
   describe('shipsList', () => {
+    afterEach(() => resetSHIPS());
+
     it('should provide all 5 ships with max health values if called on its own for the player.', () => {
       assert.deepEqual(shipsList('player'), {
         carrier: 5,
         battleship: 4,
         cruiser: 3,
-        submarine: 2,
-        destroyer: 1
+        submarine: 3,
+        destroyer: 2
       });
     });
 
@@ -111,9 +114,21 @@ describe('Main Functions', () => {
         carrier: 5,
         battleship: 4,
         cruiser: 3,
-        submarine: 2,
-        destroyer: 1
+        submarine: 3,
+        destroyer: 2
       });
+    });
+  });
+
+  it('should reflect damage taken on any ships that have lost health', () => {
+    reduceHP('carrier', 'player');
+    reduceHP('destroyer', 'player');
+    assert.deepEqual(shipsList('player'), {
+      carrier: 4,
+      battleship: 4,
+      cruiser: 3,
+      submarine: 3,
+      destroyer: 2
     });
   });
 
