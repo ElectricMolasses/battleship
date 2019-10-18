@@ -15,6 +15,7 @@ const {
   doesShipOverlap,
   setShipCoords,
   clearShipCoords,
+  reduceHP,
 } = main;
 
 let board;
@@ -123,6 +124,14 @@ describe('Helper Functions', () => {
     it('should clear the Y coordinate in the global SHIPS object', () => {
       clearShipCoords('destroyer', 'player');
       assert.equal(SHIPS.destroyer.player.Y, null);
+    });
+  });
+  
+  describe('reduceHP', () => {
+    after(() => resetSHIPS());
+    it('should reduce the hp by one if that ship has hp', () => {
+      SHIPS.destroyer.player.hp--;
+      assert.equal(SHIPS.destroyer.player.hp, 1);
     });
   });
 });
