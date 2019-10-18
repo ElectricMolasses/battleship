@@ -37,6 +37,7 @@ describe('Main Functions', () => {
 
   describe('placeShip', () => {
     beforeEach(() => board = createBoard());
+    afterEach(() => resetSHIPS());
 
     it('should return true if the ship placement is valid and ship is not already placed', () => {
       assert.isTrue(placeShip(2, 4, 'cruiser', 'horizontal', board, 'player'));
@@ -71,6 +72,7 @@ describe('Main Functions', () => {
 
   describe('removeShip', () => {
     beforeEach(() => board = createBoard());
+    afterEach(() => resetSHIPS);
     it('should return true if the ship was on the board, and successfully removed', () => {
       placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
       assert.isTrue(removeShip('carrier', board, 'player'));
@@ -83,6 +85,7 @@ describe('Main Functions', () => {
 
   describe('doesHit', () => {
     beforeEach(() => board = createBoard());
+    afterEach(() => resetSHIPS());
 
     it('should return true when firing on a cell occupied by a ship.', () => {
       placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
