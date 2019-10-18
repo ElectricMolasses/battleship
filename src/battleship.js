@@ -173,7 +173,7 @@ const isOccupied = function(x, y, board) {
   return board[x][y].shipType !== null;
 };
 
-const listShips = function(player) {
+const shipsList = function(player) {
 
 };
 
@@ -221,7 +221,7 @@ module.exports = {
   createBoard,
   placeShip,
   removeShip,
-  listShips,
+  shipsList,
   isPlayerValid,
   isShipPlaced,
   isPointValid,

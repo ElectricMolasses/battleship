@@ -10,7 +10,7 @@ const {
   createBoard,
   placeShip,
   removeShip,
-  listShips,
+  shipsList,
   fire,
   logShot,
 } = main;
@@ -92,6 +92,28 @@ describe('Main Functions', () => {
 
     it('should return false if the ship was not already placed', () => {
       assert.isFalse(removeShip('destroyer', board, 'player'));
+    });
+  });
+
+  describe('shipsList', () => {
+    it('should provide all 5 ships with max health values if called on its own for the player.', () => {
+      assert.deepEqual(shipsList('player'), {
+        carrier: 5,
+        battleship: 4,
+        cruiser: 3,
+        submarine: 2,
+        destroyer: 1
+      });
+    });
+
+    it('should provide all 5 ships with max health values if called on its own for the computer.', () => {
+      assert.deepEqual(shipsList('computer'), {
+        carrier: 5,
+        battleship: 4,
+        cruiser: 3,
+        submarine: 2,
+        destroyer: 1
+      });
     });
   });
 
