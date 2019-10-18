@@ -1,6 +1,6 @@
 # Battleship
 
-Web application that let's you play battleship.
+Web application that lets you play battleship.
 
 ## ToDo
 
