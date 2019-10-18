@@ -16,6 +16,7 @@ const {
   setShipCoords,
   clearShipCoords,
   reduceHP,
+  hitCell
 } = main;
 
 let board;

@@ -165,7 +165,7 @@ const reduceHP = function(ship, player) {
 };
 
 const hitCell = function(x, y, board) {
-  
+
 };
 
 // Start game will handle the game loop, created boards for both players, and
@@ -204,4 +204,5 @@ module.exports = {
   clearShipCoords,
   fire,
   reduceHP,
+  hitCell,
 };
