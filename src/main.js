@@ -1,3 +1,2 @@
-const {startGame} = require('./battleship');
+const battleship = require('./battleship');
 
-startGame();
