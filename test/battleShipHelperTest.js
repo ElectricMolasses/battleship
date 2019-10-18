@@ -129,7 +129,7 @@ describe('Helper Functions', () => {
   });
   
   describe('reduceHP', () => {
-    after(() => resetSHIPS());
+    afterEach(() => resetSHIPS());
 
     it('should reduce the hp by one if that ship has hp', () => {
       reduceHP('destroyer', 'player');
@@ -138,8 +138,8 @@ describe('Helper Functions', () => {
   });
 
   describe('hitCell,', () => {
-    before(() => board = createBoard());
-    after(() => resetSHIPS());
+    beforeEach(() => board = createBoard());
+    afterEach(() => resetSHIPS());
 
     it('should change the property of any hit cell to true', () => {
       hitCell(1, 2, board);
