@@ -47,10 +47,15 @@ blockquote, q {
 	quotes: "" "";
 }
 
+/* END OF RESET */
+
 body {
   background: black;
 }
 
 #gameView {
-  background: grey;
+  background: #383428;
+  margin: auto;
+  width: 1200px;
+  height: 900px;
 }
