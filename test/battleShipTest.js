@@ -117,12 +117,14 @@ describe('Main Functions', () => {
     });
 
     it('should throw an Error when targeting an out of bounds cell', () => {
-      expect(fire(20, 20, board, 'player')).to.throw(Error);
+      expect(fire.bind(20, 20, board, 'player')).to.throw(Error);
     });
 
     it('should throw an Error when attempting to fire on a cell already fired on', () => {
       fire(3, 3, board, 'player');
-      expect(fire(3, 3, board, 'player')).to.throw(Error);
+      expect(fire.bind(3, 3, board, 'player')).to.throw(Error);
     });
   });
 });
+
+//expect(placeShip.bind(1, 1, 'carrier', 'vertical', board, 'bob')).to.throw(Error);
