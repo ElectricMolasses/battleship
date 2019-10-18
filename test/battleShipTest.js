@@ -133,5 +133,14 @@ describe('Main Functions', () => {
     });
   });
 
-  
+  describe('logShot', () => {
+
+    it('should dispay a message with the players name, where they fired, an whether or not the shot landed.', () => {
+      assert.equal(logShot(2, 7, true, 'player'), `player shoots at C8: HIT`);
+    });
+
+    it('should dispay a message with the computers name, where they fired, an whether or not the shot landed.', () => {
+      assert.equal(logShot(3, 2, false, 'computer'), `computer shoots at D3: MISS`);
+    });
+  });
 });
