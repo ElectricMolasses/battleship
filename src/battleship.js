@@ -208,4 +208,5 @@ module.exports = {
   fire,
   reduceHP,
   hitCell,
+  isOccupied,
 };

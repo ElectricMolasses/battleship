@@ -16,7 +16,8 @@ const {
   setShipCoords,
   clearShipCoords,
   reduceHP,
-  hitCell
+  hitCell,
+  isOccupied,
 } = main;
 
 let board;
@@ -146,4 +147,6 @@ describe('Helper Functions', () => {
       assert.equal(board[1][2].wasShot, true);
     });
   });
+
+  
 });
