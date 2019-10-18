@@ -58,6 +58,7 @@ describe('Helper Functions', () => {
 
     it('should return true if the ships tail is within bounds', () => {
       assert.isTrue(isShipTailValid(7, 0, 'submarine', 'horizontal', board));
+      assert.isTrue(isShipTailValid(0, 5, 'carrier', 'vertical', board));
     });
 
     it('should return false if the ships tail is out of bounds', () => {
@@ -80,7 +81,20 @@ describe('Helper Functions', () => {
   });
 
   describe('doesShipOverlap', () => {
+    before(() => {
+      board = createBoard();
+      placeShip(1, 1, 'carrier', 'vertical', board, 'player');
+    });
 
+    it('should return true if the ships do not overlap', () => {
+      assert.isTrue(doesShipOverlap(0, 0, 'destroyer', 'horizontal', board));
+      //assert.isTrue(doesShipOverlap(0, 1, 'destroyer', 'vertical', board));
+      //assert.isTrue(doesShipOverlap(2, 1, 'destroyer', 'vertical', board));
+    });
+
+    it('should return false if the ships do overlap', () => {
+
+    });
   });
 
   describe('setShipCoords', () => {
