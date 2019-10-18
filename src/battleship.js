@@ -111,11 +111,11 @@ const isShipPlaced = function(ship, player) {
 
 const isShipTailValid = function(x, y, ship, orientation, board) {
   if (orientation === 'horizontal') {
-    if (x + SHIPS[ship].length > board.length - 1) {
+    if (x + SHIPS[ship].length > board.length) {
       return false;
     }
   } else if (orientation === 'vertical') {
-    if (y + SHIPS[ship].length > board[x].length - 1) {
+    if (y + SHIPS[ship].length > board[x].length) {
       return false;
     }
   }
