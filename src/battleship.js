@@ -179,14 +179,14 @@ const listShips = function(player) {
 
 const logShot = function(x, y, hitStatus, player) {
   if (hitStatus) {
-    console.log(`${player} shoots at ${GENERATE_CELL_HERE}: HIT`);
+    console.log(`${player} shoots at ${convertCellName(x,y)}: HIT`);
   } else {
-    console.log(`${player} shoots at ${GENERATE_CELL_HERE}: MISS`);
+    console.log(`${player} shoots at ${convertCellName(x, y)}: MISS`);
   }
 };
 
 const convertCellName = function(x, y) {
-
+  
 };
 
 // Start game will handle the game loop, created boards for both players, and
