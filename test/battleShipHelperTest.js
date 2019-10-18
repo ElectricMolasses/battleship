@@ -131,7 +131,8 @@ describe('Helper Functions', () => {
   describe('reduceHP', () => {
     after(() => resetSHIPS());
     it('should reduce the hp by one if that ship has hp', () => {
-      SHIPS.destroyer.player.hp--;
+      //SHIPS.destroyer.player.hp--;
+      reduceHP('destroyer', 'player');
       assert.equal(SHIPS.destroyer.player.hp, 1);
     });
   });
