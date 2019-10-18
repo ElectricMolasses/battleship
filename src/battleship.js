@@ -221,6 +221,7 @@ module.exports = {
   createBoard,
   placeShip,
   removeShip,
+  listShips,
   isPlayerValid,
   isShipPlaced,
   isPointValid,
