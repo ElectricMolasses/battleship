@@ -148,5 +148,9 @@ describe('Helper Functions', () => {
     });
   });
 
-  
+  describe('isOccupied', () => {
+    beforeEach(() => board = createBoard());
+    
+    
+  });
 });
