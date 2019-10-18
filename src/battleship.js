@@ -142,7 +142,7 @@ const isPlayerValid = function(player) {
 };
 
 const isOrientationValid = function(orientation) {
-  return (orientation === "horizontal" || orientation || "vertical");
+  return (orientation === "horizontal" || orientation === "vertical");
 };
 
 const fire = function(x, y, board, targetPlayer) {
