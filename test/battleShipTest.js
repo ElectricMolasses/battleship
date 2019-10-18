@@ -98,7 +98,7 @@ describe('Main Functions', () => {
 
     it('should return true when firing on a cell occupied by a ship.', () => {
       placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
-      assert.isTrue(fire(1, 1, board, 'player'));
+      assert.isTrue(fire(2, 1, board, 'player'));
     });
 
     it('should modify the hit points of that ship on a hit.', () => {
