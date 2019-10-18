@@ -156,6 +156,7 @@ const fire = function(x, y, board, targetPlayer) {
     reduceHP(ship, targetPlayer);
     return true;
   }
+  return false;
 };
 
 const reduceHP = function(ship, player) {
