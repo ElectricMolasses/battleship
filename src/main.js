@@ -22,7 +22,7 @@ const drawGrid = function(element) {
         .attr('id', `cell${j}-${i}`)
         .click(() => {
           //Test method, will have to sent shot requests to game engine.
-          drawHit($(`#cell${j}-${i}`));
+          drawMiss($(`#cell${j}-${i}`));
         }));
       cellRows[i].append(cells[i][j]);
     }
@@ -39,15 +39,18 @@ const eraseShip = function() {
 };
 
 const fireOnCell = function(cell) {
-
+  
 };
 
 const drawHit = function(cell) {
-  cell.append($('<img src="./assets/Fire/fire" alt="hit">').addClass('cellImage'));
+  cell.append($('<img src="./assets/Fire/fire" alt="hit">')
+    .addClass('cellImage'));
 };
 
 const drawMiss = function(cell) {
-
+  cell.append($('<img src="./assets/Splash/splash" alt="hit">')
+    .addClass('cellImage')
+    .css('mix-blend-mode', 'multiply'));
 };
 
 $(function() {
