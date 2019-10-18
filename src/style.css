@@ -58,4 +58,21 @@ body {
   margin: auto;
   width: 1200px;
   height: 900px;
+  display: flex;
+}
+
+#gameView .top {
+
+}
+
+#gameView .left {
+
+}
+
+#gameView .center {
+
+}
+
+#gameView .right {
+  
 }
