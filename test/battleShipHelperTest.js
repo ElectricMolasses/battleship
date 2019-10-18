@@ -151,6 +151,13 @@ describe('Helper Functions', () => {
   describe('isOccupied', () => {
     beforeEach(() => board = createBoard());
     
-    
+    it('should return true if the target cell contains a ship', () => {
+      placeShip(1, 2, 'carrier', 'horizontal', board, 'player');
+      assert.isTrue(isOccupied(1, 2, board));
+    });
+
+    it('should return false if the target cell does not contain a ship', () => {
+      assert.isFalse(isOccupied(4, 3, board));
+    });
   });
 });
