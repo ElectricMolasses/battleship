@@ -2,6 +2,11 @@
 
 Web application that let's you play battleship.
 
+## ToDo
+
+- Refactor to actually use isOccupied
+- I believe the core functionality is done and we can begin implementing steps in the game loop.
+
 ## Dependencies
 
 Mocha and chai is used for testing, everything else is pure javasript.  No additional libraries needed to run.
