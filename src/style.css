@@ -62,17 +62,25 @@ body {
 }
 
 #gameView .top {
-
+  background: red;
+  border-style: solid;
+  border-color: blue;
 }
 
 #gameView .left {
-
+  background: red;
+  border-style: solid;
+  border-color: blue;
 }
 
 #gameView .center {
-
+  background: red;
+  border-style: solid;
+  border-color: blue;
 }
 
 #gameView .right {
-  
+  background: red;
+  border-style: solid;
+  border-color: blue;
 }
