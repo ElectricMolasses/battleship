@@ -63,7 +63,7 @@ const placeShip = function(x, y, ship, orientation, board, player) {
   
   if (!isPlayerValid(player)) throw Error("Invalid player argument");
   
-  setShipCoords(x, y, ship, player, orientation);
+  setShipCoords(x, y, ship, orientation, player);
   for (let i = 0; i < SHIPS[ship].length; i++) {
     if (orientation === 'horizontal') {
       board[x + i][y].shipType = ship;
@@ -93,7 +93,7 @@ const removeShip = function(ship, board, player) {
   return true;
 };
 
-const setShipCoords = function(x, y, ship, player, orientation) {
+const setShipCoords = function(x, y, ship, orientation, player) {
   SHIPS[ship][player].X = x;
   SHIPS[ship][player].Y = y;
   SHIPS[ship][player].orientation = orientation;
