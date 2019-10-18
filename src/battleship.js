@@ -148,7 +148,11 @@ const isOrientationValid = function(orientation) {
 
 const fire = function(x, y, board, targetPlayer) {
 
-  if (board[x][y].shipType !== null) {
+  const ship = board[x][y].shipType;
+
+  if (ship !== null) {
+    reduceHP(ship, targetPlayer);
+
     return true;
   }
 };
