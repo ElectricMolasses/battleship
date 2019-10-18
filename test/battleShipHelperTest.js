@@ -130,9 +130,20 @@ describe('Helper Functions', () => {
   
   describe('reduceHP', () => {
     after(() => resetSHIPS());
+
     it('should reduce the hp by one if that ship has hp', () => {
       reduceHP('destroyer', 'player');
       assert.equal(SHIPS.destroyer.player.hp, 1);
+    });
+  });
+
+  describe('hitCell,', () => {
+    before(() => board = createBoard());
+    after(() => resetSHIPS());
+
+    it('should change the property of any hit cell to true', () => {
+      hitCell(1, 2, board);
+      assert.equal(board[1][2].wasShot, true);
     });
   });
 });
