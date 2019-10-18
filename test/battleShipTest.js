@@ -92,7 +92,7 @@ describe('Main Functions', () => {
     });
   });
 
-  describe('doesHit', () => {
+  describe('fire', () => {
     beforeEach(() => board = createBoard());
     afterEach(() => resetSHIPS());
 
