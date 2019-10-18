@@ -177,7 +177,7 @@ const listShips = function(player) {
 
 };
 
-const logShots = function(x, y, hitStatus, player) {
+const logShot = function(x, y, hitStatus, player) {
   if (hitStatus) {
     console.log(`${player} shoots at ${GENERATE_CELL_HERE}: HIT`);
   } else {
@@ -235,6 +235,6 @@ module.exports = {
   reduceHP,
   hitCell,
   isOccupied,
-  logShots,
+  logShot,
   convertCellName,
 };

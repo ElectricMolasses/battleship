@@ -10,7 +10,7 @@ const {
   placeShip,
   removeShip,
   fire,
-  logShots,
+  logShot,
 } = main;
 let board;
 
@@ -132,4 +132,6 @@ describe('Main Functions', () => {
       expect(fire.bind(3, 3, board, 'player')).to.throw(Error);
     });
   });
+
+  
 });
