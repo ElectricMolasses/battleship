@@ -168,7 +168,7 @@ const hitCell = function(x, y, board) {
 };
 
 const isOccupied = function(x, y, board) {
-  
+  return board[x][y].shipType !== null;
 };
 
 // Start game will handle the game loop, created boards for both players, and
