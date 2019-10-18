@@ -80,7 +80,18 @@ describe('Helper Functions', () => {
   });
 
   describe('doesShipOverlap', () => {
+    before(() => {
+      board = createBoard();
+      placeShip(1, 1, 'carrier', 'vertical', board, 'player');
+    });
 
+    it('should return true if the ships do not overlap', () => {
+      assert.isTrue(doesShipOverlap(0, 0, 'destroyer', 'horizontal', board));
+    });
+
+    it('should return false if the ships do overlap', () => {
+
+    });
   });
 
   describe('setShipCoords', () => {
