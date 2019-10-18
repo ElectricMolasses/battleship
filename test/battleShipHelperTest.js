@@ -4,6 +4,10 @@ const expect = chai.expect;
 
 const main = require('../src/battleship');
 const {
+  SHIPS,
+  resetSHIPS,
+  createBoard,
+  placeShip,
   isPlayerValid,
   isShipPlaced,
   isPointValid,
@@ -14,6 +18,8 @@ const {
   clearShipCoords,
 } = main;
 
+let board;
+
 describe('Helper Functions', () => {
   describe('isPlayerValid', () => {
     it('should return true if the player is "player"', () =>{
@@ -22,7 +28,17 @@ describe('Helper Functions', () => {
   });
 
   describe('isShipPlaced', () => {
-    
+    beforeEach(() => board = createBoard());
+    afterEach(() => resetSHIPS());
+
+    it('should return true if the ship has been placed', () => {
+      placeShip(2, 3, 'cruiser', 'horizontal', board, 'player');
+      assert.isTrue(isShipPlaced('cruiser', 'player'));
+    });
+
+    it('should return false if the ship has not been placed', () => {
+      assert.isFalse(isShipPlaced('cruiser', 'player'));
+    });
   });
 
   describe('isPointValid', () => {

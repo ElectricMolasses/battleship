@@ -21,7 +21,7 @@ describe('Main Functions', () => {
   });
 
   describe('createBoard', () => {
-    before(() => board = createBoard());
+    beforeEach(() => board = createBoard());
     it('should have an array of length 10, containing 10 objects', () => {
       assert(board.length === 10 && board[9].length === 10);
     });
@@ -70,7 +70,7 @@ describe('Main Functions', () => {
   });
 
   describe('removeShip', () => {
-    before(() => board = createBoard());
+    beforeEach(() => board = createBoard());
     it('should return true if the ship was on the board, and successfully removed', () => {
       placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
       assert.isTrue(removeShip('carrier', board, 'player'));
@@ -82,7 +82,7 @@ describe('Main Functions', () => {
   });
 
   describe('doesHit', () => {
-    before(() => board = createBoard());
+    beforeEach(() => board = createBoard());
 
     it('should return true when firing on a cell occupied by a ship.', () => {
       placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
