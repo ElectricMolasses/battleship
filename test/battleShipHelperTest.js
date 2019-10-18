@@ -58,7 +58,15 @@ describe('Helper Functions', () => {
   });
 
   describe('isOrientationValid', () => {
-
+    it('should return true if the orientation is horizontal', () => {
+      assert.isTrue(isOrientationValid('horizontal'));
+    });
+    it('should return true if the orientation is vertical', () => {
+      assert.isTrue(isOrientationValid('vertical'));
+    });
+    it('should return false if the orientation is not horizontal or vertical', () => {
+      assert.isFalse(isOrientationValid('Horizontal'));
+    })
   });
 
   describe('doesShipOverlap', () => {
