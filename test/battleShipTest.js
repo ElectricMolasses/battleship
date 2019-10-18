@@ -101,6 +101,12 @@ describe('Main Functions', () => {
       assert.isTrue(fire(1, 1, board, 'player'));
     });
 
+    it('should modify the hit points of that ship on a hit.', () => {
+      placeShip(1, 1, 'carrier', 'horizontal', board, 'player');
+      fire(1, 1, board, 'player');
+      assert.equal(SHIPS.carrier.player.hp, 4);
+    });
+
     it('should change the wasShot property of that cell on a hit.', () => {
       placeShip(2, 3, 'carrier', 'horizontal', board, 'player');
       fire(4, 3, board, 'player');
