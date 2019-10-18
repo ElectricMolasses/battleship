@@ -10,6 +10,7 @@ const {
   placeShip,
   removeShip,
   fire,
+  logShots,
 } = main;
 let board;
 
