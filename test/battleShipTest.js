@@ -154,9 +154,5 @@ describe('Main Functions', () => {
       expect(console.log.calledOnce).to.be.true;
       expect(console.log.calledWith(`computer shoots at D3: MISS`)).to.be.true;
     });
-    /*
-    it('should dispay a message with the computers name, where they fired, an whether or not the shot landed.', () => {
-      assert.equal(logShot(3, 2, false, 'computer'), `computer shoots at D3: MISS`);
-    });*/
   });
 });
