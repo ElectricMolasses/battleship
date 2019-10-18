@@ -99,8 +99,12 @@ describe('Helper Functions', () => {
     beforeEach(() => setShipCoords(2, 5, 'destroyer', 'horizontal', 'player'));
     afterEach(() => resetSHIPS());
 
-    it('should store the coordinates in the global SHIP object.', () => {
-      
+    it('should store the X coordinate in the global SHIPS object.', () => {
+      assert.equal(SHIPS.destroyer.player.X, 2);
+    });
+
+    it('should store the Y coordinate in the global SHIPS object.', () => {
+      assert.equal(SHIPS.destroyer.player.Y, 5);
     });
   });
 
