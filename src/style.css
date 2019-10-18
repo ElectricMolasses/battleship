@@ -132,3 +132,8 @@ body {
   border-color: black;
   border-width: 1px;
 }
+
+.cellImage {
+  width: 80px;
+  height: 80px;
+}

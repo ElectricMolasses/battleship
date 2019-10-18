@@ -22,7 +22,6 @@ const drawGrid = function(element) {
         .attr('id', `cell${j}-${i}`)
         .click(() => {
           //Test method, will have to sent shot requests to game engine.
-          $(`#cell${j}-${i}`).css('background-color', 'red');
           drawHit($(`#cell${j}-${i}`));
         }));
       cellRows[i].append(cells[i][j]);
@@ -44,7 +43,7 @@ const fireOnCell = function(cell) {
 };
 
 const drawHit = function(cell) {
-  cell.append($('<img src="./assets/Fire/fire.png" alt="hit">'));
+  cell.append($('<img src="./assets/Fire/fire" alt="hit">').addClass('cellImage'));
 };
 
 const drawMiss = function(cell) {
