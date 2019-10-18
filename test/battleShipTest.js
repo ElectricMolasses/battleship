@@ -138,6 +138,8 @@ describe('Main Functions', () => {
     // AHHHHHHHHHH
     beforeEach(function() {
       let log = console.log;
+      // Sinon automatically cleans up stubs for us before it completes
+      // a test, so we shouldn't have to worry about restore().
       this.sinon.stub(console, 'log').callsFake(() => {
         return log.apply(log, arguments);
       });
