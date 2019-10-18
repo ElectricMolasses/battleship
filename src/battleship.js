@@ -181,16 +181,24 @@ const startGame = function() {
   const computerBoard = createBoard();
 
   let playing = true;
+  let matchOngoing = 'false';
 
   // Determine who goes first.
 
   let turn = 'player';
-
+  let currentBoard = playerBoard;
+  
   while (playing) {
-    // Accept user input.
+    // Ship placement will be INSIDE this loop to allow for a replay option.
 
-    // Accept computer input.
+    while (matchOngoing) {
+      // Turns happen one by one in this loop, and
+      // turn gets swapped between player and computer
+      // at the end.
+    }
+
   }
+  
 };
 
 module.exports = {
