@@ -18,6 +18,7 @@ const {
   reduceHP,
   hitCell,
   isOccupied,
+  convertCellName,
 } = main;
 
 let board;
