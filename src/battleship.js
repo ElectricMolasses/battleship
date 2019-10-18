@@ -148,6 +148,9 @@ const isOrientationValid = function(orientation) {
 
 const fire = function(x, y, board, targetPlayer) {
   
+  if (board[x][x].shipType !== null) {
+    return true;
+  }
 };
 
 // Start game will handle the game loop, created boards for both players, and
