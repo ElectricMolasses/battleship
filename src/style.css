@@ -112,7 +112,7 @@ body {
   width: 875px;
   height: 875px;
   display: flex;
-  
+
 }
 
 #gameView .right #grid {
@@ -120,4 +120,15 @@ body {
   width: 850px;
   height: 850px;
   margin: auto;
+}
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
