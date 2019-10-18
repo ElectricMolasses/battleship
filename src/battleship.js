@@ -186,7 +186,7 @@ const logShot = function(x, y, hitStatus, player) {
 };
 
 const convertCellName = function(x, y) {
-  
+  return `${String.fromCharCode(65 + x)}${y + 1}`;
 };
 
 // Start game will handle the game loop, created boards for both players, and
