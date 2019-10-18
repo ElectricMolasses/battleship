@@ -95,6 +95,7 @@ describe('Helper Functions', () => {
       board = createBoard();
       placeShip(1, 1, 'carrier', 'vertical', board, 'player');
     });
+    after(() => resetSHIPS());
 
     it('should return false if the ships do not overlap', () => {
       assert.isFalse(doesShipOverlap(0, 0, 'destroyer', 'horizontal', board));
