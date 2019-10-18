@@ -139,6 +139,7 @@ const isPointValid = function(x, y, board) {
 
 const isPlayerValid = function(player) {
   return (player === "player" || player === "computer");
+  // Consider making this throw an error for clarity later.
 };
 
 const isOrientationValid = function(orientation) {
@@ -146,7 +147,7 @@ const isOrientationValid = function(orientation) {
 };
 
 const fire = function(x, y, board, targetPlayer) {
-
+  
 };
 
 // Start game will handle the game loop, created boards for both players, and
