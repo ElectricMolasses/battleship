@@ -111,4 +111,13 @@ body {
   border-width: 1px;
   width: 875px;
   height: 875px;
+  display: flex;
+  
+}
+
+#gameView .right #grid {
+  background: #484438;
+  width: 850px;
+  height: 850px;
+  margin: auto;
 }

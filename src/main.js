@@ -1,5 +1,9 @@
-const drawGrid = function() {
+const drawGrid = function(element) {
+  const gridWidth = element.innerWidth();
+  const gridHeight = element.innerHeight();
+  
 
+  console.log(`Width: ${gridWidth} Height: ${gridHeight}`);
 };
 
 const drawCell = function() {
@@ -8,5 +12,5 @@ const drawCell = function() {
 
 $(function() {
   const gridContainer = $('#grid');
-  gridContainer.addClass('This is dumb');
+  drawGrid(gridContainer);
 });
