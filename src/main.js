@@ -29,6 +29,19 @@ const drawGrid = function(element) {
   }
 };
 
+const drawShip = function(cell) {
+
+};
+
+// Yet to determine whether it takes a ship or a cell.
+const eraseShip = function() {
+
+};
+
+const fireOnCell = function(cell) {
+
+};
+
 $(function() {
   const gridContainer = $('#grid');
   drawGrid(gridContainer);
