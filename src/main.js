@@ -122,10 +122,22 @@ const drawMiss = function(cell) {
 };
 
 const createRemoveListeners = function() {
+  for (const ship in SHIP_IMAGES) {
+    $(`#remove${ship}`).click(() => {
+      // Check to see if the ship has been placed.
+      // If it has not been placed
+      // Set it to the active ship to place.
+      
 
+      // If it has been placed.
+      // Request to game logic to remove ship.
+      eraseShip(ship);
+    });
+  }
 };
 
 $(function() {
   const gridContainer = $('#grid');
   drawGrid(gridContainer);
+  createRemoveListeners();
 });
