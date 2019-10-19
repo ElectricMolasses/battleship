@@ -22,15 +22,30 @@ const drawGrid = function(element) {
         .attr('id', `cell${j}-${i}`)
         .click(() => {
           //Test method, will have to sent shot requests to game engine.
-          drawMiss($(`#cell${j}-${i}`));
+          drawShip($(`#cell${j}-${i}`), 'carrier');
         }));
       cellRows[i].append(cells[i][j]);
     }
   }
 };
 
-const drawShip = function(cell) {
+const drawShip = function(cell, ship) {
+  if (ship === 'carrier') {
+    cell.append($('<img src="./assets/Carrier/rotated-ShipCarrierHull.png" alt="carrier">')
+      .attr('id', 'carrierImage'));
+  }
+  if (ship === 'battleship') {
 
+  }
+  if (ship === 'cruiser') {
+
+  }
+  if (ship === 'submarine') {
+
+  }
+  if (ship === 'destroyer') {
+    
+  }
 };
 
 // Yet to determine whether it takes a ship or a cell.

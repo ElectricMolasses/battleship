@@ -139,21 +139,26 @@ body {
 }
 
 #carrierImage {
-  width: 400px;
+  width: 480px;
+  height: 80px;
 }
 
 #battleshipImage {
-  width: 320px;
+  width: 300px;
+  height: 80px;
 }
 
 #cruiserImage {
-  width: 240px;
+  width: 220px;
+  height: 80px;
 }
 
 #submarineImage {
-  width: 240px;
+  width: 220px;
+  height: 80px;
 }
 
 #destroyerImage {
-  width: 160px;
+  width: 140px;
+  height: 80px;
 }
