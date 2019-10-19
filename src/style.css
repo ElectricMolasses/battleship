@@ -136,6 +136,7 @@ body {
 .cellImage {
   width: 80px;
   height: 80px;
+  z-index: 10;
 }
 
 #carrierImageH {
