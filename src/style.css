@@ -112,14 +112,22 @@ body {
   width: 875px;
   height: 875px;
   display: flex;
-
+  flex-direction: column;
 }
 
-#gameView .right #grid {
+#gameView .right .grid {
   background: #484438;
-  width: 850px;
-  height: 850px;
+  width: 425px;
+  height: 425px;
   margin: auto;
+}
+
+#gameView .right #playerGrid {
+  
+}
+
+#gameView .right #opponentGrid {
+
 }
 
 .rowContainer {
@@ -134,57 +142,57 @@ body {
 }
 
 .cellImage {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   z-index: 10;
 }
 
 #carrierImageH {
-  width: 480px;
-  height: 80px;
+  width: 240px;
+  height: 40px;
 }
 
 #battleshipImageH {
-  width: 300px;
-  height: 80px;
+  width: 150px;
+  height: 40px;
 }
 
 #cruiserImageH {
-  width: 220px;
-  height: 80px;
+  width: 110px;
+  height: 40px;
 }
 
 #submarineImageH {
-  width: 220px;
-  height: 80px;
+  width: 110px;
+  height: 40px;
 }
 
 #destroyerImageH {
-  width: 140px;
-  height: 80px;
+  width: 70px;
+  height: 40px;
 }
 
 #carrierImageV {
-  width: 80px;
-  height: 480px;
+  width: 40px;
+  height: 240px;
 }
 
 #battleshipImageV {
-  width: 80px;
-  height: 300px;
+  width: 40px;
+  height: 150px;
 }
 
 #cruiserImageV {
-  width: 80px;
-  height: 220px;
+  width: 40px;
+  height: 110px;
 }
 
 #submarineImageV {
-  width: 80px;
-  height: 220px;
+  width: 40px;
+  height: 110px;
 }
 
 #destroyerImageV {
-  width: 80px;
-  height: 140px;
+  width: 40px;
+  height: 70px;
 }

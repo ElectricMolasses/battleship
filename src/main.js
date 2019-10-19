@@ -137,7 +137,7 @@ const createRemoveListeners = function() {
 };
 
 $(function() {
-  const gridContainer = $('#grid');
+  const gridContainer = $('#playerGrid');
   drawGrid(gridContainer);
   createRemoveListeners();
 });
