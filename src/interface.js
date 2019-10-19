@@ -28,7 +28,8 @@ const requestPlaceShip = function(x, y, ship, orientation) {
 };
 
 const requestRemoveShip = function(ship) {
-
+  // Will return true if removed, and false if not.
+  return removeShip(ship, playerBoard, 'player');
 };
 
 const requestFire = function(x, y) {

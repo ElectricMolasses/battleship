@@ -128,6 +128,7 @@ const drawShip = function(cell, ship, orientation) {
 
 // Yet to determine whether it takes a ship or a cell.
 const eraseShip = function(ship) {
+  if (!requestRemoveShip(ship)) return false;
   $(`#${ship}ImageH`).remove();
   $(`#${ship}ImageV`).remove();
 };

@@ -54,7 +54,6 @@ const createBoard = function() {
 // Orientation will only accept 'vertical' or 'horizontal'
 // Player will only accept 'player' or 'computer'
 const placeShip = function(x, y, ship, orientation, board, player) {
-  console.log(arguments);
   
   if (isShipPlaced(ship, player) ||
       !isPointValid(x, y, board) ||
