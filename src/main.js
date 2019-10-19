@@ -21,6 +21,10 @@ const SHIP_IMAGES = {
   }
 };
 
+const genBoardId = function() {
+  return Math.ceil(Math.random() * 10000);
+};
+
 // drawGrid will take callbacks in addition to the element it's targetting,
 // and apply the callbacks to each cell of the grid under a .click() event.
 const drawGrid = function(element) {
