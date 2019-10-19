@@ -21,6 +21,8 @@ const SHIP_IMAGES = {
   }
 };
 
+// drawGrid will take callbacks in addition to the element it's targetting,
+// and apply the callbacks to each cell of the grid under a .click() event.
 const drawGrid = function(element) {
   const gridWidth = element.innerWidth();
   const gridHeight = element.innerHeight();
