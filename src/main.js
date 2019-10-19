@@ -150,7 +150,9 @@ const createRemoveListeners = function() {
 };
 
 $(function() {
-  const gridContainer = $('#playerGrid');
-  drawGrid(gridContainer, drawShip);
+  const playerBoard = $('#playerGrid');
+  const opponentBoard = $('#opponentGrid');
+  drawGrid(playerBoard, drawShip);
+  drawGrid(opponentBoard, drawHit);
   createRemoveListeners();
 });
