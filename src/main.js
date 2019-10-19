@@ -65,17 +65,19 @@ const drawGrid = function(element) {
 
 const convertCellToCoords = function(cell) {
   // Index will always be the same in cells, regex for practice.
-  const x = cell.attr('id').match(/\d(?=-)/);
-  const y = cell.attr('id').match(/\d$/);
+  const x = Number(cell.attr('id').match(/\d(?=-)/)[0]);
+  const y = Number(cell.attr('id').match(/\d$/)[0]);
   return [
     x,
     y
   ];
-  // $(`#${boardId}cell2-5`)
 };
 
 const drawShip = function(cell, ship, orientation) {
-  requestPlaceShip();
+  const [x, y] = convertCellToCoords(cell);
+  if (!requestPlaceShip(x, y, ship, orientation)) {
+    return;
+  }
 
   if (ship === 'carrier') {
     if (orientation === 'horizontal') {
@@ -177,4 +179,5 @@ $(function() {
   drawGrid(playerBoard, drawShip);          // Will need to request placing a ship.
   drawGrid(opponentBoard, drawHit);         // Will need to request firing on a cell.
   createRemoveListeners();
+
 });

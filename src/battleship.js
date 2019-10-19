@@ -54,13 +54,14 @@ const createBoard = function() {
 // Orientation will only accept 'vertical' or 'horizontal'
 // Player will only accept 'player' or 'computer'
 const placeShip = function(x, y, ship, orientation, board, player) {
-
+  console.log(arguments);
+  
   if (isShipPlaced(ship, player) ||
       !isPointValid(x, y, board) ||
       !isShipTailValid(x, y, ship, orientation, board) ||
       doesShipOverlap(x, y, ship, orientation, board) ||
       !isOrientationValid(orientation)) return false;
-  
+
   if (!isPlayerValid(player)) throw Error("Invalid player argument");
   
   setShipCoords(x, y, ship, orientation, player);
@@ -71,6 +72,7 @@ const placeShip = function(x, y, ship, orientation, board, player) {
       board[x][y + i].shipType = ship;
     }
   }
+  
   return true;
 };
 
