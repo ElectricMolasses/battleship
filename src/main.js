@@ -4,20 +4,20 @@ const SHIP_IMAGES = {
     vertical: './assets/Carrier/ShipCarrierHull.png'
   },
   battleship: {
-    horizontal: '',
-    vertical: ''
+    horizontal: './assets/Battleship/rotated-ShipBattleshipHull.png',
+    vertical: './assets/Battleship/ShipBattleshipHull.png'
   },
   cruiser: {
-    horizontal: '',
-    vertical: ''
+    horizontal: './assets/Cruiser/rotated-ShipCruiserHull.png',
+    vertical: './assets/Cruiser/ShipCruiserHull.png'
   },
   submarine: {
-    horizontal: '',
-    vertical: ''
+    horizontal: './assets/Submarine/rotated-ShipSubMarineHull.png',
+    vertical: './assets/Submarine/ShipSubMarineHull.png'
   },
   destroyer: {
-    horizontal: '',
-    vertical: ''
+    horizontal: './assets/Destroyer/rotated-ShipDestroyerHull.png',
+    vertical: './assets/Destroyer/ShipDestroyerHull.png'
   }
 };
 
