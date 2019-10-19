@@ -24,6 +24,9 @@ const SHIP_IMAGES = {
 // drawGrid will take callbacks in addition to the element it's targetting,
 // and apply the callbacks to each cell of the grid under a .click() event.
 const drawGrid = function(element) {
+  const callbacks = Array.prototype.slice.call(arguments, 1);
+  //Remove named param's from the arguments object for later use.
+
   const gridWidth = element.innerWidth();
   const gridHeight = element.innerHeight();
 
@@ -46,8 +49,10 @@ const drawGrid = function(element) {
         .addClass('cell')
         .attr('id', `cell${j}-${i}`)
         .click(() => {
-          //Test method, will have to sent shot requests to game engine.
-          drawShip($(`#cell${j}-${i}`), 'battleship', 'vertical');
+          for (const func of callbacks) {
+            func($(`#cell${j}-${i}`), 'battleship', 'vertical');
+          }
+          
         }));
       cellRows[i].append(cells[i][j]);
     }
@@ -140,6 +145,6 @@ const createRemoveListeners = function() {
 
 $(function() {
   const gridContainer = $('#playerGrid');
-  drawGrid(gridContainer);
+  drawGrid(gridContainer, drawShip);
   createRemoveListeners();
 });
