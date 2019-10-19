@@ -134,6 +134,12 @@ const eraseShip = function(ship) {
 };
 
 const fireOnCell = function(cell) {
+  const [x, y] = convertCellToCoords(cell);
+  if (requestFire(x, y)) {
+    drawHit(cell);
+  } else {
+    drawMiss(cell);
+  }
   
 };
 
