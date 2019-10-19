@@ -1,3 +1,26 @@
+const SHIP_IMAGES = {
+  carrier: {
+    horizontal: './assets/Carrier/rotated-ShipCarrierHull.png',
+    vertical: './assets/Carrier/ShipCarrierHull.png'
+  },
+  battleship: {
+    horizontal: '',
+    vertical: ''
+  },
+  cruiser: {
+    horizontal: '',
+    vertical: ''
+  },
+  submarine: {
+    horizontal: '',
+    vertical: ''
+  },
+  destroyer: {
+    horizontal: '',
+    vertical: ''
+  }
+};
+
 const drawGrid = function(element) {
   const gridWidth = element.innerWidth();
   const gridHeight = element.innerHeight();
@@ -44,7 +67,7 @@ const drawShip = function(cell, ship) {
 
   }
   if (ship === 'destroyer') {
-    
+
   }
 };
 
