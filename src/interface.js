@@ -20,7 +20,8 @@ const startGame = function(goesFirst) {
 };
 
 const requestPlaceShip = function(x, y, ship, orientation) {
-
+  // Will return true if placed, and false if not.
+  return placeShip(x, y, ship, orientation, playerBoard, 'player');
 };
 
 const requestFire = function(x, y) {
