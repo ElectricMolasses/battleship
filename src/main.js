@@ -121,6 +121,10 @@ const drawMiss = function(cell) {
     .css('mix-blend-mode', 'multiply'));
 };
 
+const createRemoveListeners = function() {
+
+};
+
 $(function() {
   const gridContainer = $('#grid');
   drawGrid(gridContainer);
