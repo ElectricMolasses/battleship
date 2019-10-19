@@ -152,7 +152,7 @@ const createRemoveListeners = function() {
 $(function() {
   const playerBoard = $('#playerGrid');
   const opponentBoard = $('#opponentGrid');
-  drawGrid(playerBoard, drawShip);
-  drawGrid(opponentBoard, drawHit);
+  drawGrid(playerBoard, drawShip);          // Will need to request placing a ship.
+  drawGrid(opponentBoard, drawHit);         // Will need to request firing on a cell.
   createRemoveListeners();
 });
