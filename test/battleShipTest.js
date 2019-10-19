@@ -53,7 +53,7 @@ describe('Main Functions', () => {
                     board[2][1].shipType === 'carrier' &&
                     board[3][1].shipType === 'carrier' &&
                     board[4][1].shipType === 'carrier' &&
-                    board[4][1].shipType === 'carrier');
+                    board[5][1].shipType === 'carrier');
     });
 
     it('should return false if the ship has already been placed', () => {
