@@ -101,8 +101,9 @@ const drawShip = function(cell, ship, orientation) {
 };
 
 // Yet to determine whether it takes a ship or a cell.
-const eraseShip = function() {
-
+const eraseShip = function(ship) {
+  $(`#${ship}ImageH`).remove();
+  $(`#${ship}ImageV`).remove();
 };
 
 const fireOnCell = function(cell) {
