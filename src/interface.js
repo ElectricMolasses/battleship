@@ -1,9 +1,10 @@
+/*  Will be brought back if this is ever moved to a proper backend for multiplayer.
 const {
   createBoard,
   placeShip,
   fire
 } = require('./battleship');
-
+*/
 let playerBoard;
 let opponentBoard;
 let currentTurn;

@@ -39,8 +39,6 @@ const drawGrid = function(element) {
 
   const boardId = genBoardId();
   
-  console.log(`Width: ${gridWidth} Height: ${gridHeight}`);
-  
   for (let i = 0; i < 10; i++) {
     cells.push([]);
     cellRows.push($('<div></div>').width(gridWidth)
@@ -65,7 +63,19 @@ const drawGrid = function(element) {
   }
 };
 
+const convertCellToCoords = function(cell) {
+  // Index will always be the same in cells, regex for practice.
+  const x = cell.match(/\d?=-/);
+  const y = cell.match(/\d$/);
+  return [
+    x,
+    y
+  ];
+};
+
 const drawShip = function(cell, ship, orientation) {
+  requestPlaceShip();
+
   if (ship === 'carrier') {
     if (orientation === 'horizontal') {
       cell.append($(`<img src="${SHIP_IMAGES.carrier.horizontal}" alt="carrier">`)
