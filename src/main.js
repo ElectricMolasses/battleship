@@ -149,6 +149,17 @@ const createRemoveListeners = function() {
   }
 };
 
+const resetGame = function(playerBoard, opponentBoard) {
+  clearBoard(playerBoard);
+  clearBoard(opponentBoard);
+  drawGrid(playerBoard, drawShip);
+  drawGrid(opponentBoard, drawHit);
+};
+
+const clearBoard = function(board) {
+  board.empty();
+};
+
 $(function() {
   const playerBoard = $('#playerGrid');
   const opponentBoard = $('#opponentGrid');
