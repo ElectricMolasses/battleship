@@ -37,8 +37,14 @@ const receive = function() {
 // Will need to send opponents shots to the players board.
 const playerBoard;
 const opponentBoard;
+let currentTurn;
 
-const startGame = function() {
+const startGame = function(goesFirst) {
   playerBoard = createBoard();
   opponentBoard = createBoard();
+  if(goesFirst === 'player') {
+    currentTurn = 'player';
+  } else {
+    currentTurn = 'opponent';
+  }
 };
