@@ -65,12 +65,13 @@ const drawGrid = function(element) {
 
 const convertCellToCoords = function(cell) {
   // Index will always be the same in cells, regex for practice.
-  const x = cell.match(/\d?=-/);
-  const y = cell.match(/\d$/);
+  const x = cell.attr('id').match(/\d(?=-)/);
+  const y = cell.attr('id').match(/\d$/);
   return [
     x,
     y
   ];
+  // $(`#${boardId}cell2-5`)
 };
 
 const drawShip = function(cell, ship, orientation) {
