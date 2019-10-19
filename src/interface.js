@@ -6,3 +6,13 @@
 const request = function(command) {
 
 };
+
+// Will need to request to place a ship.
+// Will need to request to remove a ship.
+// Will need to request to fire a shot.
+
+const receive = function() {
+
+};
+
+// Will need to send opponents shots to the players board.
