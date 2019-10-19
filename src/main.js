@@ -36,6 +36,8 @@ const drawGrid = function(element) {
 
   const cellRows = [];
   const cells = [];
+
+  const boardId = genBoardId();
   
   console.log(`Width: ${gridWidth} Height: ${gridHeight}`);
   
@@ -44,17 +46,17 @@ const drawGrid = function(element) {
     cellRows.push($('<div></div>').width(gridWidth)
       .height(gridHeight / 10)
       .addClass('rowContainer')
-      .attr('id', `gridRow${i}`));
+      .attr('id', `${boardId}gridRow${i}`));
     element.append(cellRows[i]);
 
     for (let j = 0; j < 10; j++) {
       cells[i].push($('<div></div>').width(gridWidth / 10)
         .height(gridHeight / 10)
         .addClass('cell')
-        .attr('id', `cell${j}-${i}`)
+        .attr('id', `${boardId}cell${j}-${i}`)
         .click(() => {
           for (const func of callbacks) {
-            func($(`#cell${j}-${i}`), 'battleship', 'vertical');
+            func($(`#${boardId}cell${j}-${i}`), 'battleship', 'vertical');
           }
           
         }));
