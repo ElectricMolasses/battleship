@@ -4,13 +4,46 @@ const {
   fire
 } = require('./battleship');
 
+let playerBoard;
+let opponentBoard;
+let currentTurn;
+let winLoss = [0, 0];
+
+const startGame = function(goesFirst) {
+  playerBoard = createBoard();
+  opponentBoard = createBoard();
+  if (goesFirst === 'player') {
+    currentTurn = 'player';
+  } else {
+    currentTurn = 'opponent';
+  }
+};
+
+const requestPlaceShip = function(x, y, ship, orientation) {
+
+};
+
+const requestFire = function(x, y) {
+
+
+  endTurn();
+};
+
+const endTurn = function() {
+
+};
+
+const getScore = function() {
+  return winLoss;
+};
+
 const requests = {
   'startGame': startGame,
-  'fire': 0,
-  'placeShip': 0,
-  'endTurn': 0,
+  'fire': requestFire,
+  'placeShip': requestPlaceShip,
+  'endTurn': endTurn,
   'goesFirst': 0,
-  'getLeaderboard': 0,
+  'getScore': getScore,
 };
 
 const directions = {
@@ -22,8 +55,10 @@ const directions = {
 // Effectively exists to help control what functions main can access,
 // in addition to filtering input.
 
-const request = function(command) {
-
+const request = function(command, args) {
+  if (command in requests) {
+    command(args);
+  } else throw Error("Invalid request: " + command);
 };
 
 // Will need to request to place a ship.
@@ -35,16 +70,3 @@ const receive = function() {
 };
 
 // Will need to send opponents shots to the players board.
-const playerBoard;
-const opponentBoard;
-let currentTurn;
-
-const startGame = function(goesFirst) {
-  playerBoard = createBoard();
-  opponentBoard = createBoard();
-  if(goesFirst === 'player') {
-    currentTurn = 'player';
-  } else {
-    currentTurn = 'opponent';
-  }
-};
