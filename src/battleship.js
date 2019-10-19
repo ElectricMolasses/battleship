@@ -196,6 +196,7 @@ const convertCellName = function(x, y) {
 // Start game will handle the game loop, created boards for both players, and
 // allow interactions to begin.  It will ONLY handle the game logic, actual
 // user input will be processed from the main function.
+/*
 const startGame = function() {
   const playerBoard = createBoard();
   const computerBoard = createBoard();
@@ -220,6 +221,7 @@ const startGame = function() {
   }
   
 };
+*/
 
 module.exports = {
   SHIPS,
