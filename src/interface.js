@@ -5,7 +5,7 @@ const {
 } = require('./battleship');
 
 const requests = {
-  'startGame': 0,
+  'startGame': startGame,
   'fire': 0,
   'placeShip': 0,
   'endTurn': 0,
@@ -35,5 +35,10 @@ const receive = function() {
 };
 
 // Will need to send opponents shots to the players board.
-const playerBoard = createBoard();
-const opponentBoard = createBoard();
+const playerBoard;
+const opponentBoard;
+
+const startGame = function() {
+  playerBoard = createBoard();
+  opponentBoard = createBoard();
+};
