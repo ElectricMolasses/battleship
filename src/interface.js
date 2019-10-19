@@ -1,7 +1,21 @@
 const {
+  createBoard,
   placeShip,
   fire
 } = require('./battleship');
+
+const requests = {
+  'startGame': 0,
+  'fire': 0,
+  'placeShip': 0,
+  'endTurn': 0,
+  'goesFirst': 0,
+  'getLeaderboard': 0,
+};
+
+const directions = {
+  'opponentsShot': 0
+};
 
 // Include for main.js, will handle communication back and forth
 // between it and the battleship file.
@@ -21,3 +35,5 @@ const receive = function() {
 };
 
 // Will need to send opponents shots to the players board.
+const playerBoard = createBoard();
+const opponentBoard = createBoard();
