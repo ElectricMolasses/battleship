@@ -45,7 +45,7 @@ const drawGrid = function(element) {
         .attr('id', `cell${j}-${i}`)
         .click(() => {
           //Test method, will have to sent shot requests to game engine.
-          drawShip($(`#cell${j}-${i}`), 'carrier', 'horizontal');
+          drawShip($(`#cell${j}-${i}`), 'battleship', 'vertical');
         }));
       cellRows[i].append(cells[i][j]);
     }
@@ -63,16 +63,40 @@ const drawShip = function(cell, ship, orientation) {
     }
   }
   if (ship === 'battleship') {
-
+    if (orientation === 'horizontal') {
+      cell.append($(`<img src="${SHIP_IMAGES.battleship.horizontal}" alt="carrier">`)
+        .attr('id', 'battleshipImageH'));
+    } else {
+      cell.append($(`<img src="${SHIP_IMAGES.battleship.vertical}" alt="carrier">`)
+        .attr('id', 'battleshipImageV'));
+    }
   }
   if (ship === 'cruiser') {
-
+    if (orientation === 'horizontal') {
+      cell.append($(`<img src="${SHIP_IMAGES.cruiser.horizontal}" alt="carrier">`)
+        .attr('id', 'cruiserImageH'));
+    } else {
+      cell.append($(`<img src="${SHIP_IMAGES.cruiser.vertical}" alt="carrier">`)
+        .attr('id', 'cruiserImageV'));
+    }
   }
   if (ship === 'submarine') {
-
+    if (orientation === 'horizontal') {
+      cell.append($(`<img src="${SHIP_IMAGES.submarine.horizontal}" alt="carrier">`)
+        .attr('id', 'submarineImageH'));
+    } else {
+      cell.append($(`<img src="${SHIP_IMAGES.submarine.vertical}" alt="carrier">`)
+        .attr('id', 'submarineImageV'));
+    }
   }
   if (ship === 'destroyer') {
-
+    if (orientation === 'horizontal') {
+      cell.append($(`<img src="${SHIP_IMAGES.destroyer.horizontal}" alt="carrier">`)
+        .attr('id', 'destroyerImageH'));
+    } else {
+      cell.append($(`<img src="${SHIP_IMAGES.destroyer.vertical}" alt="carrier">`)
+        .attr('id', 'destroyerImageV'));
+    }
   }
 };
 
