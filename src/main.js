@@ -45,17 +45,22 @@ const drawGrid = function(element) {
         .attr('id', `cell${j}-${i}`)
         .click(() => {
           //Test method, will have to sent shot requests to game engine.
-          drawShip($(`#cell${j}-${i}`), 'carrier');
+          drawShip($(`#cell${j}-${i}`), 'carrier', 'horizontal');
         }));
       cellRows[i].append(cells[i][j]);
     }
   }
 };
 
-const drawShip = function(cell, ship) {
+const drawShip = function(cell, ship, orientation) {
   if (ship === 'carrier') {
-    cell.append($('<img src="./assets/Carrier/rotated-ShipCarrierHull.png" alt="carrier">')
-      .attr('id', 'carrierImage'));
+    if (orientation === 'horizontal') {
+      cell.append($(`<img src="${SHIP_IMAGES.carrier.horizontal}" alt="carrier">`)
+        .attr('id', 'carrierImageH'));
+    } else {
+      cell.append($(`<img src="${SHIP_IMAGES.carrier.vertical}" alt="carrier">`)
+        .attr('id', 'carrierImageV'));
+    }
   }
   if (ship === 'battleship') {
 

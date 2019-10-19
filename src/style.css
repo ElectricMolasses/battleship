@@ -138,27 +138,52 @@ body {
   height: 80px;
 }
 
-#carrierImage {
+#carrierImageH {
   width: 480px;
   height: 80px;
 }
 
-#battleshipImage {
+#battleshipImageH {
   width: 300px;
   height: 80px;
 }
 
-#cruiserImage {
+#cruiserImageH {
   width: 220px;
   height: 80px;
 }
 
-#submarineImage {
+#submarineImageH {
   width: 220px;
   height: 80px;
 }
 
-#destroyerImage {
+#destroyerImageH {
   width: 140px;
   height: 80px;
+}
+
+#carrierImageV {
+  width: 80px;
+  height: 480px;
+}
+
+#battleshipImageV {
+  width: 80px;
+  height: 300px;
+}
+
+#cruiserImageV {
+  width: 80px;
+  height: 220px;
+}
+
+#submarineImageV {
+  width: 80px;
+  height: 220px;
+}
+
+#destroyerImageV {
+  width: 80px;
+  height: 140px;
 }
