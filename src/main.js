@@ -185,6 +185,14 @@ const clearBoard = function(board) {
   board.empty();
 };
 
+const switchOrientation = function() {
+  if (currentOrientation === 'horizontal') {
+    currentOrientation = 'vertical';
+  } else {
+    currentOrientation = 'horizontal';
+  }
+};
+
 $(function() {
   const playerBoard = $('#playerGrid');
   const opponentBoard = $('#opponentGrid');

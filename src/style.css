@@ -200,3 +200,8 @@ body {
   width: 40px;
   height: 70px;
 }
+
+#rotateButton {
+  width: 100px;
+  margin: 40px 10px 10px 10px;
+}
