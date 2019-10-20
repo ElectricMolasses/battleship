@@ -27,14 +27,13 @@ const startGame = function(goesFirst) {
     // Check if all ships are placed.
     // If they are not, tell the player to place them.
     // If they are, start the match.
+    areAllShipsPlaced();
   }
   if (gameStage === 'playing') {
     // Ask the player if they would like to restart.
     // If they would, clear the boards and set to placement.
   }
 };
-
-startGame();
 
 const requestPlaceShip = function(x, y, ship, orientation) {
   // Will return true if placed, and false if not.
@@ -107,3 +106,4 @@ const receive = function() {
 };
 
 // Will need to send opponents shots to the players board.
+startGame();

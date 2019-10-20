@@ -200,8 +200,10 @@ const switchShip = function(ship) {
   currentShip = ship;
 };
 
-const nextGamePhase = function() {
-
+const nextGamePhase = function(button) {
+  button.click(() => {
+    startGame();
+  });
 };
 
 $(function() {
@@ -211,4 +213,5 @@ $(function() {
   drawGrid(opponentBoard, fireOnCell);
   createRemoveListeners();
   linkSwitchButton($("#rotateButton"));
+  nextGamePhase($('#startGame'));
 });
