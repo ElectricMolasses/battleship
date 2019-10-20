@@ -21,6 +21,9 @@ const SHIP_IMAGES = {
   }
 };
 
+let currentShip = 'carrier';
+let currentOrientation = 'horizontal';
+
 const genBoardId = function() {
   return Math.ceil(Math.random() * 10000);
 };
@@ -54,7 +57,7 @@ const drawGrid = function(element) {
         .attr('id', `${boardId}cell${j}-${i}`)
         .click(() => {
           for (const func of callbacks) {
-            func($(`#${boardId}cell${j}-${i}`), 'battleship', 'vertical');
+            func($(`#${boardId}cell${j}-${i}`));
           }
           
         }));
@@ -73,8 +76,11 @@ const convertCellToCoords = function(cell) {
   ];
 };
 
-const drawShip = function(cell, ship, orientation) {
+const drawShip = function(cell) {
   const [x, y] = convertCellToCoords(cell);
+  const ship = currentShip;
+  const orientation = currentOrientation;
+
   if (!requestPlaceShip(x, y, ship, orientation)) {
     return;
   }
