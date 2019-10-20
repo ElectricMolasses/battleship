@@ -140,7 +140,6 @@ const fireOnCell = function(cell) {
   } else {
     drawMiss(cell);
   }
-  
 };
 
 const drawHit = function(cell) {
@@ -173,7 +172,7 @@ const resetGame = function(playerBoard, opponentBoard) {
   clearBoard(playerBoard);
   clearBoard(opponentBoard);
   drawGrid(playerBoard, drawShip);
-  drawGrid(opponentBoard, drawHit);
+  drawGrid(opponentBoard, fireOnCell);
 };
 
 const clearBoard = function(board) {
@@ -184,7 +183,7 @@ $(function() {
   const playerBoard = $('#playerGrid');
   const opponentBoard = $('#opponentGrid');
   drawGrid(playerBoard, drawShip);          // Will need to request placing a ship.
-  drawGrid(opponentBoard, drawHit);         // Will need to request firing on a cell.
+  drawGrid(opponentBoard, fireOnCell);         // Will need to request firing on a cell.
   createRemoveListeners();
 
 });

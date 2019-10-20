@@ -33,7 +33,7 @@ const requestRemoveShip = function(ship) {
 };
 
 const requestFire = function(x, y) {
-
+  return fire(x, y, opponentBoard, 'computer');
 
   endTurn();
 };
