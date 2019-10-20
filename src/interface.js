@@ -69,9 +69,9 @@ const areAllShipsPlaced = function() {
 
 const requestFire = function(x, y) {
   if (currentTurn !== 'player') return;
+  endTurn();
 
   if (fire(x, y, opponentBoard, 'computer')) {
-    endTurn();
     return true;
   }
   return false;
