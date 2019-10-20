@@ -135,6 +135,10 @@ const directions = {
   'opponentsShot': 0
 };
 
+const gameOver(winner) {
+
+};
+
 // DEPRECATED FOR LOCAL GAME TYPE.
 // These functions will likely be used if I overhaul the code to allow for multiplayer
 // As it stands, they can be ignored.
