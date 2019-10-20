@@ -10,8 +10,6 @@ let opponentBoard;
 let currentTurn;
 let gameStage = 'over';
 let winLoss = [0, 0];
-const playerShipStatus = {};
-const opponentShipStatus = {};
 
 const startGame = function(goesFirst) {
   if (gameStage === 'over' ||
@@ -41,14 +39,6 @@ const startGame = function(goesFirst) {
     // Ask the player if they would like to restart.
     // If they would, clear the boards and set to placement.
   }
-};
-
-const resetShipStatus = function(playerShips) {
-  playerShips.carrier = true;
-  playerShips.battleship = true;
-  playerShips.cruiser = true;
-  playerShips.submarine = true;
-  playerShips.destroyer = true;
 };
 
 const requestPlaceShip = function(x, y, ship, orientation) {
@@ -85,9 +75,9 @@ const requestFire = function(x, y) {
 
   if (fire(x, y, opponentBoard, 'computer')) {
     logShot(x, y, true, 'player');
-    console.log(SHIPS[opponentBoard[x][y].shipType].computer.hp);
+    //console.log(SHIPS[opponentBoard[x][y].shipType].computer.hp);
     if (SHIPS[opponentBoard[x][y].shipType].computer.hp === 0) {
-      console.log(logSink(x, y, 'player'));
+      logSink(opponentBoard[x][y].shipType, 'player');
     }
     endTurn();
     return true;

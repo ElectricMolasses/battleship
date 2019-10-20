@@ -196,6 +196,10 @@ const logShot = function(x, y, hitStatus, player) {
   }`);
 };
 
+const logSink = function(ship, player) {
+  console.log(`${player} has sunk a ${ship}!`);
+};
+
 const convertCellName = function(x, y) {
   return `${String.fromCharCode(65 + x)}${invertGridNumber(y + 1)}`;
 };
