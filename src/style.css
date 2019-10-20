@@ -79,6 +79,10 @@ body {
   flex-direction: column;
 }
 
+#gameView .left #shipStatus div {
+  height: 430px;
+}
+
 #gameView .left div div {
   display: flex;
   flex-direction: column;
