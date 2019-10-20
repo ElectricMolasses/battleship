@@ -137,4 +137,3 @@ const receive = function() {
 };
 
 // Will need to send opponents shots to the players board.
-startGame('player');

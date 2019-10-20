@@ -27,6 +27,6 @@ const dumbShot = function(board, player) {
     randomX = Math.floor(Math.random() * 10);
     randomY = Math.floor(Math.random() * 10);
   } while (board[randomX][randomY].wasShot);
-  
   return [randomX, randomY, fire(randomX, randomY, board, player)];
 };
+startGame('player');

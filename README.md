@@ -5,6 +5,7 @@ Web application that lets you play battleship.
 ## ToDo
 
 - Currently a bug in AI shots being displaced on the cell the ship has been placed on.  Need to make the elements float over the ships.
+- Current a bug where it will give the alert to place all ships as soon as the game begins to run, this should only appear if the player tries to start a game without placing all their ships.
 
 ## Dependencies
 
