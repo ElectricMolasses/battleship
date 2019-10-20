@@ -20,8 +20,6 @@ const startGame = function(goesFirst) {
 
     playerBoard = createBoard();
     opponentBoard = createBoard();
-    resetShipStatus(playerShipStatus);
-    resetShipStatus(opponentShipStatus);
   }
   if (gameStage === 'placement') {
     // Check if all ships are placed.
@@ -79,8 +77,8 @@ const requestFire = function(x, y) {
 
   if (fire(x, y, opponentBoard, 'computer')) {
     logShot(x, y, true, 'player');
-    if (SHIPS[opponentBoard[x][y].shipType].computer.hp === 0) {
-      logSink(opponentBoard[x][y].shipType, 'player');
+    if (didSink(x, y, opponentBoard[x][y].shipType, opponentBoard, 'computer')) {
+      logSink(opponentBoard[x][y].shipType, 'player');  
       opponentShips--;
       // If opponentShips hits 0, win.
     }
@@ -112,7 +110,7 @@ const opponentTurn = function() {
 
 const didSink = function(x, y, ship, targetBoard, targetPlayer) {
 
-  if (SHIPS[targetBoard[x][y]].ship[targetPlayer].hp === 0) return true;
+  if (SHIPS[targetBoard[x][y].shipType][targetPlayer].hp === 0) return true;
   return false;
 };
 
