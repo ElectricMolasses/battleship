@@ -87,8 +87,8 @@ const endTurn = function() {
 
 const opponentTurn = function() {
   const [x, y, hitStatus] = dumbShot(playerBoard, 'player');
-  const cell = convertCoordsToCell(x, y);
-  console.log('REACHED');
+  const cell = convertCoordsToCell(x, y, boardIds[0]);
+
   if (hitStatus) {
     drawHit(cell);
   } else {

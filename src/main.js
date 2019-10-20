@@ -87,6 +87,7 @@ const convertCellToCoords = function(cell) {
 };
 
 const convertCoordsToCell = function(x, y, id) {
+  console.log(`#${id}cell${x}-${y}`);
   return $(`#${id}cell${x}-${y}`);
 };
 
