@@ -1,0 +1,1 @@
+// Logic for computer opponent in battleship.
