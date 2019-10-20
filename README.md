@@ -2,6 +2,10 @@
 
 Web application that lets you play battleship.
 
+## Manually Tested
+
+- Hitting a ship does properly reduce its health, just need to make a statement to toss out when a ship has been destroyed and log it.
+
 ## ToDo
 
 - Currently a bug in AI shots being displaced on the cell the ship has been placed on.  Need to make the elements float over the ships.
