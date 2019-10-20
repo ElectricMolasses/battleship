@@ -200,6 +200,10 @@ const switchShip = function(ship) {
   currentShip = ship;
 };
 
+const nextGamePhase = function() {
+
+};
+
 $(function() {
   const playerBoard = $('#playerGrid');
   const opponentBoard = $('#opponentGrid');

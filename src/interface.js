@@ -46,6 +46,19 @@ const requestRemoveShip = function(ship) {
   return removeShip(ship, playerBoard, 'player');
 };
 
+const areAllShipsPlaced = function() {
+  // Will return true if every ship has been placed.
+  if (isShipPlaced('carrier', 'player') &&
+      isShipPlaced('battleship', 'player') &&
+      isShipPlaced('cruiser', 'player') &&
+      isShipPlaced('submarine', 'player') &&
+      isShipPlaced('destroyer', 'player')) {
+        alert('All Placed');
+      } else {
+        alert('Please place all of your ships.');
+      }
+};
+
 const requestFire = function(x, y) {
   return fire(x, y, opponentBoard, 'computer');
 
