@@ -66,6 +66,10 @@ const drawGrid = function(element) {
   }
 };
 
+const removeAfterClick = function(cell) {
+  cell.prop("onclick", null).off("click");
+};
+
 const convertCellToCoords = function(cell) {
   // Index will always be the same in cells, regex for practice.
   const x = Number(cell.attr('id').match(/\d(?=-)/)[0]);
@@ -141,7 +145,10 @@ const eraseShip = function(ship) {
 
 const fireOnCell = function(cell) {
   const [x, y] = convertCellToCoords(cell);
-  if (requestFire(x, y)) {
+  let result = requestFire(x, y);
+  console.log(result);
+  if (result === undefined) return;
+  if (result) {
     drawHit(cell);
   } else {
     drawMiss(cell);
@@ -202,7 +209,7 @@ const switchShip = function(ship) {
 
 const nextGamePhase = function(button) {
   button.click(() => {
-    startGame();
+    startGame('player'); //WILL NEED TO MAKE THIS TAKE WHOEVER GOES FIRST
   });
 };
 
@@ -210,7 +217,7 @@ $(function() {
   const playerBoard = $('#playerGrid');
   const opponentBoard = $('#opponentGrid');
   drawGrid(playerBoard, drawShip);
-  drawGrid(opponentBoard, fireOnCell);
+  drawGrid(opponentBoard, fireOnCell, removeAfterClick);
   createRemoveListeners();
   linkSwitchButton($("#rotateButton"));
   nextGamePhase($('#startGame'));

@@ -7,27 +7,31 @@ const {
 */
 let playerBoard;
 let opponentBoard;
-let currentTurn;
+let currentTurn = 'player';
 let gameStage = 'over';
 let winLoss = [0, 0];
 
 const startGame = function(goesFirst) {
-  if (gameStage === 'over') {
+  if (gameStage === 'over' ||
+      gameStage === undefined) {
     gameStage = 'placement';
 
     playerBoard = createBoard();
     opponentBoard = createBoard();
-    if (goesFirst === 'player') {
-      currentTurn = 'player';
-    } else {
-      currentTurn = 'opponent';
-    }
+
+    console.log(currentTurn);
   }
   if (gameStage === 'placement') {
     // Check if all ships are placed.
     // If they are not, tell the player to place them.
     // If they are, start the match.
     if (areAllShipsPlaced()) gameStage = 'playing';
+    if (goesFirst === 'player') {
+      currentTurn = 'player';
+    } else {
+      currentTurn = 'opponent';
+    }
+    console.log(currentTurn);
   }
   if (gameStage === 'playing') {
     // Ask the player if they would like to restart.
@@ -64,13 +68,21 @@ const areAllShipsPlaced = function() {
 };
 
 const requestFire = function(x, y) {
-  return fire(x, y, opponentBoard, 'computer');
+  if (currentTurn !== 'player') return;
 
-  endTurn();
+  if (fire(x, y, opponentBoard, 'computer')) {
+    endTurn();
+    return true;
+  }
+  return false;
 };
 
 const endTurn = function() {
+  currentTurn = 'opponent';
+};
 
+const opponentTurn = function() {
+  //currentTurn = 'player';
 };
 
 const getScore = function() {
@@ -83,7 +95,6 @@ const requests = {
   'placeShip': requestPlaceShip,
   'requestRemoveShip': requestRemoveShip,
   'endTurn': endTurn,
-  'goesFirst': 0,
   'getScore': getScore,
 };
 
@@ -111,4 +122,4 @@ const receive = function() {
 };
 
 // Will need to send opponents shots to the players board.
-startGame();
+startGame('player');
