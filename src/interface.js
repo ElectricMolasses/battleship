@@ -82,10 +82,19 @@ const requestFire = function(x, y) {
 
 const endTurn = function() {
   currentTurn = 'opponent';
+  opponentTurn();
 };
 
 const opponentTurn = function() {
-  //currentTurn = 'player';
+  const [x, y, hitStatus] = dumbShot(playerBoard, 'player');
+  const cell = convertCoordsToCell(x, y);
+
+  if (hitStatus) {
+    drawHit(cell);
+  } else {
+    drawMiss(cell);
+  }
+  currentTurn = 'player';
 };
 
 const getScore = function() {

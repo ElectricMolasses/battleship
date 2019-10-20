@@ -23,6 +23,11 @@ const SHIP_IMAGES = {
 
 let currentShip = 'carrier';
 let currentOrientation = 'horizontal';
+let boardIds = [];
+
+const storeId = function(id) {
+  boardIds.push(id);
+};
 
 const genBoardId = function() {
   return Math.ceil(Math.random() * 10000);
@@ -41,6 +46,7 @@ const drawGrid = function(element) {
   const cells = [];
 
   const boardId = genBoardId();
+  storeId(boardId);
   
   for (let i = 0; i < 10; i++) {
     cells.push([]);
@@ -78,6 +84,10 @@ const convertCellToCoords = function(cell) {
     x,
     y
   ];
+};
+
+const convertCoordsToCell = function(x, y, id) {
+  return $(`#${id}cell${x}-${y}`);
 };
 
 const drawShip = function(cell) {
