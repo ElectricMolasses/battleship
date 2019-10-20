@@ -10,6 +10,8 @@ let opponentBoard;
 let currentTurn;
 let gameStage = 'over';
 let winLoss = [0, 0];
+let playerShips;
+let opponentShips;
 
 const startGame = function(goesFirst) {
   if (gameStage === 'over' ||
@@ -27,6 +29,8 @@ const startGame = function(goesFirst) {
     // If they are, start the match.
     if (areAllShipsPlaced()) {
       dumbPlacement(opponentBoard, 'computer');
+      playerShips = 5;
+      opponentShips = 5;
       gameStage = 'playing';
       if (goesFirst === 'player') {
         currentTurn = 'player';
@@ -78,6 +82,8 @@ const requestFire = function(x, y) {
     //console.log(SHIPS[opponentBoard[x][y].shipType].computer.hp);
     if (SHIPS[opponentBoard[x][y].shipType].computer.hp === 0) {
       logSink(opponentBoard[x][y].shipType, 'player');
+      opponentShips--;
+      // If opponentShips hits 0, win.
     }
     endTurn();
     return true;
