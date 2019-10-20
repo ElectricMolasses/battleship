@@ -110,6 +110,12 @@ const opponentTurn = function() {
   currentTurn = 'player';
 };
 
+const didSink = function(x, y, ship, targetBoard, targetPlayer) {
+
+  if (SHIPS[targetBoard[x][y]].ship[targetPlayer].hp === 0) return true;
+  return false;
+};
+
 const getScore = function() {
   return winLoss;
 };
