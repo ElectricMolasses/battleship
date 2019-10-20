@@ -185,12 +185,20 @@ const clearBoard = function(board) {
   board.empty();
 };
 
-const switchOrientation = function() {
+const switchOrientation = function(button) {
   if (currentOrientation === 'horizontal') {
     currentOrientation = 'vertical';
+    if (button !== undefined) button.text('vertical');
   } else {
     currentOrientation = 'horizontal';
+    if (button !== undefined) button.text('horizontal');
   }
+};
+
+const linkSwitchButton = function(button) {
+  button.click(() => {
+    switchOrientation(button);
+  });
 };
 
 $(function() {
@@ -199,5 +207,5 @@ $(function() {
   drawGrid(playerBoard, drawShip);
   drawGrid(opponentBoard, fireOnCell);
   createRemoveListeners();
-
+  linkSwitchButton($("#rotateButton"));
 });
