@@ -8,13 +8,13 @@ const dumbPlacement = function(board, player) {
 
   for (const ship of ships) {
     do {
-      randomX = Math.floor(Math.random() * 10);
-      randomY = Math.floor(Math.random() * 10);
-      Math.round(Math.random) ? randomOrientation = 'horizontal' : 
+      console.log(SHIPS[ship].length);
+      randomX = Math.floor(Math.random() * (10 - SHIPS[ship].length));
+      randomY = Math.floor(Math.random() * (10 - SHIPS[ship].length));
+      console.log(`${randomX}, ${randomY}`);
+      Math.round(Math.random) === 1 ? randomOrientation = 'horizontal' :
         randomOrientation = 'vertical';
-      console.log(`RandomX: ${randomX}`);
-      console.log(`RandomY: ${randomY}`);
-      console.log(`RandomOrientation: ${randomOrientation}`);
+
     } while (!placeShip(randomX, randomY, ship, randomOrientation, board, player));
   }
 };

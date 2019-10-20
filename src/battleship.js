@@ -54,7 +54,8 @@ const createBoard = function() {
 // Orientation will only accept 'vertical' or 'horizontal'
 // Player will only accept 'player' or 'computer'
 const placeShip = function(x, y, ship, orientation, board, player) {
-  
+
+  if (!isShipTailValid(x, y, ship, orientation, board)) return false;
   if (isShipPlaced(ship, player) ||
       !isPointValid(x, y, board) ||
       !isShipTailValid(x, y, ship, orientation, board) ||
@@ -70,7 +71,7 @@ const placeShip = function(x, y, ship, orientation, board, player) {
     } else {
       board[x][y + i].shipType = ship;
     }
-  } 
+  }
   
   return true;
 };
@@ -125,6 +126,7 @@ const isShipTailValid = function(x, y, ship, orientation, board) {
 
 const doesShipOverlap = function(x, y, ship, orientation, board) {
   for (let i = 0; i < SHIPS[ship].length; i++) {
+
     if (orientation === 'horizontal') {
       if (board[x + i][y].shipType !== null) return true;
     } else {

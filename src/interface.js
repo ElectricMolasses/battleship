@@ -24,7 +24,7 @@ const startGame = function(goesFirst) {
     // If they are not, tell the player to place them.
     // If they are, start the match.
     if (areAllShipsPlaced()) {
-      dumbPlacement(playerBoard, 'player');
+      dumbPlacement(opponentBoard, 'computer');
       gameStage = 'playing';
       if (goesFirst === 'player') {
         currentTurn = 'player';
