@@ -197,7 +197,11 @@ const logShot = function(x, y, hitStatus, player) {
 };
 
 const convertCellName = function(x, y) {
-  return `${String.fromCharCode(65 + x)}${y + 1}`;
+  return `${String.fromCharCode(65 + x)}${invertGridNumber(y + 1)}`;
+};
+
+const invertGridNumber = function(num) {
+  return 11 - num;
 };
 
 // Start game will handle the game loop, created boards for both players, and
