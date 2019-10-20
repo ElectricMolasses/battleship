@@ -79,7 +79,6 @@ const requestFire = function(x, y) {
 
   if (fire(x, y, opponentBoard, 'computer')) {
     logShot(x, y, true, 'player');
-    //console.log(SHIPS[opponentBoard[x][y].shipType].computer.hp);
     if (SHIPS[opponentBoard[x][y].shipType].computer.hp === 0) {
       logSink(opponentBoard[x][y].shipType, 'player');
       opponentShips--;
