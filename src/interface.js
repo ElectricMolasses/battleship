@@ -27,7 +27,7 @@ const startGame = function(goesFirst) {
     // Check if all ships are placed.
     // If they are not, tell the player to place them.
     // If they are, start the match.
-    areAllShipsPlaced();
+    if (areAllShipsPlaced()) gameStage = 'playing';
   }
   if (gameStage === 'playing') {
     // Ask the player if they would like to restart.
@@ -37,12 +37,16 @@ const startGame = function(goesFirst) {
 
 const requestPlaceShip = function(x, y, ship, orientation) {
   // Will return true if placed, and false if not.
-  return placeShip(x, y, ship, orientation, playerBoard, 'player');
+  if (gameStage === 'placement') {
+    return placeShip(x, y, ship, orientation, playerBoard, 'player');
+  }
 };
 
 const requestRemoveShip = function(ship) {
   // Will return true if removed, and false if not.
-  return removeShip(ship, playerBoard, 'player');
+  if (gameStage === 'placement') {
+    return removeShip(ship, playerBoard, 'player');
+  }
 };
 
 const areAllShipsPlaced = function() {
@@ -52,9 +56,10 @@ const areAllShipsPlaced = function() {
       isShipPlaced('cruiser', 'player') &&
       isShipPlaced('submarine', 'player') &&
       isShipPlaced('destroyer', 'player')) {
-        alert('All Placed');
+        return true;
       } else {
         alert('Please place all of your ships.');
+        return false;
       }
 };
 
