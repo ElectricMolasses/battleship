@@ -81,6 +81,9 @@ const requestFire = function(x, y) {
       logSink(opponentBoard[x][y].shipType, 'player');  
       opponentShips--;
       // If opponentShips hits 0, win.
+      if (opponentShips < 1) {
+        gameOver('player');
+      }
     }
     endTurn();
     return true;
@@ -101,11 +104,14 @@ const opponentTurn = function() {
 
   logShot(x, y, hitStatus, 'computer');
   if (hitStatus) {
+    drawHit(cell);
     if (didSink(x, y, playerBoard[x][y].shipType, playerBoard, 'player')) {
       logSink(playerBoard[x][y].shipType, 'opponent');
       playerShips--;
+      if (playerShips < 1) {
+        gameOver();
+      }
     }
-    drawHit(cell);
   } else {
     drawMiss(cell);
   }
