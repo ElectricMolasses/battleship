@@ -31,6 +31,20 @@ This **could** be used to track hits/misses as well, rather than tracking it dir
 
 ## Functions
 
+Functionality is split between three main areas.
+
+#### battleship.js
+
+Contains the basegame logic, ability to track board state and ship health ability to fire on cells.  Completely separate from the front end where it will actually draw the results of game logic.
+
+#### interface.js
+
+The middle man that takes requests from the front end system and speaks to the game logic to negotiate whether or not moves are valid, and what happens when a valid move is provided.
+
+#### main.js
+
+The front end engine, handles drawing player boards and updating elements to reflect the current state of the game.  Also handles adding click listeners to send requests to the interface so the user can actually play.
+
 ### The Board
 
 The board is designed as an array of objects, where the objects track state.  You can pull whether or not that cell contains a ship, as well as whether or not a cell has been hit through the object properties.  Ships are not their own objects, only properties spread across multiple cells.
