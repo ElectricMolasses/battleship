@@ -131,6 +131,10 @@ const directions = {
   'opponentsShot': 0
 };
 
+// DEPRECATED FOR LOCAL GAME TYPE.
+// These functions will likely be used if I overhaul the code to allow for multiplayer
+// As it stands, they can be ignored.
+
 // Include for main.js, will handle communication back and forth
 // between it and the battleship file.
 // Effectively exists to help control what functions main can access,
