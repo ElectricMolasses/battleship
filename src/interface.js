@@ -70,14 +70,15 @@ const areAllShipsPlaced = function() {
 
 const requestFire = function(x, y) {
   if (currentTurn !== 'player') return;
-  endTurn();
   
 
   if (fire(x, y, opponentBoard, 'computer')) {
     logShot(x, y, true, 'player');
+    endTurn();
     return true;
   }
   logShot(x,y, false, 'player');
+  endTurn();
   return false;
 };
 
@@ -90,6 +91,7 @@ const opponentTurn = function() {
   const [x, y, hitStatus] = dumbShot(playerBoard, 'player');
   const cell = convertCoordsToCell(x, y, boardIds[0]);
 
+  logShot(x, y, hitStatus, 'computer');
   if (hitStatus) {
     drawHit(cell);
   } else {
