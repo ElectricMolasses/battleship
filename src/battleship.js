@@ -70,7 +70,7 @@ const placeShip = function(x, y, ship, orientation, board, player) {
     } else {
       board[x][y + i].shipType = ship;
     }
-  }
+  } 
   
   return true;
 };
@@ -160,7 +160,7 @@ const fire = function(x, y, board, targetPlayer) {
   return false;
 };
 
-const wasShot = function(x, y, board) {
+const alreadyShot = function(x, y, board) {
   return board[x][y].wasShot;
 };
 
