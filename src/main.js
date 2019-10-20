@@ -159,14 +159,6 @@ const drawMiss = function(cell) {
     .css('mix-blend-mode', 'multiply'));
 };
 
-const createRemoveListeners = function() {
-  for (const ship in SHIP_IMAGES) {
-    $(`#remove${ship}`).click(() => {
-      eraseShip(ship);
-    });
-  }
-};
-
 const resetGame = function(playerBoard, opponentBoard) {
   clearBoard(playerBoard);
   clearBoard(opponentBoard);
@@ -192,6 +184,20 @@ const linkSwitchButton = function(button) {
   button.click(() => {
     switchOrientation(button);
   });
+};
+
+
+const createRemoveListeners = function() {
+  for (const ship in SHIP_IMAGES) {
+    $(`#remove${ship}`).click(() => {
+      eraseShip(ship);
+      switchShip(ship);
+    });
+  }
+};
+
+const switchShip = function(ship) {
+  currentShip = ship;
 };
 
 $(function() {
