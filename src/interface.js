@@ -135,7 +135,7 @@ const directions = {
   'opponentsShot': 0
 };
 
-const gameOver(winner) {
+const gameOver = function(winner) {
 
 };
 
