@@ -182,8 +182,8 @@ const clearBoard = function(board) {
 $(function() {
   const playerBoard = $('#playerGrid');
   const opponentBoard = $('#opponentGrid');
-  drawGrid(playerBoard, drawShip);          // Will need to request placing a ship.
-  drawGrid(opponentBoard, fireOnCell);         // Will need to request firing on a cell.
+  drawGrid(playerBoard, drawShip);
+  drawGrid(opponentBoard, fireOnCell);
   createRemoveListeners();
 
 });
