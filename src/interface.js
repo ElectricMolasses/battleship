@@ -8,15 +8,29 @@ const {
 let playerBoard;
 let opponentBoard;
 let currentTurn;
+let gameStage = 'over';
 let winLoss = [0, 0];
 
 const startGame = function(goesFirst) {
-  playerBoard = createBoard();
-  opponentBoard = createBoard();
-  if (goesFirst === 'player') {
-    currentTurn = 'player';
-  } else {
-    currentTurn = 'opponent';
+  if (gameStage === 'over') {
+    gameStage = 'placement';
+
+    playerBoard = createBoard();
+    opponentBoard = createBoard();
+    if (goesFirst === 'player') {
+      currentTurn = 'player';
+    } else {
+      currentTurn = 'opponent';
+    }
+  }
+  if (gameStage === 'placement') {
+    // Check if all ships are placed.
+    // If they are not, tell the player to place them.
+    // If they are, start the match.
+  }
+  if (gameStage === 'playing') {
+    // Ask the player if they would like to restart.
+    // If they would, clear the boards and set to placement.
   }
 };
 

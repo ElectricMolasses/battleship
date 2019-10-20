@@ -201,7 +201,7 @@ body {
   height: 70px;
 }
 
-#rotateButton {
+.buttons {
   width: 100px;
-  margin: 40px 10px 10px 10px;
+  margin: 10px 10px 0px 10px;
 }
