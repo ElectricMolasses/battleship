@@ -101,6 +101,10 @@ const opponentTurn = function() {
 
   logShot(x, y, hitStatus, 'computer');
   if (hitStatus) {
+    if (didSink(x, y, playerBoard[x][y].shipType, playerBoard, 'player')) {
+      logSink(playerBoard[x][y].shipType, 'opponent');
+      playerShips--;
+    }
     drawHit(cell);
   } else {
     drawMiss(cell);
