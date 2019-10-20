@@ -4,8 +4,7 @@ Web application that lets you play battleship.
 
 ## ToDo
 
-- Refactor to actually use isOccupied
-- I believe the core functionality is done and we can begin implementing steps in the game loop.
+- Currently a bug in AI shots being displaced on the cell the ship has been placed on.  Need to make the elements float over the ships.
 
 ## Dependencies
 
