@@ -24,6 +24,8 @@ const SHIP_IMAGES = {
 let currentShip = 'carrier';
 let currentOrientation = 'horizontal';
 let boardIds = [];
+let playerBoard;
+let opponentBoard;
 
 const storeId = function(id) {
   boardIds.push(id);
@@ -185,7 +187,8 @@ const resetGame = function(playerBoard, opponentBoard) {
 };
 
 const clearBoard = function(board) {
-  board.empty();
+  console.log(board);
+  $(board).empty();
 };
 
 const switchOrientation = function(button) {
@@ -220,13 +223,20 @@ const switchShip = function(ship) {
 
 const nextGamePhase = function(button) {
   button.click(() => {
-    startGame('player'); //WILL NEED TO MAKE THIS TAKE WHOEVER GOES FIRST
+    if (startGame('player') === 'clearBoard') {
+      console.log('trying to clear');
+      clearBoard(playerBoard);
+      clearBoard(opponentBoard);
+      drawGrid(playerBoard, drawShip);
+      drawGrid(opponentBoard, fireOnCell, removeAfterClick);  
+    }
+    
   });
 };
 
-$(function() {
-  const playerBoard = $('#playerGrid');
-  const opponentBoard = $('#opponentGrid');
+$(document).ready(function() {
+  playerBoard = $('#playerGrid');
+  opponentBoard = $('#opponentGrid');
   drawGrid(playerBoard, drawShip);
   drawGrid(opponentBoard, fireOnCell, removeAfterClick);
   createRemoveListeners();

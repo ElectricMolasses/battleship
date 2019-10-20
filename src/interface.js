@@ -5,8 +5,8 @@ const {
   fire
 } = require('./battleship');
 */
-let playerBoard;
-let opponentBoard;
+let playerIBoard;
+let opponentIBoard;
 let currentTurn;
 let gameStage = 'over';
 let winLoss = [0, 0];
@@ -17,15 +17,14 @@ const startGame = function(goesFirst) {
   if (gameStage === 'over' ||
       gameStage === undefined) {
     gameStage = 'placement';
-
-    playerBoard = createBoard();
-    opponentBoard = createBoard();
+    playerIBoard = createBoard();
+    opponentIBoard = createBoard();
   } else if (gameStage === 'placement') {
     // Check if all ships are placed.
     // If they are not, tell the player to place them.
     // If they are, start the match.
     if (areAllShipsPlaced()) {
-      dumbPlacement(opponentBoard, 'computer');
+      dumbPlacement(opponentIBoard, 'computer');
       playerShips = 5;
       opponentShips = 5;
       gameStage = 'playing';
@@ -38,20 +37,26 @@ const startGame = function(goesFirst) {
   } else if (gameStage === 'playing') {
     // Ask the player if they would like to restart.
     // If they would, clear the boards and set to placement.
+    if (window.confirm("Would you like to end this match?")) {
+      console.log('reached!');
+      gameStage = 'over';
+      startGame();
+      return 'clearBoard';
+    }
   }
 };
 
 const requestPlaceShip = function(x, y, ship, orientation) {
   // Will return true if placed, and false if not.
   if (gameStage === 'placement') {
-    return placeShip(x, y, ship, orientation, playerBoard, 'player');
+    return placeShip(x, y, ship, orientation, playerIBoard, 'player');
   }
 };
 
 const requestRemoveShip = function(ship) {
   // Will return true if removed, and false if not.
   if (gameStage === 'placement') {
-    return removeShip(ship, playerBoard, 'player');
+    return removeShip(ship, playerIBoard, 'player');
   }
 };
 
@@ -70,13 +75,13 @@ const areAllShipsPlaced = function() {
 };
 
 const requestFire = function(x, y) {
-  if (currentTurn !== 'player') return;
+  if (currentTurn !== 'player' || gameStage !== 'playing') return;
   
 
-  if (fire(x, y, opponentBoard, 'computer')) {
+  if (fire(x, y, opponentIBoard, 'computer')) {
     logShot(x, y, true, 'player');
-    if (didSink(x, y, opponentBoard[x][y].shipType, opponentBoard, 'computer')) {
-      logSink(opponentBoard[x][y].shipType, 'player');  
+    if (didSink(x, y, opponentIBoard[x][y].shipType, opponentIBoard, 'computer')) {
+      logSink(opponentIBoard[x][y].shipType, 'player');  
       opponentShips--;
       // If opponentShips hits 0, win.
       if (opponentShips < 1) {
@@ -97,14 +102,14 @@ const endTurn = function() {
 };
 
 const opponentTurn = function() {
-  const [x, y, hitStatus] = dumbShot(playerBoard, 'player');
+  const [x, y, hitStatus] = dumbShot(playerIBoard, 'player');
   const cell = convertCoordsToCell(x, y, boardIds[0]);
 
   logShot(x, y, hitStatus, 'computer');
   if (hitStatus) {
     drawHit(cell);
-    if (didSink(x, y, playerBoard[x][y].shipType, playerBoard, 'player')) {
-      logSink(playerBoard[x][y].shipType, 'opponent');
+    if (didSink(x, y, playerIBoard[x][y].shipType, playerIBoard, 'player')) {
+      logSink(playerIBoard[x][y].shipType, 'opponent');
       playerShips--;
       if (playerShips < 1) {
         gameOver();
