@@ -152,53 +152,53 @@ body {
 }
 
 #carrierImageH {
-  width: 240px;
+  width: 200px;
   height: 40px;
 }
 
 #battleshipImageH {
-  width: 150px;
+  width: 160px;
   height: 40px;
 }
 
 #cruiserImageH {
-  width: 110px;
+  width: 120px;
   height: 40px;
 }
 
 #submarineImageH {
-  width: 110px;
+  width: 120px;
   height: 40px;
 }
 
 #destroyerImageH {
-  width: 70px;
+  width: 80px;
   height: 40px;
 }
 
 #carrierImageV {
   width: 40px;
-  height: 240px;
+  height: 200px;
 }
 
 #battleshipImageV {
   width: 40px;
-  height: 150px;
+  height: 160px;
 }
 
 #cruiserImageV {
   width: 40px;
-  height: 110px;
+  height: 120px;
 }
 
 #submarineImageV {
   width: 40px;
-  height: 110px;
+  height: 120px;
 }
 
 #destroyerImageV {
   width: 40px;
-  height: 70px;
+  height: 80px;
 }
 
 .buttons {

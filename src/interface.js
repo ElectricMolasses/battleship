@@ -48,6 +48,9 @@ const startGame = function(goesFirst) {
 
 const gameOver = function(winner) {
   if (winner === 'player') winLoss[0]++;
+  else winLoss[1]++;
+
+  // Place an overlay window with the current leaderboard, and a new button to play again.
 };
 
 const requestPlaceShip = function(x, y, ship, orientation) {
