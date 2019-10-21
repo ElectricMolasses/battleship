@@ -38,7 +38,6 @@ const startGame = function(goesFirst) {
     // Ask the player if they would like to restart.
     // If they would, clear the boards and set to placement.
     if (window.confirm("Would you like to end this match?")) {
-      console.log('reached!');
       gameStage = 'over';
       resetSHIPS();
       startGame();

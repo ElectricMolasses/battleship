@@ -89,7 +89,6 @@ const convertCellToCoords = function(cell) {
 };
 
 const convertCoordsToCell = function(x, y, id) {
-  console.log(`#${id}cell${x}-${y}`);
   return $(`#${id}cell${x}-${y}`);
 };
 
@@ -159,7 +158,6 @@ const eraseShip = function(ship) {
 const fireOnCell = function(cell) {
   const [x, y] = convertCellToCoords(cell);
   let result = requestFire(x, y);
-  console.log(result);
   if (result === undefined) return;
   if (result) {
     drawHit(cell);
