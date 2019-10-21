@@ -14,21 +14,21 @@ Web application that lets you play battleship.
 
 ### Functional
 
-- Allow the player to start a new game.
-- Allow the player to take a shot on their turn only.
-- Allow the player to play against an AI.
-- Have a leaderboard for games against the AI.
+- ![#46B308](https://placehold.it/15/46B308/000000?text=+) Allow the player to start a new game.
+- ![#46B308](https://placehold.it/15/46B308/000000?text=+) Allow the player to take a shot on their turn only.
+- ![#46B308](https://placehold.it/15/46B308/000000?text=+) Allow the player to play against an AI.
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)  Have a leaderboard for games against the AI.
 
 ### Display
 
-- Players should be able to see the other players board and their own.
-- The players own board should show the following:
-  - The players ship placement.
-  - Any shots the opposing player has made.
-- The opponents board should show the following:
-  - Any shots made by the player, and whether a HIT or a MISS.
-- Both boards should show:
-  - Coordinates of the cells, up to you on how this should be displayed.
+- ![#46B308](https://placehold.it/15/46B308/000000?text=+) Players should be able to see the other players board and their own.
+- ![#46B308](https://placehold.it/15/46B308/000000?text=+) The players own board should show the following:
+  - ![#46B308](https://placehold.it/15/46B308/000000?text=+) The players ship placement.
+  - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Any shots the opposing player has made.
+- ![#46B308](https://placehold.it/15/46B308/000000?text=+) The opponents board should show the following:
+  - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Any shots made by the player, and whether a HIT or a MISS.
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)  Both boards should show:
+  - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Coordinates of the cells, up to you on how this should be displayed.
 
 ## Dependencies
 
