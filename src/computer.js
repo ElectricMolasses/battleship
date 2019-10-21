@@ -12,7 +12,7 @@ const dumbPlacement = function(board, player) {
       randomX = Math.floor(Math.random() * (10 - SHIPS[ship].length));
       randomY = Math.floor(Math.random() * (10 - SHIPS[ship].length));
       console.log(`${randomX}, ${randomY}`);
-      Math.round(Math.random) === 1 ? randomOrientation = 'horizontal' :
+      Math.round(Math.random()) === 1 ? randomOrientation = 'horizontal' :
         randomOrientation = 'vertical';
 
     } while (!placeShip(randomX, randomY, ship, randomOrientation, board, player));
