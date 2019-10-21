@@ -46,6 +46,10 @@ const startGame = function(goesFirst) {
   }
 };
 
+const gameOver = function(winner) {
+  if (winner === 'player') winLoss[0]++;
+};
+
 const requestPlaceShip = function(x, y, ship, orientation) {
   // Will return true if placed, and false if not.
   if (gameStage === 'placement') {
@@ -142,10 +146,6 @@ const requests = {
 
 const directions = {
   'opponentsShot': 0
-};
-
-const gameOver = function(winner) {
-
 };
 
 // DEPRECATED FOR LOCAL GAME TYPE.
