@@ -40,6 +40,7 @@ const startGame = function(goesFirst) {
     if (window.confirm("Would you like to end this match?")) {
       console.log('reached!');
       gameStage = 'over';
+      resetSHIPS();
       startGame();
       return 'clearBoard';
     }

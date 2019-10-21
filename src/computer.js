@@ -29,4 +29,3 @@ const dumbShot = function(board, player) {
   } while (board[randomX][randomY].wasShot);
   return [randomX, randomY, fire(randomX, randomY, board, player)];
 };
-startGame('player');

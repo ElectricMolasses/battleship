@@ -242,4 +242,5 @@ $(document).ready(function() {
   createRemoveListeners();
   linkSwitchButton($("#rotateButton"));
   nextGamePhase($('#startGame'));
+  startGame('player');
 });
