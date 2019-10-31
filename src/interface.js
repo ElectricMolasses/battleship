@@ -51,6 +51,7 @@ const gameOver = function(winner) {
   else winLoss[1]++;
 
   // Place an overlay window with the current leaderboard, and a new button to play again.
+  $("#score").text(`${winLoss[0]} - ${winLoss[1]}`);
   $("#leaderBoard").css('visibility', 'visible');
 };
 
