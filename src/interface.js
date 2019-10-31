@@ -51,6 +51,7 @@ const gameOver = function(winner) {
   else winLoss[1]++;
 
   // Place an overlay window with the current leaderboard, and a new button to play again.
+  $("#leaderBoard").css('visibility', 'visible');
 };
 
 const requestPlaceShip = function(x, y, ship, orientation) {
@@ -74,11 +75,11 @@ const areAllShipsPlaced = function() {
       isShipPlaced('cruiser', 'player') &&
       isShipPlaced('submarine', 'player') &&
       isShipPlaced('destroyer', 'player')) {
-        return true;
-      } else {
-        alert('Please place all of your ships.');
-        return false;
-      }
+    return true;
+  } else {
+    alert('Please place all of your ships.');
+    return false;
+  }
 };
 
 const requestFire = function(x, y) {
@@ -87,9 +88,12 @@ const requestFire = function(x, y) {
 
   if (fire(x, y, opponentIBoard, 'computer')) {
     logShot(x, y, true, 'player');
-    if (didSink(x, y, opponentIBoard[x][y].shipType, opponentIBoard, 'computer')) {
-      logSink(opponentIBoard[x][y].shipType, 'player');  
+    if (didSink(x, y, opponentIBoard, 'computer')) {
+      logSink(opponentIBoard[x][y].shipType, 'player');
       opponentShips--;
+
+      // Mark ship as destroyed in UI.
+
       // If opponentShips hits 0, win.
       if (opponentShips < 1) {
         gameOver('player');
