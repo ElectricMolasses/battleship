@@ -115,7 +115,7 @@ const opponentTurn = function() {
   logShot(x, y, hitStatus, 'computer');
   if (hitStatus) {
     drawHit(cell);
-    if (didSink(x, y, playerIBoard[x][y].shipType, playerIBoard, 'player')) {
+    if (didSink(x, y, playerIBoard, 'player')) {
       logSink(playerIBoard[x][y].shipType, 'opponent');
       playerShips--;
       if (playerShips < 1) {
@@ -128,7 +128,7 @@ const opponentTurn = function() {
   currentTurn = 'player';
 };
 
-const didSink = function(x, y, ship, targetBoard, targetPlayer) {
+const didSink = function(x, y, targetBoard, targetPlayer) {
 
   if (SHIPS[targetBoard[x][y].shipType][targetPlayer].hp === 0) return true;
   return false;
