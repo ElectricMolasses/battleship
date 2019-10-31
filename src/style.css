@@ -205,3 +205,15 @@ body {
   width: 100px;
   margin: 10px 10px 0px 10px;
 }
+
+#leaderBoard {
+  background: yellow;
+  position: absolute;
+  height: 800px;
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: 50px;
+  visibility: visible;
+  z-index: 5;
+}
