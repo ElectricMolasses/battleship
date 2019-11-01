@@ -65,6 +65,10 @@ const drawGrid = function(element) {
   }
 };
 
+const labelGrid = function(element) {
+
+};
+
 const removeAfterClick = function(cell) {
   cell.prop("onclick", null).off("click");
 };
