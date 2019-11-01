@@ -154,7 +154,8 @@ body {
 
 #battleshipImageH {
   width: 160px;
-  height: 40px;
+  height: 30px;
+  margin-top: 5px;
 }
 
 #cruiserImageH {
@@ -178,8 +179,9 @@ body {
 }
 
 #battleshipImageV {
-  width: 40px;
+  width: 30px;
   height: 160px;
+  margin-left: 5px;
 }
 
 #cruiserImageV {
