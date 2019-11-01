@@ -119,11 +119,22 @@ body {
   flex-direction: column;
 }
 
-#gameView .right .grid {
+.gridContainer {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: [labelCol] 42px [main-grid] repeat(10, 42px);
+  grid-template-rows: [main-grid] repeat(10, 42px) [labelRow] 42px ;
+}
+
+.grid {
   background: #4d3bb4;
   width: 420px;
   height: 420px;
   margin: auto;
+  grid-row-start: main-grid;
+  grid-column-start: main-grid;
+  grid-row-end: labelRow;
+  grid-column-end: 11;
   display: grid;
   grid-template-columns: repeat(10, 42px);
   grid-template-rows: repeat(10, 42px);

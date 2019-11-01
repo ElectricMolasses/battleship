@@ -184,7 +184,6 @@ const resetGame = function(playerBoard, opponentBoard) {
 };
 
 const clearBoard = function(board) {
-  console.log(board);
   $(board).empty();
 };
 
@@ -203,7 +202,6 @@ const linkSwitchButton = function(button) {
     switchOrientation(button);
   });
 };
-
 
 const createRemoveListeners = function() {
   for (const ship in SHIP_IMAGES) {
