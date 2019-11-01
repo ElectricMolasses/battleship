@@ -226,7 +226,8 @@ const nextGamePhase = function(button) {
       clearBoard(playerBoard);
       clearBoard(opponentBoard);
       drawGrid(playerBoard, drawShip);
-      drawGrid(opponentBoard, fireOnCell, removeAfterClick);  
+      drawGrid(opponentBoard, fireOnCell, removeAfterClick);
+      $('#leaderBoard').css('visibility', 'hidden');
     }
     
   });
@@ -240,5 +241,6 @@ $(document).ready(function() {
   createRemoveListeners();
   linkSwitchButton($("#rotateButton"));
   nextGamePhase($('#startGame'));
+  nextGamePhase($('#nextMatch'));
   startGame('player');
 });
