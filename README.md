@@ -6,7 +6,7 @@ Web application that lets you play battleship.g
 
 - Currently a bug where the player can remove event listeners from the opponents grid before the game starts.
 
-## Requirements
+## Roadmap
 
 ### Functional
 
