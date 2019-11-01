@@ -57,7 +57,7 @@ body {
   background: #383428;
   margin: auto;
   width: 1200px;
-  height: 900px;
+  height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;  
@@ -69,7 +69,7 @@ body {
   border-color: rgb(117, 33, 33);
   border-width: 1px;
   width: 300px;
-  height: 875px;
+  height: 975px;
   display: flex;
   flex-direction: column;
 }
@@ -98,13 +98,14 @@ body {
   border-color: rgb(95, 95, 187);
   border-width: 1px;
   width: 875px;
-  height: 875px;
+  height: 975px;
   display: flex;
   flex-direction: column;
 }
 
 .gridContainer {
   margin: auto;
+  margin-top: 5px;
   display: grid;
   grid-template-columns: [labelCol] 42px [main-grid] repeat(10, 42px);
   grid-template-rows: [main-grid] repeat(10, 42px) [labelRow] 42px;
@@ -115,7 +116,6 @@ body {
   width: 420px;
   height: 420px;
   margin: 0px;
-  margin-top: 5px;
   grid-row-start: main-grid;
   grid-column-start: main-grid;
   grid-row-end: labelRow;
