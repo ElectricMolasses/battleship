@@ -52,7 +52,6 @@ const drawGrid = function(element) {
   resetSunk();
   
   for (let i = 0; i < 10; i++) {
-
     for (let j = 0; j < 10; j++) {
       element.append($('<div></div>')
         .addClass('cell')
@@ -140,7 +139,6 @@ const drawShip = function(cell) {
   }
 };
 
-// Yet to determine whether it takes a ship or a cell.
 const eraseShip = function(ship) {
   if (!requestRemoveShip(ship)) return false;
   $(`#${ship}ImageH`).remove();
