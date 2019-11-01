@@ -49,6 +49,7 @@ const drawGrid = function(element) {
 
   const boardId = genBoardId();
   storeId(boardId);
+  resetSunk();
   
   for (let i = 0; i < 10; i++) {
 
@@ -177,6 +178,7 @@ const displaySink = function(ship, player) {
 };
 
 const resetGame = function(playerBoard, opponentBoard) {
+  resetSunk();
   clearBoard(playerBoard);
   clearBoard(opponentBoard);
   drawGrid(playerBoard, drawShip);
@@ -216,6 +218,13 @@ const createRemoveListeners = function() {
 
 const switchShip = function(ship) {
   currentShip = ship;
+};
+
+const resetSunk = function() {
+  for (const ship in SHIP_IMAGES) {
+    $(`#remove${ship}`).css('background-color', 'transparent');
+    $(`#opponent${ship}`).css('background-color', 'transparent');
+  }
 };
 
 const nextGamePhase = function(button) {
