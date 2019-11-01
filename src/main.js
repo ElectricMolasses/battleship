@@ -71,11 +71,13 @@ const labelGrid = function(element) {
     element.append($('<div></div>')
       .css('grid-column', 1)
       .css('grid-row', i - 1)
+      .css('margin', 'auto')
       .text('COL'));
 
     element.append($('<div></div>')
       .css('grid-column', i + 1)
       .css('grid-row', 11)
+      .css('margin', 'auto')
       .text('ROW'));
   }
 };
