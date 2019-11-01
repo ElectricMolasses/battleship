@@ -38,7 +38,7 @@ const genBoardId = function() {
 // drawGrid will take callbacks in addition to the element it's targetting,
 // and apply the callbacks to each cell of the grid under a .click() event.
 const drawGrid = function(element) {
-  const callbacks = Array.prototype.slice.call(arguments, 1);
+  const callbacks = [...arguments].slice(1);
   //Remove named param's from the arguments object for later use.
 
   const gridWidth = element.innerWidth();
