@@ -88,24 +88,8 @@ body {
   flex-direction: column;
 }
 
-#gameView .left #shipStatus #playerShips {
-  /* */
-}
-
 #gameView .left #shipStatus div img {
   margin: 3px auto 3px 12px;
-}
-
-#gameView .left #shipStatus #playerShips img {
-  /* Just leaving this here for now.*/
-}
-
-#gameView .left #shipStatus #aiShips{
-  /* */
-}
-
-#gameView .left #shipStatus #aiShips img {
-  /* Just leaving this here for now.*/
 }
 
 #gameView .right {
