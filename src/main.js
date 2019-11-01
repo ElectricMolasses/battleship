@@ -170,9 +170,9 @@ const drawMiss = function(cell) {
 
 const displaySink = function(ship, player) {
   if (player === 'player') {
-
+    // Nada for now.
   } else {
-    
+    $(`#opponent${ship}`).css('background-color', 'red');
   }
 };
 
