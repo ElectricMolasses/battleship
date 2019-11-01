@@ -120,17 +120,18 @@ body {
 }
 
 .gridContainer {
-  margin: 10px;
+  margin: auto;
   display: grid;
   grid-template-columns: [labelCol] 42px [main-grid] repeat(10, 42px);
-  grid-template-rows: [main-grid] repeat(10, 42px) [labelRow] 42px ;
+  grid-template-rows: [main-grid] repeat(10, 42px) [labelRow] 42px;
 }
 
 .grid {
   background: #4d3bb4;
   width: 420px;
   height: 420px;
-  margin: auto;
+  margin: 0px;
+  margin-top: 5px;
   grid-row-start: main-grid;
   grid-column-start: main-grid;
   grid-row-end: labelRow;
