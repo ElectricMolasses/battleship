@@ -67,6 +67,17 @@ const drawGrid = function(element) {
 
 const labelGrid = function(element) {
 
+  for (let i = 1; i <= 10; i++) {
+    element.append($('<div></div>')
+      .css('grid-column', 1)
+      .css('grid-row', i - 1)
+      .text('COL'));
+
+    element.append($('<div></div>')
+      .css('grid-column', i + 1)
+      .css('grid-row', 11)
+      .text('ROW'));
+  }
 };
 
 const removeAfterClick = function(cell) {
@@ -243,6 +254,7 @@ const nextGamePhase = function(button) {
 $(document).ready(function() {
   playerBoard = $('#playerGrid');
   opponentBoard = $('#opponentGrid');
+  labelGrid($('.gridContainer'));
   drawGrid(playerBoard, drawShip);
   drawGrid(opponentBoard, fireOnCell, removeAfterClick);
   createRemoveListeners();
