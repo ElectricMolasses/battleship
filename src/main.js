@@ -95,46 +95,46 @@ const drawShip = function(cell) {
   if (ship === 'carrier') {
     if (orientation === 'horizontal') {
       cell.append($(`<img src="${SHIP_IMAGES.carrier.horizontal}" alt="carrier">`)
-        .attr('id', 'carrierImageH'));
+        .attr('id', 'carrierImageH').addClass('ship'));
     } else {
       cell.append($(`<img src="${SHIP_IMAGES.carrier.vertical}" alt="carrier">`)
-        .attr('id', 'carrierImageV'));
+        .attr('id', 'carrierImageV').addClass('ship'));
     }
   }
   if (ship === 'battleship') {
     if (orientation === 'horizontal') {
       cell.append($(`<img src="${SHIP_IMAGES.battleship.horizontal}" alt="carrier">`)
-        .attr('id', 'battleshipImageH'));
+        .attr('id', 'battleshipImageH').addClass('ship'));
     } else {
       cell.append($(`<img src="${SHIP_IMAGES.battleship.vertical}" alt="carrier">`)
-        .attr('id', 'battleshipImageV'));
+        .attr('id', 'battleshipImageV').addClass('ship'));
     }
   }
   if (ship === 'cruiser') {
     if (orientation === 'horizontal') {
       cell.append($(`<img src="${SHIP_IMAGES.cruiser.horizontal}" alt="carrier">`)
-        .attr('id', 'cruiserImageH'));
+        .attr('id', 'cruiserImageH').addClass('ship'));
     } else {
       cell.append($(`<img src="${SHIP_IMAGES.cruiser.vertical}" alt="carrier">`)
-        .attr('id', 'cruiserImageV'));
+        .attr('id', 'cruiserImageV').addClass('ship'));
     }
   }
   if (ship === 'submarine') {
     if (orientation === 'horizontal') {
       cell.append($(`<img src="${SHIP_IMAGES.submarine.horizontal}" alt="carrier">`)
-        .attr('id', 'submarineImageH'));
+        .attr('id', 'submarineImageH').addClass('ship'));
     } else {
       cell.append($(`<img src="${SHIP_IMAGES.submarine.vertical}" alt="carrier">`)
-        .attr('id', 'submarineImageV'));
+        .attr('id', 'submarineImageV').addClass('ship'));
     }
   }
   if (ship === 'destroyer') {
     if (orientation === 'horizontal') {
       cell.append($(`<img src="${SHIP_IMAGES.destroyer.horizontal}" alt="carrier">`)
-        .attr('id', 'destroyerImageH'));
+        .attr('id', 'destroyerImageH').addClass('ship'));
     } else {
       cell.append($(`<img src="${SHIP_IMAGES.destroyer.vertical}" alt="carrier">`)
-        .attr('id', 'destroyerImageV'));
+        .attr('id', 'destroyerImageV').addClass('ship'));
     }
   }
 };
