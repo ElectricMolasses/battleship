@@ -25,8 +25,8 @@ Web application that lets you play battleship.
   - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Any shots the opposing player has made.
 - ![#46B308](https://placehold.it/15/46B308/000000?text=+) The opponents board should show the following:
   - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Any shots made by the player, and whether a HIT or a MISS.
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)  Both boards should show:
-  - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Coordinates of the cells, up to you on how this should be displayed.
+- ![#f03c15](https://placehold.it/15/46B308/000000?text=+)  Both boards should show:
+  - ![#f03c15](https://placehold.it/15/46B308/000000?text=+) Coordinates of the cells, up to you on how this should be displayed.
 
 ## Dependencies
 
