@@ -161,7 +161,8 @@ body {
 
 #cruiserImageH {
   width: 120px;
-  height: 40px;
+  height: 25px;
+  margin-top: 7.5px;
 }
 
 #submarineImageH {
@@ -187,8 +188,9 @@ body {
 }
 
 #cruiserImageV {
-  width: 40px;
+  width: 25px;
   height: 120px;
+  margin-left: 7.5px;
 }
 
 #submarineImageV {
