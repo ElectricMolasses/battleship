@@ -51,16 +51,9 @@ const drawGrid = function(element) {
   storeId(boardId);
   
   for (let i = 0; i < 10; i++) {
-    cells.push([]);
-    cellRows.push($('<div></div>').width(gridWidth)
-      .height(gridHeight / 10)
-      .addClass('rowContainer')
-      .attr('id', `${boardId}gridRow${i}`));
-    element.append(cellRows[i]);
 
     for (let j = 0; j < 10; j++) {
-      cells[i].push($('<div></div>').width(gridWidth / 10)
-        .height(gridHeight / 10)
+      element.append($('<div></div>')
         .addClass('cell')
         .attr('id', `${boardId}cell${j}-${i}`)
         .click(() => {
@@ -68,7 +61,6 @@ const drawGrid = function(element) {
             func($(`#${boardId}cell${j}-${i}`));
           }
         }));
-      cellRows[i].append(cells[i][j]);
     }
   }
 };

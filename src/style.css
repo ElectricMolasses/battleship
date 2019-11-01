@@ -121,17 +121,12 @@ body {
 
 #gameView .right .grid {
   background: #4d3bb4;
-  width: 425px;
-  height: 425px;
+  width: 420px;
+  height: 420px;
   margin: auto;
-}
-
-#gameView .right #playerGrid {
-  
-}
-
-#gameView .right #opponentGrid {
-
+  display: grid;
+  grid-template-columns: repeat(10, 42px);
+  grid-template-rows: repeat(10, 42px);
 }
 
 .rowContainer {
