@@ -64,9 +64,9 @@ body {
 }
 
 #gameView .left {
-  background: red;
+  background: rgb(61, 44, 44);
   border-style: solid;
-  border-color: blue;
+  border-color: rgb(117, 33, 33);
   border-width: 1px;
   width: 300px;
   height: 875px;
@@ -109,9 +109,9 @@ body {
 }
 
 #gameView .right {
-  background: red;
+  background: rgb(160, 60, 60);
   border-style: solid;
-  border-color: blue;
+  border-color: rgb(95, 95, 187);
   border-width: 1px;
   width: 875px;
   height: 875px;
@@ -120,7 +120,7 @@ body {
 }
 
 #gameView .right .grid {
-  background: #484438;
+  background: #4d3bb4;
   width: 425px;
   height: 425px;
   margin: auto;

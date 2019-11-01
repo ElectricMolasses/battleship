@@ -67,7 +67,6 @@ const drawGrid = function(element) {
           for (const func of callbacks) {
             func($(`#${boardId}cell${j}-${i}`));
           }
-          
         }));
       cellRows[i].append(cells[i][j]);
     }
@@ -229,7 +228,6 @@ const nextGamePhase = function(button) {
       drawGrid(opponentBoard, fireOnCell, removeAfterClick);
       $('#leaderBoard').css('visibility', 'hidden');
     }
-    
   });
 };
 
