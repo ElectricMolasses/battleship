@@ -1,10 +1,10 @@
 # Battleship
 
-Web application that lets you play battleship.
+Web application that lets you play battleship.g
 
-## ToDo
+## Known Bugs
 
-- Currently a bug in AI shots being displaced on the cell the ship has been placed on.  Need to make the elements float over the ships.
+- Currently a bug where the player can remove event listeners from the opponents grid before the game starts.
 
 ## Requirements
 
