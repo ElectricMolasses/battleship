@@ -15,7 +15,7 @@ Web application that lets you play battleship.
 - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Allow the player to play against an AI.
 - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Have a leaderboard for games against the AI.
 - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Ships on the status bar change appearance once the have been sunk (Stretch).
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Allow the player to pick between different levels of AI difficulty (Stretch).
+- ![#f03c15](https://placehold.it/15/c08c15/000000?text=+) Allow the player to pick between different levels of AI difficulty (Stretch).
 
 ### Display
 
