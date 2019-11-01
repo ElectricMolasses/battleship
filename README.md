@@ -6,7 +6,7 @@ Web application that lets you play battleship.
 
 - Currently a bug where the player can remove event listeners from the opponents grid before the game starts.
 
-## Roadmapg
+## Roadmap
 
 ### Functional
 
