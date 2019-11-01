@@ -17,7 +17,7 @@ Web application that lets you play battleship.
 - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Allow the player to start a new game.
 - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Allow the player to take a shot on their turn only.
 - ![#46B308](https://placehold.it/15/46B308/000000?text=+) Allow the player to play against an AI.
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)  Have a leaderboard for games against the AI.
+- ![#46B308](https://placehold.it/15/46B308/000000?text=+)  Have a leaderboard for games against the AI.
 
 ### Display
 
