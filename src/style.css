@@ -149,7 +149,8 @@ body {
 
 #carrierImageH {
   width: 200px;
-  height: 40px;
+  height: 58px;
+  margin-top: -9px;
 }
 
 #battleshipImageH {
@@ -174,8 +175,9 @@ body {
 }
 
 #carrierImageV {
-  width: 40px;
+  width: 58px;
   height: 200px;
+  margin-left: -9px;
 }
 
 #battleshipImageV {
