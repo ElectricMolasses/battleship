@@ -173,7 +173,8 @@ body {
 
 #destroyerImageH {
   width: 80px;
-  height: 40px;
+  height: 20px;
+  margin-top: 10px;
 }
 
 #carrierImageV {
@@ -201,8 +202,9 @@ body {
 }
 
 #destroyerImageV {
-  width: 40px;
+  width: 20px;
   height: 80px;
+  margin-left: 10px;
 }
 
 .buttons {
