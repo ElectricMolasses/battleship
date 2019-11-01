@@ -1,12 +1,12 @@
 # Battleship
 
-Web application that lets you play battleship.g
+Web application that lets you play battleship.
 
 ## Known Bugs
 
 - Currently a bug where the player can remove event listeners from the opponents grid before the game starts.
 
-## Roadmap
+## Roadmapg
 
 ### Functional
 
