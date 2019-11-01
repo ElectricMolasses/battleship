@@ -94,6 +94,7 @@ const requestFire = function(x, y) {
       opponentShips--;
 
       // Mark ship as destroyed in UI.
+      displaySink(opponentIBoard[x][y].shipType, 'computer');
 
       // If opponentShips hits 0, win.
       if (opponentShips < 1) {

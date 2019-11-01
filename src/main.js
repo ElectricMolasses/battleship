@@ -168,6 +168,14 @@ const drawMiss = function(cell) {
     .css('mix-blend-mode', 'multiply'));
 };
 
+const displaySink = function(ship, player) {
+  if (player === 'player') {
+
+  } else {
+    
+  }
+};
+
 const resetGame = function(playerBoard, opponentBoard) {
   clearBoard(playerBoard);
   clearBoard(opponentBoard);
