@@ -123,6 +123,7 @@ const opponentTurn = function() {
     drawHit(cell);
     if (didSink(x, y, playerIBoard, 'player')) {
       logSink(playerIBoard[x][y].shipType, 'opponent');
+      displaySink(playerIBoard[x][y].shipType, 'player');
       playerShips--;
       if (playerShips < 1) {
         gameOver();
