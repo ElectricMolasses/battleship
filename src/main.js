@@ -70,9 +70,9 @@ const labelGrid = function(element) {
   for (let i = 1; i <= 10; i++) {
     element.append($('<div></div>')
       .css('grid-column', 1)
-      .css('grid-row', i - 1)
+      .css('grid-row', i)
       .css('margin', 'auto')
-      .text('COL'));
+      .text(11 - i));
 
     element.append($('<div></div>')
       .css('grid-column', i + 1)
