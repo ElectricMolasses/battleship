@@ -78,7 +78,7 @@ const labelGrid = function(element) {
       .css('grid-column', i + 1)
       .css('grid-row', 11)
       .css('margin', 'auto')
-      .text('ROW'));
+      .text(String.fromCharCode(64 + i)));
   }
 };
 
