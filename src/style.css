@@ -80,7 +80,11 @@ body {
 }
 
 #gameView .left #shipStatus div {
-  height: 430px;
+  height: 410px;
+}
+
+#gameView .left #shipStatus #currentPlayer {
+  height: 50px;
 }
 
 #gameView .left div div {
