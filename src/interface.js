@@ -13,6 +13,8 @@ let winLoss = [0, 0];
 let playerShips;
 let opponentShips;
 
+let memory = [];
+
 const startGame = function(goesFirst) {
   if (gameStage === 'over' ||
       gameStage === undefined) {
@@ -115,7 +117,7 @@ const endTurn = function() {
 };
 
 const opponentTurn = function() {
-  const [x, y, hitStatus] = dumbShot(playerIBoard, 'player');
+  const [x, y, hitStatus] = dumbShot(playerIBoard, 'player', memory);
   const cell = convertCoordsToCell(x, y, boardIds[0]);
 
   logShot(x, y, hitStatus, 'computer');
