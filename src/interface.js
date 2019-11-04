@@ -35,7 +35,7 @@ const startGame = function(goesFirst) {
         $("#currentPlayer").text('Player');
       } else {
         currentTurn = 'opponent';
-        $("#currentPlayer").text('Player');
+        $("#currentPlayer").text('Computer');
       }
     }
   } else if (gameStage === 'playing') {
@@ -115,7 +115,7 @@ const requestFire = function(x, y) {
 
 const endTurn = function() {
   currentTurn = 'opponent';
-  $("currentPlayer").text('Computer');
+  $("#currentPlayer").text('Computer');
   setTimeout(() => {
     opponentTurn();
   }, Math.random() * 1000 + 800);
@@ -140,7 +140,7 @@ const opponentTurn = function() {
   } else {
     drawMiss(cell);
   }
-  $("currentPlayer").text('Player');
+  $("#currentPlayer").text('Player');
   currentTurn = 'player';
 };
 
