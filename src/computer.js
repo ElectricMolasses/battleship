@@ -65,12 +65,23 @@ const okayShot = function(board, player, memory) {
     }
   }
 
-  const verifyVerticalLine = function(x, y1, y2) {
-
+  // Functions to confirm a potential line/ship is not broken by a miss.
+  const verifyVerticalLine = function(x, y1, y2, board) {
+    for (let i = y1; i <= y2; i++) {
+      if (!board[x][i].wasShot) {
+        return false;
+      }
+    }
+    return true;
   };
 
-  const verifyHorizontalLine = function(y, x1, x2) {
-
+  const verifyHorizontalLine = function(y, x1, x2, board) {
+    for (let i = x1; i <= x2; i++) {
+      if (!board[i][y].wasShot) {
+        return false;
+      }
+    }
+    return true;
   };
 
   return [shotX, shotY, result];
