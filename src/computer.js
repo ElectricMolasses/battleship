@@ -53,6 +53,8 @@ const okayShot = function(board, player, memory) {
       memory.push([shotX, shotY]);
     }
   } else {
+    // The fun stuff.  Intelligent shot choices once there are more than two pending shots on the board.
+
     let lowX, highX = memory[0][0];
     let lowY, highY = memory[0][1];
 
@@ -88,40 +90,25 @@ const okayShot = function(board, player, memory) {
 
     for (let i = lowX; i <= highX; i++) {
       for (let j = lowY; j <= highY; j++) {
-        if (verifyHorizontalLine(j, i, highX)) {
-
+        if (!board[i + 1][j].wasShot) {
+          result = fire(i + 1, j, board, player);
+          return [i + 1, j, result];
         }
-        if (verifyVerticalLine(i, j, highY)) {
-
+        if (!board[i - 1][j].wasShot) {
+          result = fire(i - 1, j, board, player);
+          return [i - 1, j, result];
+        }
+        if (!board[i][j + 1].wasShot) {
+          result = fire(i, j + 1, board, player);
+          return [i, j + 1, result];
+        }
+        if (!board[i][j - 1].wasShot) {
+          result = fire(i, j - 1, board, player);
+          return [i, j - 1, result];
         }
       }
     }
   }
 
-  
-
-
   return [shotX, shotY, result];
-};
-
-// Functions to confirm a potential line/ship is not broken by a miss.
-
-const verifyVerticalLine = function(x, y1, y2, board) {
-  if (y1 === y2) return false;
-  for (let i = y1; i <= y2; i++) {
-    if (!board[x][i].wasShot) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const verifyHorizontalLine = function(y, x1, x2, board) {
-  if (x1 === x2) return false;
-  for (let i = x1; i <= x2; i++) {
-    if (!board[i][y].wasShot) {
-      return false;
-    }
-  }
-  return true;
 };
