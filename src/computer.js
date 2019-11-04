@@ -65,11 +65,11 @@ const okayShot = function(board, player, memory) {
     }
   }
 
-  const verifyVerticalLine = function(x1, x2, y) {
+  const verifyVerticalLine = function(x, y1, y2) {
 
   };
 
-  const verifyHorizontalLine = function(x, y1, y2) {
+  const verifyHorizontalLine = function(y, x1, x2) {
 
   };
 
