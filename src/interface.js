@@ -116,7 +116,10 @@ const requestFire = function(x, y) {
 const endTurn = function() {
   currentTurn = 'opponent';
   $("currentPlayer").text('Computer');
-  opponentTurn();
+  setTimeout(() => {
+    opponentTurn();
+  }, Math.random() * 1000 + 800);
+  
 };
 
 const opponentTurn = function() {
