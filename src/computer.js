@@ -63,26 +63,58 @@ const okayShot = function(board, player, memory) {
       if (point[1] < lowY) lowY = point[1];
       if (point[1] > highY) highY = point[1];
     }
+
+    if (lowX === highX) {
+      if (!board[lowX][highY + 1].wasShot) {
+        result = fire(lowX, highY + 1, board, player);
+        return [lowX, highY + 1, result];
+      }
+      if (!board[lowX][lowY - 1].wasShot) {
+        result = fire(lowX, lowY - 1, board, player);
+        return [lowX, lowY - 1, result];
+      }
+    }
+
+    if (lowY === highY) {
+
+    }
+
+    for (let i = lowX; i <= highX; i++) {
+      for (let j = lowY; j <= highY; j++) {
+        if (verifyHorizontalLine(j, i, highX)) {
+
+        }
+        if (verifyVerticalLine(i, j, highY)) {
+
+        }
+      }
+    }
   }
 
-  // Functions to confirm a potential line/ship is not broken by a miss.
-  const verifyVerticalLine = function(x, y1, y2, board) {
-    for (let i = y1; i <= y2; i++) {
-      if (!board[x][i].wasShot) {
-        return false;
-      }
-    }
-    return true;
-  };
+  
 
-  const verifyHorizontalLine = function(y, x1, x2, board) {
-    for (let i = x1; i <= x2; i++) {
-      if (!board[i][y].wasShot) {
-        return false;
-      }
-    }
-    return true;
-  };
 
   return [shotX, shotY, result];
+};
+
+// Functions to confirm a potential line/ship is not broken by a miss.
+
+const verifyVerticalLine = function(x, y1, y2, board) {
+  if (y1 === y2) return false;
+  for (let i = y1; i <= y2; i++) {
+    if (!board[x][i].wasShot) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const verifyHorizontalLine = function(y, x1, x2, board) {
+  if (x1 === x2) return false;
+  for (let i = x1; i <= x2; i++) {
+    if (!board[i][y].wasShot) {
+      return false;
+    }
+  }
+  return true;
 };
