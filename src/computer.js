@@ -76,7 +76,14 @@ const okayShot = function(board, player, memory) {
     }
 
     if (lowY === highY) {
-
+      if (!board[highX + 1][lowY].wasShot) {
+        result = fire(highX + 1, lowY, board, player);
+        return [highX + 1, lowY, result];
+      }
+      if (!board[lowX - 1][lowY].wasShot) {
+        result = fire(lowX - 1, lowY, result);
+        return [lowX - 1, lowY, result];
+      }
     }
 
     for (let i = lowX; i <= highX; i++) {
