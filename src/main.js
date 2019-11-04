@@ -65,6 +65,8 @@ const drawGrid = function(element) {
   }
 };
 
+// Take an existing grid and builds a set of labels along
+// the root x and y axis.
 const labelGrid = function(element) {
 
   for (let i = 1; i <= 10; i++) {
