@@ -172,18 +172,16 @@ const requests = {
 // Effectively exists to help control what functions main can access,
 // in addition to filtering input.
 
-const request = function(command, args) {
-  if (command in requests) {
-    command(args);
-  } else throw Error("Invalid request: " + command);
-};
+// const request = function(command, args) {
+//   if (command in requests) {
+//     command(args);
+//   } else throw Error("Invalid request: " + command);
+// };
 
 // Will need to request to place a ship.
 // Will need to request to remove a ship.
 // Will need to request to fire a shot.
 
-const receive = function() {
 
-};
 
 // Will need to send opponents shots to the players board.
