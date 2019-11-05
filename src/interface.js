@@ -154,14 +154,14 @@ const getScore = function() {
   return winLoss;
 };
 
-const requests = {
-  'startGame': startGame,
-  'fire': requestFire,
-  'placeShip': requestPlaceShip,
-  'requestRemoveShip': requestRemoveShip,
-  'endTurn': endTurn,
-  'getScore': getScore,
-};
+// const requests = {
+//   'startGame': startGame,
+//   'fire': requestFire,
+//   'placeShip': requestPlaceShip,
+//   'requestRemoveShip': requestRemoveShip,
+//   'endTurn': endTurn,
+//   'getScore': getScore,
+// };
 
 // DEPRECATED FOR LOCAL GAME TYPE.
 // These functions will likely be used if I overhaul the code to allow for multiplayer
