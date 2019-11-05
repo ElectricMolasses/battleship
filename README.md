@@ -47,7 +47,16 @@ There are not yet UI elements to indicate which ships have been placed, or which
 
 ### Active Match
 
+Currently, the player will always go before the computer.
+Click on an enemy cell to fire at that cell, provided it is your turn.  There is text to the left to indicate whose turn it is.  The computer will automatically pick up its turn and fire after you do.
 
+### Game Over
+
+Once the player or the computer wins, a scoreboard will appear displaying the players win loss with a play again button.
+
+### Restart
+
+At any point, the player can click "new game" on the left to reset the match.  It will provide a prompt to approve the reset in case of a misclick.
 
 ## Values
 
