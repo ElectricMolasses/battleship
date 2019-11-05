@@ -32,6 +32,23 @@ Web application that lets you play battleship.
 
 Mocha and chai is used for testing, everything else is pure javasript.  No additional libraries needed to run.
 
+## Getting Started
+
+- Just launch index.html, multiplayer is not yet implemented so the game does not require a server to run.
+
+## Usage
+
+### Placement
+
+The game starts in placement mode.  Click the ship you would like to place on the left, and click the button below your ships to change the current orientation it will place at.
+The ship will always place the upper left section of the ship on the cell you click.
+You can click on a ship you've placed on the left to remove it, allowing you to move it somewhere else.
+There are not yet UI elements to indicate which ships have been placed, or which ship is currently selected.
+
+### Active Match
+
+
+
 ## Values
 
 ### Entity Objects
