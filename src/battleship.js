@@ -162,10 +162,6 @@ const fire = function(x, y, board, targetPlayer) {
   return false;
 };
 
-const alreadyShot = function(x, y, board) {
-  return board[x][y].wasShot;
-};
-
 const reduceHP = function(ship, player) {
   //if (SHIPS[ship][player].hp !== null) return false;
   //if (SHIPS[ship][player].hp > 0) return false;
