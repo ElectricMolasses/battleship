@@ -163,10 +163,6 @@ const requests = {
   'getScore': getScore,
 };
 
-const directions = {
-  'opponentsShot': 0
-};
-
 // DEPRECATED FOR LOCAL GAME TYPE.
 // These functions will likely be used if I overhaul the code to allow for multiplayer
 // As it stands, they can be ignored.
