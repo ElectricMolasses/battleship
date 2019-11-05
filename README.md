@@ -4,7 +4,7 @@ Web application that lets you play battleship.
 
 ## Known Bugs
 
-- Currently a bug where the player can remove event listeners from the opponents grid before the game starts.
+- Currently a bug where the player can remove event listeners from the opponents grid before the game starts.  Bug is likely also present during the opponents turn.
 
 ## Roadmap
 
@@ -34,7 +34,7 @@ Mocha and chai is used for testing, everything else is pure javasript.  No addit
 
 ## Getting Started
 
-- Just launch index.html, multiplayer is not yet implemented so the game does not require a server to run.
+Just launch index.html, multiplayer is not yet implemented so the game does not require a server to run.
 
 ## Usage
 
